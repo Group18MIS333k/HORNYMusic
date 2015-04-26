@@ -1,0 +1,63 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="WebApplication1.Master.vb" Inherits="WepApplication1.Master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="MasterPageStyleSheet.css" rel="stylesheet" type="text/css" />
+    </head>
+<body>
+    <form id="form1" runat="server">
+    <div id ="banner">
+    
+        <asp:Label ID="Label3" runat="server" Font-Size="XX-Large" Text="Austin Company"></asp:Label>
+        
+    
+        <br />
+        <asp:LinkButton ID="lnkMyMusic" runat="server" PostBackUrl="~/MyMusic.aspx">My Music</asp:LinkButton>
+&nbsp;<asp:LinkButton ID="LnkShoppingCart" runat="server">Shopping Cart</asp:LinkButton>
+&nbsp;<asp:LinkButton ID="lnkMyAccount" runat="server">My Account</asp:LinkButton>
+&nbsp;<asp:LinkButton ID="lnkSearch" runat="server">Search</asp:LinkButton>
+        &nbsp;<asp:LinkButton ID="lnkWelcomePage" runat="server" PostBackUrl="~/WelcomePage.aspx">Home</asp:LinkButton>
+        
+    
+    </div>
+
+
+     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            <p>
+            </p>
+
+            <p>
+            </p>
+
+            <p>
+            </p>
+
+            <p>
+            </p>
+
+            <p>
+            </p>
+
+            <p>
+            </p>
+
+            <p>
+            </p>
+
+            <p>
+            </p>
+
+        </asp:ContentPlaceHolder>
+
+    <div id ="bottom">
+
+        Company doing stuff in Austin<br />
+        Contact us: <a href="mailto:austincompany@gmail.com">austincompany@gmail.com</a><br />
+        <img alt="" class="auto-style1" src="images.jpg" />
+    </div>
+    </form>
+</body>
+</html>

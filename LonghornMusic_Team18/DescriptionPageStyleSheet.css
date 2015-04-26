@@ -1,0 +1,48 @@
+﻿body {
+    width: 800px;
+    height: 586px;
+}
+#banner
+{
+	width: 100%;
+	position: relative;
+	text-align: center;
+	font-size: large;
+}
+
+#LeftDesc
+{
+    width: 35%;
+	position: relative;
+	float: left;
+    vertical-align: top;
+    text-align: left;
+    height: 400px;
+}	
+		
+#RightDesc {
+    position: relative;
+    float: left;
+    width: 20%;
+    text-align:left;
+    padding-left:4px;
+      
+}
+#picture
+{
+	position: relative;
+	float: left;
+	width:100px;
+    height: 400px;
+}
+
+#bottom {
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+	
+
+.textbox /* "." looks for a CssClass reference*/ {
+    width: 100px;
+}

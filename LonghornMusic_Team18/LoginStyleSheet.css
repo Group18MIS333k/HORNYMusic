@@ -1,0 +1,100 @@
+﻿body {
+    width: 800px;
+    height: 586px;
+}
+#banner
+{
+	width: 100%;
+	position: relative;
+	text-align: center;
+	font-size: large;
+  
+}
+
+#left
+{
+    width: 50%;
+	position: relative;
+	float: left;
+    top: 0px;
+    left: 0px;
+    height: 400px;
+}
+
+
+#right
+{
+	position: relative;
+	width: 44%;
+    height: 400px;
+    top: 0px;
+    left: 8px;
+}	
+
+						
+
+#picture
+{
+	position: relative;
+	float: left;
+	width: 20%;
+    top: 61px;
+    left: 16px;
+    height: 141px;
+}
+
+#bottom {
+    width: 100%;
+    position: relative;
+    float: left;
+    text-align: left;
+    padding-left: 80px;
+}
+#label {
+    position: relative;
+    float: left;
+    width: 15%;
+    text-align: left;
+    line-height: 23px;
+    height: 400px;
+}		
+#text {
+    position: relative;
+    float: left;
+    width: 30%;
+    line-height: 23px;
+    top: 0px;
+    left: 4px;
+    height: 400px;
+}		
+#price {
+    position: relative;
+    float: left;
+    width: 15%;
+    line-height: 23px;
+    text-align: left;
+    padding-left: 4px;
+}		
+#totalsbox
+{
+	position: relative;
+	float: left;
+	width: 43%;
+}		
+#labeltotals {
+    position: relative;
+    float: left;
+    width: 20%;
+    text-align: right;
+    padding-right: 5px;
+}		
+#totals
+{
+	position: relative;
+	float: left;
+	width: 18%;
+}		
+
+.textbox /* "." looks for a CssClass reference*/ {
+    width: 100px;
+}

@@ -1,0 +1,21 @@
+﻿body {
+    width: 800px;
+    height: 586px;
+}
+#banner
+{
+	width: 100%;
+	position: relative;
+	text-align: center;
+	font-size: large;
+  
+}
+
+#bottom {
+    width: 100%;
+    position: relative;
+    float: left;
+    text-align: center;
+    top: 0px;
+    left: 0px;
+}
