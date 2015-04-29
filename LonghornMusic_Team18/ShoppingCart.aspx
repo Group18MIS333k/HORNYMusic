@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/WebApplication1.Master" CodeBehind="ShoppingCart.aspx.vb" Inherits="WebApplication1.ShoppingCart" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/WebApplication1.Master" CodeBehind="ShoppingCart.aspx.vb" Inherits="LonghornMusic_Team18.ShoppingCart" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p style="font-size: large">
         <strong>Review your Cart:</strong></p>

@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class WelcomePageNoLogin
+Partial Public Class WelcomePage
 
     '''<summary>
     '''Head1 control.

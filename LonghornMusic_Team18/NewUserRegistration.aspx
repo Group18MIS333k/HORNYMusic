@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="NewUserRegistration.aspx.vb" Inherits="WebApplication1.NewUserRegistration" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="NewUserRegistration.aspx.vb" Inherits="LonghornMusic_Team18.NewUserRegistration" %>
 
 <!DOCTYPE html>
 
@@ -58,33 +58,34 @@
             <br />
             <br />
        
-            <asp:TextBox ID="txtLastName" runat="server" Enabled="False"></asp:TextBox>
+            <asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
        
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtLastName" ErrorMessage="Last Name Required">*</asp:RequiredFieldValidator>
        
             <br />
-            <asp:TextBox ID="txtFirstName" runat="server" Enabled="False"></asp:TextBox>
+            <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtFirstName" ErrorMessage="First Name Required">*</asp:RequiredFieldValidator>
             <br />
-            <asp:TextBox ID="txtInitial" runat="server" Enabled="False"></asp:TextBox>
+            <asp:TextBox ID="txtInitial" runat="server"></asp:TextBox>
             <br />
-            <asp:TextBox ID="txtPassword" runat="server" Enabled="False"></asp:TextBox>
+            <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtPassword" ErrorMessage="Password Required">*</asp:RequiredFieldValidator>
             <br />
-            <asp:TextBox ID="txtAddress" runat="server" Enabled="False"></asp:TextBox>
+            <asp:TextBox ID="txtAddress" runat="server"></asp:TextBox>
             <br />
-            <asp:TextBox ID="txtCity" runat="server" Enabled="False"></asp:TextBox>
+            <asp:TextBox ID="txtCity" runat="server"></asp:TextBox>
             <br />
-            <asp:TextBox ID="txtState" runat="server" Enabled="False"></asp:TextBox>
+            <asp:TextBox ID="txtState" runat="server"></asp:TextBox>
             <br />
-            <asp:TextBox ID="txtZip" runat="server" Enabled="False"></asp:TextBox>
+            <asp:TextBox ID="txtZip" runat="server" MaxLength="5"></asp:TextBox>
             <br />
-            <asp:TextBox ID="txtEmail" runat="server" Enabled="False"></asp:TextBox>
+            <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtEmail" ErrorMessage="Email Required">*</asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtEmail" ErrorMessage="Invalid Email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">*</asp:RegularExpressionValidator>
             <br />
-            <asp:TextBox ID="txtPhone" runat="server" Enabled="False"></asp:TextBox>
+            <asp:TextBox ID="txtPhone" runat="server" MaxLength="10"></asp:TextBox>
             <br />
+            <asp:Label ID="lblError" runat="server" Text="Label"></asp:Label>
             <br />
             <br />
             <br />
@@ -96,7 +97,10 @@
             <br />
             <br />
             <br />
+            <asp:TextBox ID="TextBox1" runat="server" AutoPostBack="True"></asp:TextBox>
             <br />
+            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
             <br />
             <asp:Button ID="btnRegister" runat="server" Text="Register" />
 

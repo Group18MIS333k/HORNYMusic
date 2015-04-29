@@ -1,4 +1,4 @@
-﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="WebApplication1.Master.vb" Inherits="WepApplication1.Master" %>
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site1.master.vb" Inherits="LonghornMusic_Team18.Site1" %>
 
 <!DOCTYPE html>
 
@@ -8,7 +8,7 @@
     <link href="MasterPageStyleSheet.css" rel="stylesheet" type="text/css" />
     </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form2" runat="server">
     <div id ="banner">
     
         <asp:Label ID="Label3" runat="server" Font-Size="XX-Large" Text="Austin Company"></asp:Label>
