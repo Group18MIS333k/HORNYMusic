@@ -187,6 +187,7 @@
         txtPhone.ReadOnly = True
         txtState.ReadOnly = True
         txtZip.ReadOnly = True
+        ddlCustomer.Enabled = True
         SetFormRegular()
         FillTextboxes()
     End Sub
@@ -200,6 +201,7 @@
         btnAbortDelete.Enabled = True
         btnConfirmDelete.Visible = True
         btnConfirmDelete.Enabled = True
+        ddlCustomer.Enabled = False
         lblError.Text = "Are you sure yoou want to delete this record?"
     End Sub
 
@@ -223,6 +225,8 @@
         btnAbortDelete.Enabled = False
         btnConfirmDelete.Visible = False
         btnConfirmDelete.Enabled = False
+        ddlCustomer.Enabled = True
+
     End Sub
 
     Protected Sub btnAbortDelete_Click(sender As Object, e As EventArgs) Handles btnAbortDelete.Click
@@ -234,6 +238,7 @@
         btnAbortDelete.Enabled = False
         btnConfirmDelete.Visible = False
         btnConfirmDelete.Enabled = False
+        ddlCustomer.Enabled = True
         lblError.Text = ""
         SetFormRegular()
         FillTextboxes()

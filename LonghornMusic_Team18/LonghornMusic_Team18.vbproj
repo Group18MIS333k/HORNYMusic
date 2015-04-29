@@ -204,13 +204,6 @@
       <DependentUpon>ManageCustomer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ManageCustomers.aspx.designer.vb">
-      <DependentUpon>ManageCustomers.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCustomers.aspx.vb">
-      <DependentUpon>ManageCustomers.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -315,7 +308,6 @@
     <Content Include="Login.aspx" />
     <Content Include="LoginStyleSheet.css" />
     <Content Include="ManageCustomer.aspx" />
-    <Content Include="ManageCustomers.aspx" />
     <Content Include="MasterPageStyleSheet.css" />
     <Content Include="MyMusic.aspx" />
     <Content Include="NewUserRegistration.aspx" />
