@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="MyMusic.aspx.vb" Inherits="LonghornMusic_Team18.MyMusic" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="MyMusic.aspx.vb" Inherits="LonghornMusic_Team18.MyMusic" %>
 
 <!DOCTYPE html>
 

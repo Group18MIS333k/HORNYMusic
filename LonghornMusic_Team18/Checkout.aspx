@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/WebApplication1.Master" CodeBehind="Checkout.aspx.vb" Inherits="LonghornMusic_Team18.Checkout" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/site1.Master" CodeBehind="Checkout.aspx.vb" Inherits="LonghornMusic_Team18.Checkout" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p style="font-size: x-large; text-align: center">
         <strong>Checkout</strong></p>

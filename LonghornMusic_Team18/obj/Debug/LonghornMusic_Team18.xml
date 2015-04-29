@@ -6,39 +6,7 @@ LonghornMusic_Team18
 </name>
 </assembly>
 <members>
-<member name="F:LonghornMusic_Team18.WebForm1.txtEmail">
-	<summary>
-txtEmail control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.WebForm1.txtPassword">
-	<summary>
-txtPassword control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.WebForm1.btnLogin">
-	<summary>
-btnLogin control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.WebForm1.lblError">
-	<summary>
-lblError control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.ManageCustomer.ddlCustomer">
+<member name="F:LonghornMusic_Team18.ManageCustomer.ddlCustomer">
 	<summary>
 ddlCustomer control.
 </summary>
@@ -190,49 +158,297 @@ btnAbortDelete control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.ShoppingCart.btnCheckout">
+</member><member name="F:LonghornMusic_Team18.EmployeeLogin.txtEmail">
 	<summary>
-btnCheckout control.
+txtEmail control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.ShoppingCart.gvShoppingCart">
+</member><member name="F:LonghornMusic_Team18.EmployeeLogin.txtPassword">
 	<summary>
-gvShoppingCart control.
+txtPassword control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.ShoppingCart.lblSubtotal">
+</member><member name="F:LonghornMusic_Team18.EmployeeLogin.btnLogin">
 	<summary>
-lblSubtotal control.
+btnLogin control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.ShoppingCart.LabelSavings">
+</member><member name="F:LonghornMusic_Team18.EmployeeLogin.lblError">
 	<summary>
-LabelSavings control.
+lblError control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.ShoppingCart.lblTax">
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Head1">
 	<summary>
-lblTax control.
+Head1 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.ShoppingCart.lblTotal">
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.form1">
 	<summary>
-lblTotal control.
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Label6">
+	<summary>
+Label6 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Label10">
+	<summary>
+Label10 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Label5">
+	<summary>
+Label5 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Label9">
+	<summary>
+Label9 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Label11">
+	<summary>
+Label11 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Label12">
+	<summary>
+Label12 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Label13">
+	<summary>
+Label13 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Label14">
+	<summary>
+Label14 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Label15">
+	<summary>
+Label15 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Label16">
+	<summary>
+Label16 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.txtLastName">
+	<summary>
+txtLastName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.RequiredFieldValidator1">
+	<summary>
+RequiredFieldValidator1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.txtFirstName">
+	<summary>
+txtFirstName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.RequiredFieldValidator2">
+	<summary>
+RequiredFieldValidator2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.txtInitial">
+	<summary>
+txtInitial control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.txtPassword">
+	<summary>
+txtPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.RequiredFieldValidator4">
+	<summary>
+RequiredFieldValidator4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.txtAddress">
+	<summary>
+txtAddress control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.txtCity">
+	<summary>
+txtCity control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.txtState">
+	<summary>
+txtState control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.txtZip">
+	<summary>
+txtZip control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.txtEmail">
+	<summary>
+txtEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.RequiredFieldValidator5">
+	<summary>
+RequiredFieldValidator5 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.RegularExpressionValidator1">
+	<summary>
+RegularExpressionValidator1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.txtPhone">
+	<summary>
+txtPhone control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.lblError">
+	<summary>
+lblError control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.TextBox1">
+	<summary>
+TextBox1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.TextBox2">
+	<summary>
+TextBox2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.TextBox3">
+	<summary>
+TextBox3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.NewUserRegistration.btnRegister">
+	<summary>
+btnRegister control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -318,39 +534,7 @@ BtnAdd2Cart control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.EmployeeLogin.txtEmail">
-	<summary>
-txtEmail control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.EmployeeLogin.txtPassword">
-	<summary>
-txtPassword control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.EmployeeLogin.btnLogin">
-	<summary>
-btnLogin control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.EmployeeLogin.lblError">
-	<summary>
-lblError control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.SongDetail.Label3">
+</member><member name="F:LonghornMusic_Team18.ArtistDetail.Label3">
 	<summary>
 Label3 control.
 </summary>
@@ -358,7 +542,7 @@ Label3 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.SongDetail.Image1">
+</member><member name="F:LonghornMusic_Team18.ArtistDetail.Image1">
 	<summary>
 Image1 control.
 </summary>
@@ -366,15 +550,7 @@ Image1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.SongDetail.lblSongName">
-	<summary>
-lblSongName control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.SongDetail.LblArtistName">
+</member><member name="F:LonghornMusic_Team18.ArtistDetail.LblArtistName">
 	<summary>
 LblArtistName control.
 </summary>
@@ -382,31 +558,15 @@ LblArtistName control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.SongDetail.lnkArtist">
+</member><member name="F:LonghornMusic_Team18.ArtistDetail.gvAlbumList">
 	<summary>
-lnkArtist control.
+gvAlbumList control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.SongDetail.LblAlbumName">
-	<summary>
-LblAlbumName control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.SongDetail.LnkAlbum">
-	<summary>
-LnkAlbum control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.SongDetail.gvSongList">
+</member><member name="F:LonghornMusic_Team18.ArtistDetail.gvSongList">
 	<summary>
 gvSongList control.
 </summary>
@@ -414,33 +574,17 @@ gvSongList control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.SongDetail.lblPrice">
+</member><member name="F:LonghornMusic_Team18.ArtistDetail.lblArtistDescription">
 	<summary>
-lblPrice control.
+lblArtistDescription control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.SongDetail.lblSongDescription">
-	<summary>
-lblSongDescription control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.SongDetail.LblRatingsNReviews">
+</member><member name="F:LonghornMusic_Team18.ArtistDetail.LblRatingsNReviews">
 	<summary>
 LblRatingsNReviews control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.SongDetail.BtnAdd2Cart">
-	<summary>
-BtnAdd2Cart control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -758,87 +902,38 @@ txtPhone control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.ArtistDetail.Label3">
+</member><member name="F:LonghornMusic_Team18.Login.txtEmail">
 	<summary>
-Label3 control.
+txtEmail control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.ArtistDetail.Image1">
+</member><member name="F:LonghornMusic_Team18.Login.txtPassword">
 	<summary>
-Image1 control.
+txtPassword control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.ArtistDetail.LblArtistName">
+</member><member name="F:LonghornMusic_Team18.Login.btnLogin">
 	<summary>
-LblArtistName control.
+btnLogin control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.ArtistDetail.gvAlbumList">
+</member><member name="F:LonghornMusic_Team18.Login.lblError">
 	<summary>
-gvAlbumList control.
+lblError control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.ArtistDetail.gvSongList">
-	<summary>
-gvSongList control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.ArtistDetail.lblArtistDescription">
-	<summary>
-lblArtistDescription control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.ArtistDetail.LblRatingsNReviews">
-	<summary>
-LblRatingsNReviews control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="P:LonghornMusic_Team18.My.MyWebExtension.Computer">
-	<summary>
- Returns information about the host computer.
- </summary>
-</member><member name="P:LonghornMusic_Team18.My.MyWebExtension.User">
-	<summary>
- Returns information for the current Web user.
- </summary>
-</member><member name="P:LonghornMusic_Team18.My.MyWebExtension.Request">
-	<summary>
- Returns Request object.
- </summary>
-</member><member name="P:LonghornMusic_Team18.My.MyWebExtension.Response">
-	<summary>
- Returns Response object.
- </summary>
-</member><member name="P:LonghornMusic_Team18.My.MyWebExtension.Log">
-	<summary>
- Returns the Asp log object.
- </summary>
-</member><member name="T:LonghornMusic_Team18.My.MyWebExtension">
-	<summary>
- Module used to define the properties that are available in the My Namespace for Web projects.
- </summary>
-	<remarks></remarks>
 </member><member name="F:LonghornMusic_Team18.Checkout.pnlInitialCheckout">
 	<summary>
 pnlInitialCheckout control.
@@ -1007,23 +1102,32 @@ lnkHomePage control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Head1">
+</member><member name="P:LonghornMusic_Team18.My.MyWebExtension.Computer">
 	<summary>
-Head1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.form1">
+ Returns information about the host computer.
+ </summary>
+</member><member name="P:LonghornMusic_Team18.My.MyWebExtension.User">
 	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Label3">
+ Returns information for the current Web user.
+ </summary>
+</member><member name="P:LonghornMusic_Team18.My.MyWebExtension.Request">
+	<summary>
+ Returns Request object.
+ </summary>
+</member><member name="P:LonghornMusic_Team18.My.MyWebExtension.Response">
+	<summary>
+ Returns Response object.
+ </summary>
+</member><member name="P:LonghornMusic_Team18.My.MyWebExtension.Log">
+	<summary>
+ Returns the Asp log object.
+ </summary>
+</member><member name="T:LonghornMusic_Team18.My.MyWebExtension">
+	<summary>
+ Module used to define the properties that are available in the My Namespace for Web projects.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:LonghornMusic_Team18.SongDetail.Label3">
 	<summary>
 Label3 control.
 </summary>
@@ -1031,241 +1135,249 @@ Label3 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Label6">
+</member><member name="F:LonghornMusic_Team18.SongDetail.Image1">
 	<summary>
-Label6 control.
+Image1 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Label10">
+</member><member name="F:LonghornMusic_Team18.SongDetail.lblSongName">
 	<summary>
-Label10 control.
+lblSongName control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Label5">
+</member><member name="F:LonghornMusic_Team18.SongDetail.LblArtistName">
 	<summary>
-Label5 control.
+LblArtistName control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Label9">
+</member><member name="F:LonghornMusic_Team18.SongDetail.lnkArtist">
 	<summary>
-Label9 control.
+lnkArtist control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Label11">
+</member><member name="F:LonghornMusic_Team18.SongDetail.LblAlbumName">
 	<summary>
-Label11 control.
+LblAlbumName control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Label12">
+</member><member name="F:LonghornMusic_Team18.SongDetail.LnkAlbum">
 	<summary>
-Label12 control.
+LnkAlbum control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Label13">
+</member><member name="F:LonghornMusic_Team18.SongDetail.gvSongList">
 	<summary>
-Label13 control.
+gvSongList control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Label14">
+</member><member name="F:LonghornMusic_Team18.SongDetail.lblPrice">
 	<summary>
-Label14 control.
+lblPrice control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Label15">
+</member><member name="F:LonghornMusic_Team18.SongDetail.lblSongDescription">
 	<summary>
-Label15 control.
+lblSongDescription control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.Label16">
+</member><member name="F:LonghornMusic_Team18.SongDetail.LblRatingsNReviews">
 	<summary>
-Label16 control.
+LblRatingsNReviews control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.txtLastName">
+</member><member name="F:LonghornMusic_Team18.SongDetail.BtnAdd2Cart">
 	<summary>
-txtLastName control.
+BtnAdd2Cart control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.RequiredFieldValidator1">
+</member><member name="F:LonghornMusic_Team18.ShoppingCart.btnCheckout">
 	<summary>
-RequiredFieldValidator1 control.
+btnCheckout control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.txtFirstName">
+</member><member name="F:LonghornMusic_Team18.ShoppingCart.gvShoppingCart">
 	<summary>
-txtFirstName control.
+gvShoppingCart control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.RequiredFieldValidator2">
+</member><member name="F:LonghornMusic_Team18.ShoppingCart.lblSubtotal">
 	<summary>
-RequiredFieldValidator2 control.
+lblSubtotal control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.txtInitial">
+</member><member name="F:LonghornMusic_Team18.ShoppingCart.LabelSavings">
 	<summary>
-txtInitial control.
+LabelSavings control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.txtPassword">
+</member><member name="F:LonghornMusic_Team18.ShoppingCart.lblTax">
 	<summary>
-txtPassword control.
+lblTax control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.RequiredFieldValidator4">
+</member><member name="F:LonghornMusic_Team18.ShoppingCart.lblTotal">
 	<summary>
-RequiredFieldValidator4 control.
+lblTotal control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.txtAddress">
+</member><member name="F:LonghornMusic_Team18.MyMusic.Head1">
 	<summary>
-txtAddress control.
+Head1 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.txtCity">
+</member><member name="F:LonghornMusic_Team18.MyMusic.form1">
 	<summary>
-txtCity control.
+form1 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.txtState">
+</member><member name="F:LonghornMusic_Team18.MyMusic.radSort">
 	<summary>
-txtState control.
+radSort control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.txtZip">
+</member><member name="F:LonghornMusic_Team18.MyMusic.label334">
 	<summary>
-txtZip control.
+label334 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.txtEmail">
+</member><member name="F:LonghornMusic_Team18.MyMusic.txtTitle">
 	<summary>
-txtEmail control.
+txtTitle control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.RequiredFieldValidator5">
+</member><member name="F:LonghornMusic_Team18.MyMusic.btnKeywordSearch">
 	<summary>
-RequiredFieldValidator5 control.
+btnKeywordSearch control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.RegularExpressionValidator1">
+</member><member name="F:LonghornMusic_Team18.MyMusic.btnPartialSearch">
 	<summary>
-RegularExpressionValidator1 control.
+btnPartialSearch control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.txtPhone">
+</member><member name="F:LonghornMusic_Team18.MyMusic.Button1">
 	<summary>
-txtPhone control.
+Button1 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.lblError">
+</member><member name="F:LonghornMusic_Team18.MyMusic.Button2">
 	<summary>
-lblError control.
+Button2 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.TextBox1">
+</member><member name="F:LonghornMusic_Team18.MyMusic.lblRecords">
 	<summary>
-TextBox1 control.
+lblRecords control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.TextBox2">
+</member><member name="F:LonghornMusic_Team18.MyMusic.btnShowAll">
 	<summary>
-TextBox2 control.
+btnShowAll control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.TextBox3">
+</member><member name="F:LonghornMusic_Team18.MyMusic.lblSearches">
 	<summary>
-TextBox3 control.
+lblSearches control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.NewUserRegistration.btnRegister">
+</member><member name="F:LonghornMusic_Team18.MyMusic.lblMsg">
 	<summary>
-btnRegister control.
+lblMsg control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.MyMusic.gvMusicLibrary">
+	<summary>
+gvMusicLibrary control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -1386,118 +1498,6 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:LonghornMusic_Team18.WelcomePage.lnkLogout">
 	<summary>
 lnkLogout control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.MyMusic.Head1">
-	<summary>
-Head1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.MyMusic.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.MyMusic.radSort">
-	<summary>
-radSort control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.MyMusic.label334">
-	<summary>
-label334 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.MyMusic.txtTitle">
-	<summary>
-txtTitle control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.MyMusic.btnKeywordSearch">
-	<summary>
-btnKeywordSearch control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.MyMusic.btnPartialSearch">
-	<summary>
-btnPartialSearch control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.MyMusic.Button1">
-	<summary>
-Button1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.MyMusic.Button2">
-	<summary>
-Button2 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.MyMusic.lblRecords">
-	<summary>
-lblRecords control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.MyMusic.btnShowAll">
-	<summary>
-btnShowAll control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.MyMusic.lblSearches">
-	<summary>
-lblSearches control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.MyMusic.lblMsg">
-	<summary>
-lblMsg control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.MyMusic.gvMusicLibrary">
-	<summary>
-gvMusicLibrary control.
 </summary>
 	<remarks>
 Auto-generated field.

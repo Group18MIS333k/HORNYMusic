@@ -1,5 +1,5 @@
 ﻿
-<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/WebApplication1.Master" CodeBehind="AlbumDetail.aspx.vb" Inherits="LonghornMusic_Team18.AlbumDetail" %>
+<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/site1.Master" CodeBehind="AlbumDetail.aspx.vb" Inherits="LonghornMusic_Team18.AlbumDetail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
                 <!DOCTYPE html>
 
