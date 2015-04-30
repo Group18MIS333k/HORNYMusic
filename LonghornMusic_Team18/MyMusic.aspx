@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="MyMusic.aspx.vb" Inherits="LonghornMusic_Team18.MyMusic" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="MyMusic.aspx.vb" Inherits="LonghornMusic_Team18.MyMusic" %>
 
 <!DOCTYPE html>
 
@@ -86,6 +86,7 @@
         <asp:GridView ID="gvMusicLibrary" runat="server">
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
+                <asp:CommandField SelectText="Rate&amp;Review" ShowSelectButton="True" />
             </Columns>
         </asp:GridView>
     </form>

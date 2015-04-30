@@ -183,6 +183,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DBClass.vb" />
+    <Compile Include="EditProduct.aspx.designer.vb">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditProduct.aspx.vb">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="EmployeeLogin.aspx.designer.vb">
       <DependentUpon>EmployeeLogin.aspx</DependentUpon>
     </Compile>
@@ -237,6 +244,14 @@
       <DependentUpon>NewUserRegistration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="RateReview.aspx.designer.vb">
+      <DependentUpon>RateReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RateReview.aspx.vb">
+      <DependentUpon>RateReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RateReviewCLass.vb" />
     <Compile Include="ReformatClass.vb" />
     <Compile Include="ShoppingCart.aspx.designer.vb">
       <DependentUpon>ShoppingCart.aspx</DependentUpon>
@@ -286,7 +301,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <Content Include="EditProduct.aspx" />
     <Content Include="packages.config" />
+    <Content Include="RateReview.aspx" />
     <Content Include="Web.config" />
     <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">
