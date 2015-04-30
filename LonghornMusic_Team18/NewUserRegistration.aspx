@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="NewUserRegistration.aspx.vb" Inherits="LonghornMusic_Team18.NewUserRegistration" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false"  CodeBehind="NewUserRegistration.aspx.vb" Inherits="LonghornMusic_Team18.NewUserRegistration" %>
 
 <!DOCTYPE html>
 
