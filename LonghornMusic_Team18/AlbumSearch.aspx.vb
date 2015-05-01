@@ -73,7 +73,7 @@
         'eliminate duplicate code for everytime a view needs a databind
 
         'sort by the selected item
-        sort.DoSort(ddlSort.SelectedValue.ToString)
+
         'bind gridview to myview based on sort
         gvSearchResults.DataSource = sort.MyView
         gvSearchResults.DataBind()

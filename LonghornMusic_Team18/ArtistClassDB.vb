@@ -18,17 +18,204 @@ Public Class ArtistClassDB
             Return mDatasetArtist
         End Get
     End Property
-    Public Sub SearchArtistPartialAsc(ByVal strInput As String)
-        mMyView.RowFilter = "Name Like '" & strInput & "%'"
-    End Sub
-    Public Sub SearchArtistPartialDesc(ByVal strInput As String)
-        mMyView.RowFilter = "Name Like '" & strInput & "%'"
-    End Sub
-    Public Sub SearchArtistKeywordAsc(ByVal strInput As String)
-        mMyView.RowFilter = "Name Like '%" & strInput & "%'"
-    End Sub
-    Public Sub SearchArtistKeywordDesc(ByVal strInput As String)
-        mMyView.RowFilter = "Name Like '%" & strInput & "%'"
+
+    Public ReadOnly Property MyView() As DataView 'make sure and due this so your views work
+        Get
+            Return mMyView
+        End Get
+    End Property
+
+    Public Sub SearchRatings(ByVal decRatingLower As Decimal, ByVal decRatingUpper As Decimal)
+        mMyView.RowFilter = "AvgRatingNBR > '" & decRatingLower & "' AND avgRatingNBR < '" & decRatingUpper & "'"
     End Sub
 
+    Public Sub ArtistSearchArtistKeywordAsc(strInput As String)
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_artist_search_keyword_artist_asc", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'add parameter to stored procedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@artist", strInput))
+            'clear the dataset before filling
+            mDatasetArtist.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetArtist, "tblArtists")
+
+
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+    Public Sub ArtistSearchArtistKeywordDsc(strInput As String)
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_artist_search_keyword_artist_dsc", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            'add parameter to stored procedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@artist", strInput))
+            'clear the dataset before filling
+            mDatasetArtist.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetArtist, "tblArtists")
+
+
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+    Public Sub ArtistSearchRatingKeywordAsc(strInput As String)
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_artist_search_keyword_rating_asc", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            'add parameter to stored procedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@artist", strInput))
+            'clear the dataset before filling
+            mDatasetArtist.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetArtist, "tblArtists")
+
+
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+    Public Sub ArtistSearchRatingKeywordDsc(strInput As String)
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_artist_search_keyword_rating_dsc", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            'add parameter to stored procedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@artist", strInput))
+            'clear the dataset before filling
+            mDatasetArtist.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetArtist, "tblArtists")
+
+
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+   
+    Public Sub ArtistSearchArtistPartialAsc(strInput As String)
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_artist_search_partial_artist_asc", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            'add parameter to stored procedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@artist", strInput))
+            'clear the dataset before filling
+            mDatasetArtist.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetArtist, "tblArtists")
+
+
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+    Public Sub ArtistSearchArtistPartialDsc(strInput As String)
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_artist_search_partial_artist_dsc", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            'add parameter to stored procedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@artist", strInput))
+            'clear the dataset before filling
+            mDatasetArtist.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetArtist, "tblArtists")
+
+
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+    Public Sub ArtistSearchRatingPartialAsc(strInput As String)
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_artist_search_partial_rating_asc", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            'add parameter to stored procedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@artist", strInput))
+            'clear the dataset before filling
+            mDatasetArtist.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetArtist, "tblArtists")
+
+
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+    Public Sub ArtistSearchRatingPartialDsc(strInput As String)
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_artist_search_partial_rating_dsc", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            'add parameter to stored procedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@artist", strInput))
+            'clear the dataset before filling
+            mDatasetArtist.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetArtist, "tblArtists")
+
+
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+    Public Sub ArtistGetAll()
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_artists_get_all", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            'clear the dataset before filling
+            mDatasetArtist.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetArtist, "tblArtists")
+            'fill dataview
+            mMyView.Table = mDatasetArtist.Tables("tblArtists")
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
 End Class

@@ -6,37 +6,38 @@
     Dim mdecRatingHigher As Decimal
     Dim genre As New GenreClassDB
     Dim sort As New SortClassDB
+    Dim search As New ArtistClassDB
 
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
     End Sub
 
-    Protected Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
 
-    End Sub
 
     Protected Sub GridView1_SelectedIndexChanged(sender As Object, e As EventArgs)
 
     End Sub
 
     Protected Sub btnPartialSearch_Click(sender As Object, e As EventArgs) Handles btnPartialSearch.Click
-      
+        'checks and sees if user inputed a title
+        If txtTitle.Text <> "" Then
 
-        'checks and sees if the user inputed a rating, and if they did it checks if it's a valid numeric decimal
-        If txtRatingLower.Text <> "" Then
-            mdecRatingLower = valid.CheckRatings(txtRatingLower.Text)
-            If mdecRatingLower = -1 Then
-                lblMessage.Text = "Lower rating must be numeric value"
-            End If
         End If
 
-        If txtRatingHigher.Text <> "" Then
-            valid.CheckRatings(txtRatingHigher.Text)
-            If mdecRatingHigher = -1 Then
-                lblMessage.Text = "Higher rating must be numeric value"
-            End If
+        'checks and sees if user inputed an album
+        If txtAlbum.Text <> "" Then
+
         End If
+
+        'checks and sees if user inputed an artist
+        If txtArtist.Text <> "" Then
+
+        End If
+
+
+
+
 
     End Sub
 
@@ -60,20 +61,39 @@
     End Sub
 
     Protected Sub btnKeywordSearch_Click(sender As Object, e As EventArgs) Handles btnKeywordSearch.Click
+        'I feel like all of this could be put into a sub. 
         'checks and sees if the user inputed a rating, and if they did it checks if it's a valid numeric decimal
-        If txtRatingLower.Text <> "" Then
+        If txtRatingLower.Text Is Nothing Then
             mdecRatingLower = valid.CheckRatings(txtRatingLower.Text)
             If mdecRatingLower = -1 Then
                 lblMessage.Text = "Lower rating must be numeric value"
+                Exit Sub
             End If
+        Else
+            mdecRatingLower = 0
         End If
 
-        If txtRatingHigher.Text <> "" Then
+        If txtRatingHigher.Text Is Nothing Then
             valid.CheckRatings(txtRatingHigher.Text)
             If mdecRatingHigher = -1 Then
                 lblMessage.Text = "Higher rating must be numeric value"
+                Exit Sub
             End If
+        Else
+            mdecRatingHigher = 5
         End If
+
+        Try
+            If mdecRatingLower < mdecRatingHigher Then
+            End If
+
+        Catch ex As Exception
+            lblMessage.Text = "Please put lower rating first"
+            Exit Sub
+        End Try
+        'end sub
+        'Search Ratings
+        Search.SearchRatings(mdecRatingLower, mdecRatingHigher)
 
     End Sub
     Public Sub DataBindStuff()
@@ -85,7 +105,7 @@
         'eliminate duplicate code for everytime a view needs a databind
 
         'sort by the selected item
-        sort.DoSort(ddlSort.SelectedValue.ToString)
+        'sort.DoSort(ddlSort.SelectedValue.ToString)
         'bind gridview to myview based on sort
         gvSearchResults.DataSource = sort.MyView
         gvSearchResults.DataBind()

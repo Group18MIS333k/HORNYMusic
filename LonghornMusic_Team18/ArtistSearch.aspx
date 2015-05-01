@@ -11,18 +11,22 @@
 
 
             <div id="Searchbox" style="position: relative; float:left;  width:90%; text-align: center;">
-                <asp:TextBox ID="txtSearch" runat="server" Width="328px"></asp:TextBox>
-                        &nbsp;<br />
-                <asp:Button ID="btnPartialSearch" runat="server" Text="Partial Artist Search" Width="166px" />
-                <asp:Button ID="btnKeywordSearch" runat="server" Text="Keyword Artist Search" Width="166px" />
-                <br />
-                <br />
-                Rating (Optional)
+                Name:
+                <asp:TextBox ID="txtName" runat="server" Width="133px"></asp:TextBox>
+                        &nbsp;&nbsp;<br />
+                 Rating (Optional)
                 <asp:Label ID="Label5" runat="server" Text=":"></asp:Label>
                 <asp:TextBox ID="txtRatingLower" runat="server" Width="36px"></asp:TextBox>
                 
                 &nbsp;to
                 <asp:TextBox ID="txtRatingHigher" runat="server" Width="39px"></asp:TextBox>
+                     
+                <br />
+                     
+                <asp:Button ID="btnPartialSearch" runat="server" Text="Partial Artist Search" Width="166px" />
+                <asp:Button ID="btnKeywordSearch" runat="server" Text="Keyword Artist Search" Width="166px" />
+                <br />
+                <br />
                 
                 &nbsp;&nbsp; Sort By:
                 <asp:DropDownList ID="ddlSort" runat="server" Height="16px" Width="123px">

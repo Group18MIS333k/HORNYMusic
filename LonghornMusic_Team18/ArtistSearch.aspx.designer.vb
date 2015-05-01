@@ -50,31 +50,13 @@ Partial Public Class ArtistSearch
     Protected WithEvents LnkAlbums As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''txtSearch control.
+    '''txtName control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtSearch As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''btnPartialSearch control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnPartialSearch As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''btnKeywordSearch control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnKeywordSearch As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents txtName As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Label5 control.
@@ -102,6 +84,24 @@ Partial Public Class ArtistSearch
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtRatingHigher As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''btnPartialSearch control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnPartialSearch As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btnKeywordSearch control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnKeywordSearch As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''ddlSort control.

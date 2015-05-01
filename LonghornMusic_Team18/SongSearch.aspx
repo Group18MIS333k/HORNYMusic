@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/WebApplication1.Master" CodeBehind="SongSearch.aspx.vb" Inherits="LonghornMusic_Team18.Search" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/site1.Master" CodeBehind="SongSearch.aspx.vb" Inherits="LonghornMusic_Team18.Search" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
         <div id="Search&Results" style="position: relative; float:left; width:90%; height:100%">
@@ -12,19 +12,35 @@
 
 
             <div id="Searchbox" style="position: relative; float:left;  width:90%; text-align: center;">
-                <asp:TextBox ID="txtSearch" runat="server" Width="328px"></asp:TextBox>
+                Title:
+                <asp:TextBox ID="txtTitle" runat="server" Width="159px"></asp:TextBox>
+                        &nbsp;&nbsp;<br />
+                <br />
+                   Artist:
+                   <asp:TextBox ID="txtArtist" runat="server" Width="159px"></asp:TextBox>
                         &nbsp;<br />
-                <asp:Button ID="btnPartialSearch" runat="server" Text="Partial Music Search" Width="166px" />
-                <asp:Button ID="btnKeywordSearch" runat="server" Text="Keyword Music Search" Width="166px" />
                 <br />
-                <br />
-                Rating (Optional)
+                   Album:
+                   <asp:TextBox ID="txtAlbum" runat="server" Width="159px"></asp:TextBox>
+                        &nbsp;<br />
+                <br />   
+                 Rating:
                 <asp:Label ID="Label5" runat="server" Text=":"></asp:Label>
                 <asp:TextBox ID="txtRatingLower" runat="server" Width="36px"></asp:TextBox>
                 
                 &nbsp;to
                 <asp:TextBox ID="txtRatingHigher" runat="server" Width="39px"></asp:TextBox>
                 
+        
+                <br />
+                <br />
+                
+        
+                <asp:Button ID="btnPartialSearch" runat="server" Text="Partial Music Search" Width="166px" />
+                <asp:Button ID="btnKeywordSearch" runat="server" Text="Keyword Music Search" Width="166px" />
+                <br />
+                <br />
+               
                 &nbsp;&nbsp; Sort By:
                 <asp:DropDownList ID="ddlSort" runat="server" Height="16px" Width="123px">
                     <asp:ListItem>Title Ascending</asp:ListItem>
