@@ -20,6 +20,7 @@
     <div id="left">
     
         <br />
+        <asp:Button ID="btnAdd" runat="server" Text="Add" Width="229px" />
         <br />
         <br />
         <asp:Button ID="btnSave" runat="server" Text="Save" Width="232px" CausesValidation="False" style="height: 26px" />
@@ -43,6 +44,8 @@
         <br />
         <br />
         <br />
+        <asp:GridView ID="gvReview" runat="server">
+        </asp:GridView>
         <br />
     
         </div>
@@ -96,7 +99,7 @@
                 <asp:ListItem>2</asp:ListItem>
                 <asp:ListItem>3</asp:ListItem>
                 <asp:ListItem>4</asp:ListItem>
-                <asp:ListItem>5</asp:ListItem>
+                <asp:ListItem Selected="True">5</asp:ListItem>
             </asp:RadioButtonList>
             <br />
             Gift?<asp:RadioButtonList ID="radgift" runat="server">

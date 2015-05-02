@@ -5,4 +5,7 @@
 
     End Sub
 
+    Protected Sub gvSongList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvSongList.SelectedIndexChanged
+        Response.Redirect("EditSong.aspx")
+    End Sub
 End Class

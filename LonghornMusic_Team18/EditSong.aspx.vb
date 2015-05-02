@@ -23,7 +23,7 @@
             lblError.Text = "Genre Required"
             Exit Sub
         End If
-        If txtPrice.Text = "" Then
+        If txtDiscountPrice.Text = "" Then
             lblError.Text = "Price Required"
             Exit Sub
         End If

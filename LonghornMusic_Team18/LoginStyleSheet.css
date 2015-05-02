@@ -18,7 +18,7 @@
 	float: left;
     top: 0px;
     left: 0px;
-    height: 400px;
+    height: 494px;
 }
 
 
@@ -56,7 +56,9 @@
     width: 15%;
     text-align: left;
     line-height: 23px;
-    height: 400px;
+    height: 493px;
+    top: 0px;
+    left: 0px;
 }		
 #text {
     position: relative;
@@ -65,7 +67,7 @@
     line-height: 23px;
     top: 0px;
     left: 4px;
-    height: 400px;
+    height: 490px;
 }		
 #price {
     position: relative;

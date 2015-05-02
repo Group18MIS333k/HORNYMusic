@@ -183,11 +183,11 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DBClass.vb" />
-    <Compile Include="EditProduct.aspx.designer.vb">
-      <DependentUpon>EditProduct.aspx</DependentUpon>
+    <Compile Include="EditSong.aspx.designer.vb">
+      <DependentUpon>EditSong.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EditProduct.aspx.vb">
-      <DependentUpon>EditProduct.aspx</DependentUpon>
+    <Compile Include="EditSong.aspx.vb">
+      <DependentUpon>EditSong.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="EmployeeLogin.aspx.designer.vb">
@@ -267,6 +267,7 @@
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="SongClass.vb" />
     <Compile Include="SongDetail.aspx.designer.vb">
       <DependentUpon>SongDetail.aspx</DependentUpon>
     </Compile>
@@ -301,7 +302,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <Content Include="EditProduct.aspx" />
+    <Content Include="EditSong.aspx" />
     <Content Include="packages.config" />
     <Content Include="RateReview.aspx" />
     <Content Include="Web.config" />

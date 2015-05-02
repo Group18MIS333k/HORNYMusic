@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="EditProduct.aspx.vb" Inherits="LonghornMusic_Team18.EditProduct" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="EditSong.aspx.vb" Inherits="LonghornMusic_Team18.EditProduct" %>
 
 <!DOCTYPE html>
 
@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
     <div id ="banner">
     
-        Edit Product<br />
+        Edit Song<br />
     
     </div>
 
@@ -49,15 +49,16 @@
         <link href="LoginStyleSheet.css" rel="stylesheet" />
         <br />
         <br />
-        &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label6" runat="server" Text="Song Name"></asp:Label>
-        <br />
+        &nbsp;<asp:Label ID="Label6" runat="server" Text="Song Name"></asp:Label>
+        &nbsp;<br />
         <asp:Label ID="Label10" runat="server" Text="Album Name"></asp:Label>
         <br />
         <asp:Label ID="Label12" runat="server" Text="Artist"></asp:Label>
         <br />
         <asp:Label ID="Label13" runat="server" Text="Genre"></asp:Label>
         <br />
-        <asp:Label ID="Label14" runat="server" Text="Price"></asp:Label>
+        Price<br />
+        <asp:Label ID="Label14" runat="server" Text="Discount Price"></asp:Label>
         <br />
         <asp:Label ID="Label15" runat="server" Text="Featured"></asp:Label>
         <br />
@@ -95,6 +96,8 @@
             <asp:TextBox ID="txtGenre" runat="server"></asp:TextBox>
             <br />
             <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
+            <br />
+            <asp:TextBox ID="txtDiscountPrice" runat="server"></asp:TextBox>
             <br />
             <asp:RadioButtonList ID="radFeatured" runat="server">
                 <asp:ListItem>Yes</asp:ListItem>

@@ -8,7 +8,7 @@ Public Class RateReviewCLass
     Dim mstrQuery As String
     Dim mdbDataAdapter As New SqlDataAdapter
     Dim mdbConn As SqlConnection
-    Dim mstrConnection As String = "workstation id=COMPUTER;packet size=4096;data source=missql.mccombs.utexas.edu;integrated security=False;initial catalog=mis333k_msbcs740;user id=msbcs740;password=C2d3e4!!!"
+    Dim mstrConnection As String = "workstation id=COMPUTER;packet size=4096;data source=missql.mccombs.utexas.edu;integrated security=False;initial catalog=MIS333K_20152_Team18;user id=msbcs740;password=C2d3e4!!!"
     Dim myView As New DataView
 
 
@@ -19,6 +19,13 @@ Public Class RateReviewCLass
         Get
             ' return dataset to user
             Return mDatasetRR
+        End Get
+    End Property
+
+    Public ReadOnly Property myView1() As DataView
+        Get
+            'return dataview
+            Return myview
         End Get
     End Property
 
@@ -39,7 +46,7 @@ Public Class RateReviewCLass
             mDatasetRR.Clear()
 
             ' fill the dataset
-            mdbDataAdapter.Fill(mDatasetRR, "tblRateReview")
+            mdbDataAdapter.Fill(mDatasetRR, "Reviews")
 
             ' close the connection
             mdbConn.Close()
@@ -48,31 +55,48 @@ Public Class RateReviewCLass
         End Try
 
     End Sub
+    Public Sub SelectAllReviews()
+
+        'purpose create dataset with a SP that returns all customers and copy that dataset into a dataview
+        Try
+            'establich connection
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_Reviews_Get_all", mdbConn)
+
+            'sets the command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'clear dataset
+            mDatasetRR.Clear()
+
+            'fill dataset with allcustomers
+            mdbDataAdapter.Fill(mDatasetRR, "Reviews")
+
+            'copy dataset to view
+            myView.Table = mDatasetRR.Tables("Reviews")
+
+            'sort view
+            'SortCustomers(strSort)
 
 
-    Public Sub GetCustomer(IntCustID As Integer)
-        ' purpose: to return all customer records
-        ' inputs: none
-        ' outputs: none directly, but it opens and fills the dataset
-        '          with all the records in tblCustomers
 
-        ' to Get all Customers use Select and use username to filter
-        mstrQuery = "select * from tblRateReview where CustID = '" & strUsername & "'"
-        ' run the query
-        SelectQuery(mstrQuery)
+
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
     End Sub
 
+    Public Sub SearchReviewByCustIDandSongID(ByVal intCustID As Integer, ByVal intArtistID As Integer)
+        'establish connection
 
-    Public Sub GetAllSongs()
-        ' purpose: to return all customer records
-        ' inputs: none
-        ' outputs: none directly, but it opens and fills the dataset
-        '          with all the records in tblCustomers
+        SelectAllReviews()
+        myView.RowFilter = "CustID =" & intCustID
+        myView.RowFilter = "SongID =" & intArtistID
+        'sort filtered view
 
-        ' to Get all Customers use Select and use username to filter
-        mstrQuery = "select * from testSongs "
-        ' run the query
-        SelectQuery(mstrQuery)
+
     End Sub
+
+   
 
 End Class
