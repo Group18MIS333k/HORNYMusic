@@ -200,6 +200,13 @@
     </Compile>
     <Compile Include="ClassSearchValidate.vb" />
     <Compile Include="DBClass.vb" />
+    <Compile Include="EditSong.aspx.designer.vb">
+      <DependentUpon>EditSong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditSong.aspx.vb">
+      <DependentUpon>EditSong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="EmployeeLogin.aspx.designer.vb">
       <DependentUpon>EmployeeLogin.aspx</DependentUpon>
     </Compile>
@@ -271,6 +278,14 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="OrderHistoryClassDB.vb" />
+    <Compile Include="RateReview.aspx.designer.vb">
+      <DependentUpon>RateReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RateReview.aspx.vb">
+      <DependentUpon>RateReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RateReviewCLass.vb" />
     <Compile Include="ReformatClass.vb" />
     <Compile Include="ShoppingCart.aspx.designer.vb">
       <DependentUpon>ShoppingCart.aspx</DependentUpon>
@@ -286,6 +301,7 @@
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="SongClass.vb" />
     <Compile Include="SongClassDB.vb" />
     <Compile Include="SongDetail.aspx.designer.vb">
       <DependentUpon>SongDetail.aspx</DependentUpon>
@@ -331,9 +347,13 @@
     </None>
     <Content Include="AlbumSearch.aspx" />
     <Content Include="ArtistSearch.aspx" />
+    <Content Include="EditSong.aspx" />
+    <Content Include="MyMusic.aspx" />
     <Content Include="OrderDetail.aspx" />
     <Content Include="OrderHistory.aspx" />
     <Content Include="packages.config" />
+    <Content Include="RateReview.aspx" />
+    <Content Include="SongDetail.aspx" />
     <Content Include="SongSearch.aspx" />
     <Content Include="Web.config" />
     <Content Include="Site1.Master" />
@@ -357,10 +377,8 @@
     <Content Include="LoginStyleSheet.css" />
     <Content Include="ManageCustomer.aspx" />
     <Content Include="MasterPageStyleSheet.css" />
-    <Content Include="MyMusic.aspx" />
     <Content Include="NewUserRegistration.aspx" />
     <Content Include="ShoppingCart.aspx" />
-    <Content Include="SongDetail.aspx" />
     <Content Include="WelcomePage.aspx" />
   </ItemGroup>
   <PropertyGroup>

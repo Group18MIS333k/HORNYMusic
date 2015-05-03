@@ -86,6 +86,7 @@
         <asp:GridView ID="gvMusicLibrary" runat="server">
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
+                <asp:CommandField SelectText="Rate&amp;Review" ShowSelectButton="True" />
             </Columns>
         </asp:GridView>
     </form>

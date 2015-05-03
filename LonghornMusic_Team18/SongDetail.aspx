@@ -33,6 +33,9 @@
                         <br />
                         <b>Song List:</b>                        
                         <asp:GridView ID="gvSongList" runat="server">
+                            <Columns>
+                                <asp:CommandField ShowSelectButton="True" />
+                            </Columns>
                         </asp:GridView>
     </div>         
 
