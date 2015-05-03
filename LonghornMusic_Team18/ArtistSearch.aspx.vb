@@ -10,7 +10,10 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'is postback being false prevents everything from reloading every time you do something
-
+        If IsPostBack = False Then
+            Me.ddlSort.SelectedIndex = 0
+            Me.ddlSort_selectedIndexChanged(Me.ddlSort, System.EventArgs.Empty)
+        End If
     End Sub
 
     Protected Sub btnPartialSearch_Click(sender As Object, e As EventArgs) Handles btnPartialSearch.Click
@@ -190,4 +193,8 @@
         lblRecords.Text = gvSearchResults.Rows.Count.ToString
     End Sub
 
+    Protected Sub ddlSort_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlSort.SelectedIndexChanged
+        Dim index As Integer = Me.ddlSort.SelectedIndex
+
+    End Sub
 End Class

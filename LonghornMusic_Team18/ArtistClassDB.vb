@@ -1,6 +1,7 @@
 ﻿Imports System.Data
 Imports System.Data.SqlClient
 Public Class ArtistClassDB
+    'WILL NEED TO ADD PARAMETERS 
     ' these module variables are internal to object
     Dim mDatasetArtist As New DataSet
     Dim mstrQuery As String
@@ -114,7 +115,7 @@ Public Class ArtistClassDB
             Throw New Exception("error is " & ex.Message)
         End Try
     End Sub
-   
+
     Public Sub ArtistSearchArtistPartialAsc(strInput As String)
         'purpse: run any select query and fill data set
         Try
