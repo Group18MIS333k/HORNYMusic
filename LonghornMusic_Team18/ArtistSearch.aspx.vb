@@ -29,7 +29,7 @@
         search.ArtistGetAll()
         'I feel like all of this could be put into a sub. 
         'checks and sees if the user inputed a rating, and if they did it checks if it's a valid numeric decimal
-        If txtRatingLower.Text Is Nothing Then
+        If txtRatingLower.Text IsNot Nothing Then
             mdecRatingLower = valid.CheckRatings(txtRatingLower.Text)
             If mdecRatingLower = -1 Then
                 lblMessage.Text = "Lower rating must be numeric value"
@@ -39,7 +39,7 @@
             mdecRatingLower = 0
         End If
 
-        If txtRatingHigher.Text Is Nothing Then
+        If txtRatingHigher.Text IsNot Nothing Then
             valid.CheckRatings(txtRatingHigher.Text)
             If mdecRatingHigher = -1 Then
                 lblMessage.Text = "Higher rating must be numeric value"

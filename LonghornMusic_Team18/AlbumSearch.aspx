@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/WebApplication1.Master" CodeBehind="AlbumSearch.aspx.vb" Inherits="LonghornMusic_Team18.AlbumSearch" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/site1.Master" CodeBehind="AlbumSearch.aspx.vb" Inherits="LonghornMusic_Team18.AlbumSearch" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
       <div id="Search&Results" style="position: relative; float:left; width:90%; height:100%">
             <div id="SearchHeader" style="position:relative;float:left; width:100%; height:10%; text-align:center">
@@ -11,8 +11,14 @@
 
 
             <div id="Searchbox" style="position: relative; float:left;  width:90%; text-align: center;">
-                <asp:TextBox ID="txtSearch" runat="server" Width="328px"></asp:TextBox>
+                Album Name:
+                <asp:TextBox ID="txtAlbumNamae" runat="server" Width="197px"></asp:TextBox>
                         &nbsp;<br />
+                <br />
+                   Artist Name:
+                   <asp:TextBox ID="txtArtistName" runat="server" Width="200px"></asp:TextBox>
+                        &nbsp;<br />
+                <br />
                 <asp:Button ID="btnPartialSearch" runat="server" Text="Partial Album Search" Width="166px" />
                 <asp:Button ID="btnKeywordSearch" runat="server" Text="Keyword Album Search" Width="166px" />
                 <br />

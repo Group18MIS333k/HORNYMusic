@@ -50,13 +50,22 @@ Partial Public Class AlbumSearch
     Protected WithEvents LnkAlbums As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''txtSearch control.
+    '''txtAlbumNamae control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtSearch As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtAlbumNamae As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtArtistName control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtArtistName As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''btnPartialSearch control.

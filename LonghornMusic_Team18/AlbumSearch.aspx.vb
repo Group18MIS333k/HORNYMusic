@@ -4,7 +4,7 @@
     Dim mdecRatingHigher As Decimal
     Dim valid As New ClassSearchValidate
     Dim sort As New SortClassDB
-    Dim album As New AlbumClassDB
+    Dim search As New AlbumClassDB
     Dim genre As New GenreClassDB
 
 
@@ -19,16 +19,16 @@
 
     Protected Sub btnPartialSearch_Click(sender As Object, e As EventArgs) Handles btnPartialSearch.Click
         'checks and sees if the user inputed a name
-        If txtSearch.Text = "" Then
+        If txtAlbumNamae.Text = "" And txtArtistName.Text = "" Then
             lblMessage.Text = "Please input something into the textbox"
             Exit Sub
         End If
 
         lblMessage.Text = ""
-        album.AlbumGetAll()
+        search.AlbumGetAll()
         'I feel like all of this could be put into a sub. 
         'checks and sees if the user inputed a rating, and if they did it checks if it's a valid numeric decimal
-        If txtRatingLower.Text Is Nothing Then
+        If txtRatingLower.Text IsNot Nothing Then
             mdecRatingLower = valid.CheckRatings(txtRatingLower.Text)
             If mdecRatingLower = -1 Then
                 lblMessage.Text = "Lower rating must be numeric value"
@@ -38,7 +38,7 @@
             mdecRatingLower = 0
         End If
 
-        If txtRatingHigher.Text Is Nothing Then
+        If txtRatingHigher.Text IsNot Nothing Then
             valid.CheckRatings(txtRatingHigher.Text)
             If mdecRatingHigher = -1 Then
                 lblMessage.Text = "Higher rating must be numeric value"
@@ -59,27 +59,40 @@
         'end sub
 
         'search the name in the database and order by whatever is selected in the ddl
+
         If ddlSort.SelectedValue.ToString = "Name Ascending" Then
-            'Search.ArtistSearchArtistPartialAsc(txtName.Text.ToCharArray)
-            'Search.SearchRatings(mdecRatingLower, mdecRatingHigher)
+            search.AlbumSearchNamePartialAsc(txtAlbumNamae.Text.ToCharArray)
+            Search.SearchRatings(mdecRatingLower, mdecRatingHigher)
             DataBindStuff()
         End If
         If ddlSort.SelectedValue.ToString = "Name Descending" Then
-            'Search.ArtistSearchArtistPartialDsc(txtName.Text.ToCharArray)
-            'Search.SearchRatings(mdecRatingLower, mdecRatingHigher)
-            DataBindStuff()
-        End If
-        If ddlSort.SelectedValue.ToString = "Rating Ascending" Then
-            'Search.ArtistSearchRatingPartialAsc(txtName.Text.ToCharArray)
-            'Search.SearchRatings(mdecRatingLower, mdecRatingHigher)
-            DataBindStuff()
-        End If
-        If ddlSort.SelectedValue.ToString = "Rating Descending" Then
-            'Search.ArtistSearchRatingPartialDsc(txtName.Text.ToCharArray)
-            'Search.SearchRatings(mdecRatingLower, mdecRatingHigher)
+            search.AlbumSearchNamePartialDsc(txtAlbumNamae.Text.ToCharArray)
+            search.SearchRatings(mdecRatingLower, mdecRatingHigher)
             DataBindStuff()
         End If
 
+        If ddlSort.SelectedValue.ToString = "Artist Ascending" Then
+            search.AlbumSearchArtistPartialAsc(txtArtistName.Text.ToCharArray)
+            search.SearchRatings(mdecRatingLower, mdecRatingHigher)
+            DataBindStuff()
+        End If
+        If ddlSort.SelectedValue.ToString = "Artist Descending" Then
+            search.AlbumSearchArtistPartialDsc(txtArtistName.Text.ToCharArray)
+            search.SearchRatings(mdecRatingLower, mdecRatingHigher)
+            DataBindStuff()
+        End If
+
+        'ask about these two
+        If ddlSort.SelectedValue.ToString = "Rating Ascending" Then
+            search.AlbumSearchRatingPartialAsc(txtAlbumNamae.Text.ToCharArray)
+            search.SearchRatings(mdecRatingLower, mdecRatingHigher)
+            DataBindStuff()
+        End If
+        If ddlSort.SelectedValue.ToString = "Rating Descending" Then
+            search.AlbumSearchRatingPartialDsc(txtAlbumNamae.Text.ToCharArray)
+            search.SearchRatings(mdecRatingLower, mdecRatingHigher)
+            DataBindStuff()
+        End If
 
     End Sub
     Sub LoadListBox()
@@ -103,16 +116,16 @@
 
     Protected Sub btnKeywordSearch_Click(sender As Object, e As EventArgs) Handles btnKeywordSearch.Click
         'checks and sees if the user inputed a name
-        If txtSearch.Text = "" Then
-            lblMessage.Text = "Please put something in the text box"
+        If txtAlbumNamae.Text = "" And txtArtistName.Text = "" Then
+            lblMessage.Text = "Please input something into the textbox"
             Exit Sub
         End If
 
         lblMessage.Text = ""
-        album.AlbumGetAll()
+        search.AlbumGetAll()
         'I feel like all of this could be put into a sub. 
         'checks and sees if the user inputed a rating, and if they did it checks if it's a valid numeric decimal
-        If txtRatingLower.Text Is Nothing Then
+        If txtRatingLower.Text IsNot Nothing Then
             mdecRatingLower = valid.CheckRatings(txtRatingLower.Text)
             If mdecRatingLower = -1 Then
                 lblMessage.Text = "Lower rating must be numeric value"
@@ -122,7 +135,7 @@
             mdecRatingLower = 0
         End If
 
-        If txtRatingHigher.Text Is Nothing Then
+        If txtRatingHigher.Text IsNot Nothing Then
             valid.CheckRatings(txtRatingHigher.Text)
             If mdecRatingHigher = -1 Then
                 lblMessage.Text = "Higher rating must be numeric value"
@@ -143,27 +156,40 @@
         'end sub
 
         'search the name in the database and order by whatever is selected in the ddl
+
         If ddlSort.SelectedValue.ToString = "Name Ascending" Then
-            'Search.ArtistSearchArtistKeywordAsc(txtName.Text.ToCharArray)
-            ' Search.SearchRatings(mdecRatingLower, mdecRatingHigher)
+            search.AlbumSearchNameKeywordAsc(txtAlbumNamae.Text.ToCharArray)
+            search.SearchRatings(mdecRatingLower, mdecRatingHigher)
             DataBindStuff()
         End If
         If ddlSort.SelectedValue.ToString = "Name Descending" Then
-            ' Search.ArtistSearchArtistKeywordDsc(txtName.Text.ToCharArray)
-            'Search.SearchRatings(mdecRatingLower, mdecRatingHigher)
-            DataBindStuff()
-        End If
-        If ddlSort.SelectedValue.ToString = "Rating Ascending" Then
-            'Search.ArtistSearchRatingKeywordAsc(txtName.Text.ToCharArray)
-            'Search.SearchRatings(mdecRatingLower, mdecRatingHigher)
-            DataBindStuff()
-        End If
-        If ddlSort.SelectedValue.ToString = "Rating Descending" Then
-            'Search.ArtistSearchRatingKeywordDsc(txtName.Text.ToCharArray)
-            'Search.SearchRatings(mdecRatingLower, mdecRatingHigher)
+            search.AlbumSearchNameKeywordDsc(txtAlbumNamae.Text.ToCharArray)
+            search.SearchRatings(mdecRatingLower, mdecRatingHigher)
             DataBindStuff()
         End If
 
+        If ddlSort.SelectedValue.ToString = "Artist Ascending" Then
+            search.AlbumSearchArtistKeywordAsc(txtArtistName.Text.ToCharArray)
+            search.SearchRatings(mdecRatingLower, mdecRatingHigher)
+            DataBindStuff()
+        End If
+        If ddlSort.SelectedValue.ToString = "Artist Descending" Then
+            search.AlbumSearchArtistKeywordDsc(txtArtistName.Text.ToCharArray)
+            search.SearchRatings(mdecRatingLower, mdecRatingHigher)
+            DataBindStuff()
+        End If
+
+        'ask about these two
+        If ddlSort.SelectedValue.ToString = "Rating Ascending" Then
+            search.AlbumSearchRatingKeywordAsc(txtAlbumNamae.Text.ToCharArray)
+            search.SearchRatings(mdecRatingLower, mdecRatingHigher)
+            DataBindStuff()
+        End If
+        If ddlSort.SelectedValue.ToString = "Rating Descending" Then
+            search.AlbumSearchRatingKeywordDsc(txtAlbumNamae.Text.ToCharArray)
+            search.SearchRatings(mdecRatingLower, mdecRatingHigher)
+            DataBindStuff()
+        End If
 
     End Sub
     Public Sub DataBindStuff()

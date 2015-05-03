@@ -14,7 +14,7 @@ Public Class SongClassDB
     ' define a public read only property for the outside world to access the dataset filled by this class
     Public ReadOnly Property SongDataset() As DataSet
         Get
-            ' return dataset to user
+            ' return dataset to userC:\Users\Morgan\Desktop\MIS333k\LonghornMusic_Team18\LonghornMusic_Team18\SongClassDB.vb
             Return mDatasetSong
         End Get
     End Property
@@ -24,30 +24,305 @@ Public Class SongClassDB
             Return mMyView
         End Get
     End Property
+    Public Sub SearchRatings(ByVal decRatingLower As Decimal, ByVal decRatingUpper As Decimal)
+        mMyView.RowFilter = "AvgRatingNBR > '" & decRatingLower & "' AND avgRatingNBR < '" & decRatingUpper & "'"
+    End Sub
 
-    'Public Sub SearchSongTitlePartialAsc(ByVal strInput As String)
-    '    mMyView.RowFilter = "SongTitle Like '" & strInput & "%'"
-    'End Sub
-    'Public Sub SearchSongGenrePartialAsc(ByVal strInput As String)
-    '    mMyView.RowFilter = "Genre Like '" & strInput & "'"
-    'End Sub
-    'Public Sub SearchSongTitleKeywordAsc(ByVal strInput As String)
-    '    mMyView.RowFilter = "SongTitle Like '" & strInput & "'"
-    'End Sub
-    'Public Sub SearchArtistGenreKeywordAsc(ByVal strInput As String)
-    '    mMyView.RowFilter = "Genre Like '" & strInput & "'"
-    'End Sub
-    'Public Sub SearchArtistNamePartialDesc(ByVal strInput As String)
-    '    mMyView.RowFilter = "ArtistName Like '" & strInput & "'"
-    'End Sub
-    'Public Sub SearchArtistGenrePartialDesc(ByVal strInput As String)
-    '    mMyView.RowFilter = "Genre Like '" & strInput & "'"
-    'End Sub
-    'Public Sub SearchArtistNameKeywordDesc(ByVal strInput As String)
-    '    mMyView.RowFilter = "ArtistName Like '" & strInput & "'"
-    'End Sub
-    'Public Sub SearchArtistGenreKeywordDesc(ByVal strInput As String)
-    '    mMyView.RowFilter = "Genre Like '" & strInput & "'"
-    'End Sub
+    'needs to have procedure name put in
+    Public Sub SongSearchNameKeywordAsc(strInput As String)
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'add parameter to stored procedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@", strInput))
+            'clear the dataset before filling
+            mDatasetSong.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetSong, "tblSongs")
+
+
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+
+    'needs to have procedure name put in & parameters
+    Public Sub SongSearchNameKeywordDsc(strInput As String)
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'add parameter to stored procedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@", strInput))
+            'clear the dataset before filling
+            mDatasetSong.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetSong, "tblSongs")
+
+
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+    'Name, Artist
+    'needs to have procedure name put in & paramentser
+    Public Sub SongSearchArtistKeywordAsc(strInput As String)
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'add parameter to stored procedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@", strInput))
+            'clear the dataset before filling
+            mDatasetSong.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetSong, "tblSongs")
+
+
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+    'needs to have procedure name put in and parameters
+    Public Sub SongSearchArtistKeywordDsc(strInput As String)
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'add parameter to stored procedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@", strInput))
+            'clear the dataset before filling
+            mDatasetSong.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetSong, "tblSongs")
+
+
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+    'needs to have procedure name put in
+    Public Sub AlbumSearchNamePartialAsc(strInput As String)
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'add parameter to stored procedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@", strInput))
+            'clear the dataset before filling
+            mDatasetSong.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetSong, "tblSongs")
+
+
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+
+    'needs to have procedure name put in
+    Public Sub SongSearchNamePartialDsc(strInput As String)
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'add parameter to stored procedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@", strInput))
+            'clear the dataset before filling
+            mDatasetSong.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetSong, "tblSongs")
+
+
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+    'Name, Artist
+    'needs to have procedure name put in
+    Public Sub SongSearchArtistPartialAsc(strInput As String)
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'add parameter to stored procedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@", strInput))
+            'clear the dataset before filling
+            mDatasetSong.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetSong, "tblSongs")
+
+
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+    'needs to have procedure name put in
+    Public Sub SongSearchArtistPartialDsc(strInput As String)
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'add parameter to stored procedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@", strInput))
+            'clear the dataset before filling
+            mDatasetSong.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetSong, "tblSongs")
+
+
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+    'needs procedure name put in
+    Public Sub SongGetAll()
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            'clear the dataset before filling
+            mDatasetSong.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetSong, "tblSongs")
+            'fill dataview
+            mMyView.Table = mDatasetSong.Tables("tblAlbums")
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+    'Needs procedure name put in & parameters
+    Public Sub SongSearchRatingPartialAsc(strInput As String)
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            'add parameter to stored procedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@", strInput))
+            'clear the dataset before filling
+            mDatasetSong.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetSong, "tblSongs")
+
+
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+    Public Sub SongSearchRatingPartialDsc(strInput As String)
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_artist_search_partial_rating_dsc", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            'add parameter to stored procedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@", strInput))
+            'clear the dataset before filling
+            mDatasetSong.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetSong, "tblSongs")
+
+
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+    'Needs procedure name put in & parameters
+    Public Sub SongSearchRatingKeywordAsc(strInput As String)
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            'add parameter to stored procedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@", strInput))
+            'clear the dataset before filling
+            mDatasetSong.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetSong, "tblSongs")
+
+
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+
+    End Sub
+
+    Public Sub SongSearchRatingKeywordDsc(strInput As String)
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_artist_search_partial_rating_dsc", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            'add parameter to stored procedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@", strInput))
+            'clear the dataset before filling
+            mDatasetSong.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetSong, "tblSongs")
+
+
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
 End Class
 
