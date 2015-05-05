@@ -17,7 +17,7 @@ Public Class RateReview
             Dim custid As Integer
             Dim songid As Integer
             custid = 10001
-            songid = 1
+            songid = 2
             db.SearchReviewByCustIDandSongID(custid, songid)
             If db.myView1.Count = 0 Then
                 btnSave.Visible = False
@@ -25,8 +25,8 @@ Public Class RateReview
 
             If db.myView1.Count <> 0 Then
                 btnAdd.Visible = False
-                radRating.SelectedValue = db.myView1.Table.Rows(0).Item("rating").ToString
-                txtReview.Text = db.myView1.Table.Rows(0).Item("review").ToString
+                radRating.SelectedValue = db.myView1.Table.Rows(1).Item("rating").ToString
+                txtReview.Text = db.myView1.Table.Rows(1).Item("reviewcomments").ToString
                 'fill revew textbox with review from database
             End If
             gvReview.DataSource = db.myView1
@@ -117,4 +117,6 @@ Public Class RateReview
 
         'add coded to add to database
     End Sub
+
+   
 End Class

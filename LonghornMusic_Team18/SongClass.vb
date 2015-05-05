@@ -55,17 +55,44 @@ Public Class SongClass
 
     End Sub
 
-    Public Sub GetAllSongs()
-        ' purpose: to return all customer records
-        ' inputs: none
-        ' outputs: none directly, but it opens and fills the dataset
-        '          with all the records in tblCustomers
+    Public Sub SelectAllSongs()
 
-        ' to Get all Customers use Select and use username to filter
-        mstrQuery = "select * from Songs "
-        ' run the query
-        SelectQuery(mstrQuery)
+        'purpose create dataset with a SP that returns all customers and copy that dataset into a dataview
+        Try
+            'establich connection
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_songs_Get_all", mdbConn)
+
+            'sets the command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'clear dataset
+            mDatasetSong.Clear()
+
+            'fill dataset with allcustomers
+            mdbDataAdapter.Fill(mDatasetSong, "Songs")
+
+            'copy dataset to view
+            mysongView.Table = mDatasetSong.Tables("Songs")
+
+
+
+
+
+
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
     End Sub
+    Public Sub GetAllSongsinAlbum(intAlbumID As Integer)
 
+
+        SelectAllSongs()
+        mysongView.RowFilter = "AlbumID =" & intAlbumID
+
+        'sort filtered view
+
+
+    End Sub
 End Class
 

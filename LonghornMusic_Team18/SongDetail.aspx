@@ -31,12 +31,8 @@
                         <asp:LinkButton ID="LnkAlbum" runat="server" PostBackUrl="~/AlbumDetail.aspx">Go To Album</asp:LinkButton>
                         <br />
                         <br />
-                        <b>Song List:</b>                        
-                        <asp:GridView ID="gvSongList" runat="server">
-                            <Columns>
-                                <asp:CommandField ShowSelectButton="True" />
-                            </Columns>
-                        </asp:GridView>
+                        <asp:Button ID="btnEdit" runat="server" Text="Edit; Manager Only" />
+                        <br />
     </div>         
 
     <div id="RightDesc">
@@ -51,6 +47,16 @@
                         <asp:Label ID="LblRatingsNReviews" runat="server"></asp:Label>
                         <br /><br />
                         <asp:Button ID="BtnAdd2Cart" runat="server" Text="Add To Cart" />
+
+        <br />
+        <br />
+        <br />
+        <strong>Comments:</strong><asp:GridView ID="gvComments" runat="server" style="margin-top: 0px">
+            <Columns>
+                <asp:CommandField ButtonType="Button" SelectText="Upvote" ShowSelectButton="True" />
+                <asp:ButtonField Text="Downvote" />
+            </Columns>
+        </asp:GridView>
 
     </div>
        

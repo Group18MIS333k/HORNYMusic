@@ -46,7 +46,7 @@ Public Class RateReviewCLass
             mDatasetRR.Clear()
 
             ' fill the dataset
-            mdbDataAdapter.Fill(mDatasetRR, "Reviews")
+            mdbDataAdapter.Fill(mDatasetRR, "Ratings")
 
             ' close the connection
             mdbConn.Close()
@@ -61,7 +61,7 @@ Public Class RateReviewCLass
         Try
             'establich connection
             mdbConn = New SqlConnection(mstrConnection)
-            mdbDataAdapter = New SqlDataAdapter("usp_Reviews_Get_all", mdbConn)
+            mdbDataAdapter = New SqlDataAdapter("usp_Ratings_Get_all", mdbConn)
 
             'sets the command type to stored procedure
             mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
@@ -70,13 +70,12 @@ Public Class RateReviewCLass
             mDatasetRR.Clear()
 
             'fill dataset with allcustomers
-            mdbDataAdapter.Fill(mDatasetRR, "Reviews")
+            mdbDataAdapter.Fill(mDatasetRR, "Ratings")
 
             'copy dataset to view
-            myView.Table = mDatasetRR.Tables("Reviews")
+            myView.Table = mDatasetRR.Tables("Ratings")
 
-            'sort view
-            'SortCustomers(strSort)
+
 
 
 
@@ -87,7 +86,6 @@ Public Class RateReviewCLass
     End Sub
 
     Public Sub SearchReviewByCustIDandSongID(ByVal intCustID As Integer, ByVal intArtistID As Integer)
-        'establish connection
 
         SelectAllReviews()
         myView.RowFilter = "CustID =" & intCustID
@@ -96,6 +94,18 @@ Public Class RateReviewCLass
 
 
     End Sub
+
+    Public Sub SearchReviewBySong(ByVal intArtistID As Integer, ByVal intSongID As Integer)
+        'establish connection
+
+        SelectAllReviews()
+        myView.RowFilter = "Artistid=" & intArtistID
+        myView.RowFilter = "SongID =" & intSongID
+        'sort filtered view
+
+
+    End Sub
+
 
    
 

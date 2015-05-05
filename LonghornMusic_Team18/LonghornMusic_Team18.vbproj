@@ -183,6 +183,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DBClass.vb" />
+    <Compile Include="EditAlbum.aspx.designer.vb">
+      <DependentUpon>EditAlbum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditAlbum.aspx.vb">
+      <DependentUpon>EditAlbum.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="EditSong.aspx.designer.vb">
       <DependentUpon>EditSong.aspx</DependentUpon>
     </Compile>
@@ -211,6 +218,7 @@
       <DependentUpon>ManageCustomer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="ManageProductsValidation.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -302,6 +310,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <Content Include="EditAlbum.aspx" />
     <Content Include="EditSong.aspx" />
     <Content Include="packages.config" />
     <Content Include="RateReview.aspx" />

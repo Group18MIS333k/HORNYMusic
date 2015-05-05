@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="EditSong.aspx.vb" Inherits="LonghornMusic_Team18.EditProduct" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="EditAlbum.aspx.vb" Inherits="LonghornMusic_Team18.EditAlbum" %>
 
 <!DOCTYPE html>
 
@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
     <div id ="banner">
     
-        Edit Song<br />
+        Edit Album<br />
     
     </div>
 
@@ -20,13 +20,10 @@
     
         <br />
         <br />
-        <asp:Button ID="btnRemovefrmAlbum" runat="server" Text="Remove from Album" Width="231px" />
-        <br />
         <br />
         <asp:Button ID="btnSave" runat="server" Text="Save" Width="232px" CausesValidation="False" style="height: 26px" />
         <br />
         <br />
-        <asp:Button ID="btnBack" runat="server" Text="Back" Width="232px" />
         <br />
         <br />
         <br />
@@ -34,6 +31,9 @@
         <br />
         &nbsp;&nbsp;&nbsp;
         <br />
+        Song List:<br />
+        <asp:GridView ID="gvSongList" runat="server">
+        </asp:GridView>
         <br />
 &nbsp;
         &nbsp;
@@ -52,8 +52,7 @@
         <link href="LoginStyleSheet.css" rel="stylesheet" />
         <br />
         <br />
-        &nbsp;<asp:Label ID="Label6" runat="server" Text="Song Name"></asp:Label>
-        &nbsp;<br />
+        &nbsp;&nbsp;<br />
         <asp:Label ID="Label10" runat="server" Text="Album Name"></asp:Label>
         <br />
         <asp:Label ID="Label12" runat="server" Text="Artist"></asp:Label>
@@ -89,8 +88,6 @@
             <br />
             <br />
        
-            <asp:TextBox ID="txtSong" runat="server" style="margin-top: 0px"></asp:TextBox>
-       
             <br />
             <asp:TextBox ID="txtAlbum" runat="server"></asp:TextBox>
             <br />
@@ -123,5 +120,6 @@
     </form>
 </body>
 </html>
+
 
 
