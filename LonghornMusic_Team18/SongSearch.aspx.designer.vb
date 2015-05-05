@@ -140,13 +140,13 @@ Partial Public Class Search
     Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''lbxGenre control.
+    '''CheckBoxList1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbxGenre As Global.System.Web.UI.WebControls.ListBox
+    Protected WithEvents CheckBoxList1 As Global.System.Web.UI.WebControls.CheckBoxList
 
     '''<summary>
     '''lblRecords control.

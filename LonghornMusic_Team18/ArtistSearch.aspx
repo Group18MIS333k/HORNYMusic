@@ -30,8 +30,8 @@
                 
                 &nbsp;&nbsp; Sort By:
                 <asp:DropDownList ID="ddlSort" runat="server" Height="16px" Width="123px">
-                    <asp:ListItem>Name Ascending</asp:ListItem>
-                    <asp:ListItem>Name Descending</asp:ListItem>
+                    <asp:ListItem>Artist Name Ascending</asp:ListItem>
+                    <asp:ListItem>Artist Name Descending</asp:ListItem>
                     <asp:ListItem>Rating Ascending</asp:ListItem>
                     <asp:ListItem>Rating Descending</asp:ListItem>
                 </asp:DropDownList>
@@ -43,7 +43,8 @@
             
              <div id="Genre" style="position:relative; float: right; width: 10%;height:90%;max-height: 100%">
 
-            <asp:ListBox ID="lbxGenre" runat="server"></asp:ListBox>
+                 <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+                 </asp:CheckBoxList>
    
         </div>
 

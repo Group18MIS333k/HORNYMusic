@@ -18,6 +18,10 @@
             Return -1
         End If
 
+        If decResult = "" Then
+            Return 0
+        End If
+
         Return decResult
     End Function
 
