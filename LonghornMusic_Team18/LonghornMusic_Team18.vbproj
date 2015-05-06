@@ -161,6 +161,13 @@
       <DependentUpon>AccountInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="AddSong.aspx.designer.vb">
+      <DependentUpon>AddSong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddSong.aspx.vb">
+      <DependentUpon>AddSong.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="AlbumDetail.aspx.designer.vb">
       <DependentUpon>AlbumDetail.aspx</DependentUpon>
     </Compile>
@@ -168,6 +175,7 @@
       <DependentUpon>AlbumDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="ArtistClass.vb" />
     <Compile Include="ArtistDetail.aspx.designer.vb">
       <DependentUpon>ArtistDetail.aspx</DependentUpon>
     </Compile>
@@ -310,6 +318,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <Content Include="AddSong.aspx" />
     <Content Include="EditAlbum.aspx" />
     <Content Include="EditSong.aspx" />
     <Content Include="packages.config" />

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="EditSong.aspx.vb" Inherits="LonghornMusic_Team18.EditProduct" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AddSong.aspx.vb" Inherits="LonghornMusic_Team18.AddSong" %>
 
 <!DOCTYPE html>
 
@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
     <div id ="banner">
     
-        Edit Song<br />
+        Add Song<br />
     
     </div>
 
@@ -20,13 +20,11 @@
     
         <br />
         <br />
-        <asp:Button ID="btnRemovefrmAlbum" runat="server" Text="Remove " Width="231px" />
         <br />
         <br />
-        <asp:Button ID="btnSave" runat="server" Text="Save" Width="232px" CausesValidation="False" style="height: 26px" />
+        <asp:Button ID="btnAdd" runat="server" Text="Add" Width="232px" CausesValidation="False" style="height: 26px" />
         <br />
         <br />
-        <asp:Button ID="btnBack" runat="server" Text="Back" Width="232px" />
         <br />
         <br />
         <br />
@@ -38,8 +36,6 @@
 &nbsp;
         &nbsp;
         &nbsp;
-        <asp:GridView ID="gvArtist" runat="server">
-        </asp:GridView>
         <br />
         <br />
         <br />
@@ -55,17 +51,18 @@
         <br />
         <br />
         &nbsp;<asp:Label ID="Label6" runat="server" Text="Song Name"></asp:Label>
-        &nbsp;<br />
+        <br />
+        &nbsp;Description<br />
         <asp:Label ID="Label10" runat="server" Text="Album Name"></asp:Label>
         <br />
         <asp:Label ID="Label12" runat="server" Text="Artist"></asp:Label>
         <br />
         <asp:Label ID="Label13" runat="server" Text="Genre"></asp:Label>
-        1<br />
-        Genre2<br />
-        Genre3<br />
+        &nbsp;1<br />
+        Genre 2<br />
+        Genre 3<br />
         Genre 4<br />
-        Genre5<br />
+        Genre 5<br />
         Price<br />
         <asp:Label ID="Label14" runat="server" Text="Discount Price"></asp:Label>
         <br />
@@ -98,19 +95,22 @@
             <asp:TextBox ID="txtSong" runat="server" style="margin-top: 0px"></asp:TextBox>
        
             <br />
+            <asp:TextBox ID="txtDescription" runat="server"></asp:TextBox>
+       
+            <br />
             <asp:TextBox ID="txtAlbum" runat="server"></asp:TextBox>
             <br />
             <asp:TextBox ID="txtArtist" runat="server"></asp:TextBox>
-            <br />
-            <asp:TextBox ID="txtGenre" runat="server"></asp:TextBox>
-            <br />
-            <asp:TextBox ID="txtGenre0" runat="server"></asp:TextBox>
             <br />
             <asp:TextBox ID="txtGenre1" runat="server"></asp:TextBox>
             <br />
             <asp:TextBox ID="txtGenre2" runat="server"></asp:TextBox>
             <br />
             <asp:TextBox ID="txtGenre3" runat="server"></asp:TextBox>
+            <br />
+            <asp:TextBox ID="txtGenre4" runat="server"></asp:TextBox>
+            <br />
+            <asp:TextBox ID="txtGenre5" runat="server"></asp:TextBox>
             <br />
             <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
             <br />
@@ -137,5 +137,3 @@
     </form>
 </body>
 </html>
-
-
