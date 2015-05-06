@@ -14,9 +14,10 @@
 
 
         If IsPostBack = False Then
-            Me.ddlSort.SelectedIndex = 0
-            Me.ddlSort_selectedIndexChanged(Me.ddlSort, System.EventArgs.Empty)
+            genre.GenreGetAll()
+            LoadCheckBoxList()
         End If
+
     End Sub
 
     Protected Sub btnPartialSearch_Click(sender As Object, e As EventArgs) Handles btnPartialSearch.Click
@@ -81,6 +82,7 @@
         End Try
 
         search.SearchRatings(mdecRatingLower, mdecRatingHigher)
+        SearchGenres()
         DataBindStuff()
         'search.ArtistSearchSort(ddlSort.SelectedValue.ToString)
 
@@ -150,34 +152,50 @@
     'End Sub
 
     Protected Sub btnKeywordSearch_Click(sender As Object, e As EventArgs) Handles btnKeywordSearch.Click
-        'checks and sees if the user inputed a name
-        If txtAlbumNamae.Text = "" And txtArtistName.Text = "" Then
-            lblMessage.Text = "Please input something into the textbox"
-            Exit Sub
+
+        If txtArtistName.Text <> "" And txtAlbumNamae.Text <> "" Then
+            maryParamNames.Add("@albumname")
+            maryParamNames.Add("@artistname")
+            maryParamValues.Add(txtAlbumNamae.Text)
+            maryParamValues.Add(txtArtistName.Text)
+            search.AlbumSearchWithAnyParameters("usp_album_search_keyword_AlbumNameANDArtistName", maryParamNames, maryParamValues)
         End If
 
-        lblMessage.Text = ""
-        search.AlbumGetAll()
+        If txtAlbumNamae.Text <> "" And txtArtistName.Text = "" Then
+            maryParamNames.Add("@albumname")
+            maryParamValues.Add(txtAlbumNamae.Text)
+            search.AlbumSearchWithAnyParameters("usp_album_search_keyword_AlbumNameOnly", maryParamNames, maryParamValues)
+        End If
+
+        If txtAlbumNamae.Text = "" And txtArtistName.Text <> "" Then
+            maryParamNames.Add("@artistname")
+            maryParamValues.Add(txtArtistName.Text)
+            search.AlbumSearchWithAnyParameters("usp_album_search_keyword_ArtistNameOnly", maryParamNames, maryParamValues)
+        End If
+
+
+
         'I feel like all of this could be put into a sub. 
         'checks and sees if the user inputed a rating, and if they did it checks if it's a valid numeric decimal
-        If txtRatingLower.Text IsNot Nothing Then
-            mdecRatingLower = valid.CheckRatings(txtRatingLower.Text)
+        If txtRatingLower.Text = "" Then
+            mdecRatingLower = 0
+        Else
+            mdecRatingLower = valid.CheckDecimal(txtRatingLower.Text)
             If mdecRatingLower = -1 Then
                 lblMessage.Text = "Lower rating must be numeric value"
                 Exit Sub
             End If
-        Else
-            mdecRatingLower = 0
         End If
 
-        If txtRatingHigher.Text IsNot Nothing Then
-            valid.CheckRatings(txtRatingHigher.Text)
+
+        If txtRatingHigher.Text = "" Then
+            mdecRatingHigher = 5
+        Else
+            mdecRatingHigher = valid.CheckDecimal(txtRatingHigher.Text)
             If mdecRatingHigher = -1 Then
-                lblMessage.Text = "Higher rating must be numeric value"
+                lblMessage.Text = "Lower rating must be numeric value"
                 Exit Sub
             End If
-        Else
-            mdecRatingHigher = 5
         End If
 
         Try
@@ -188,7 +206,10 @@
             lblMessage.Text = "Please put lower rating first"
             Exit Sub
         End Try
-        'end sub
+
+        search.SearchRatings(mdecRatingLower, mdecRatingHigher)
+        SearchGenres()
+        DataBindStuff()
 
         ''search the name in the database and order by whatever is selected in the ddl
 
@@ -240,17 +261,87 @@
         ''bind gridview to myview based on sort
         gvSearchResults.DataSource = search.AlbumDataset.Tables("tblAlbums")
         ' gvSearchResults.DataSource = search.MyView
+        search.AlbumSearchSort(ddlSort.SelectedValue.ToString)
         gvSearchResults.DataBind()
 
         'count of how many elements are in the view after sort
         lblRecords.Text = gvSearchResults.Rows.Count.ToString
     End Sub
+    Public Sub SearchGenres()
+
+        Dim i As Integer
+
+        Dim genresSearch As String = ""
+        Dim genreFilter As String = ""
+
+
+
+
+        Dim genreItem As ListItem
+        For Each genreItem In cblGenres.Items
+            If genreItem.Selected Then
+                'genres.Add(cblGenres.SelectedValue.ToString)
+                genreFilter = "Genre = '" & genreItem.Text & "' OR "
+                genresSearch += genreFilter
+            End If
+        Next
+
+
+        If genresSearch.Length > 0 Then
+            genresSearch = genresSearch.Substring(0, genresSearch.Length - 4)
+        End If
+
+
+        search.MyView.RowFilter = genresSearch
+
+
+    End Sub
+    'Public Sub AlbumSearchSort(ByVal strSortValue As String)
+    '    'If strSortValue = "Rating Ascending" Then
+    '    '    'sort by the column name in the dataview
+
+    '    'End If
+
+    '    If strSortValue = "Rating Descending" Then
+    '        'sort by the column name in the dataview
+    '        MyView.Sort = "AvgRatingNbr DESC"
+    '    End If
+
+    '    If strSortValue = "Artist Name Ascending" Then
+    '        MyView.Sort = "ArtistName ASC"
+    '    End If
+
+    '    If strSortValue = "Artist Name Descending" Then
+    '        MyView.Sort = "ArtistName DESC"
+    '    End If
+
+    '    If strSortValue = "Album Name Ascending" Then
+    '        'sort by the column name in the dataview
+    '        MyView.Sort = "AlbumTitle ASC"
+    '    End If
+
+    '    If strSortValue = "Album Name Descending" Then
+    '        'sort by the column name in the dataview
+    '        MyView.Sort = "AlbumTitle DESC"
+    '    End If
+
+    'End Sub
 
     Private Sub ddlSort_selectedIndexChanged(dropDownList As DropDownList, Empty As EventArgs)
-        Dim index As Integer = Me.ddlSort.SelectedIndex
+
     End Sub
 
-    Protected Sub lbxGenre_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbxGenre.SelectedIndexChanged
+    Public Sub LoadCheckBoxList()
+
+        'this loads the drop down list with the data from the table
+        'get's the data from the table
+        Me.cblGenres.DataSource = genre.GenreDataset.Tables("tblGenres")
+        'what we want it to say in the list 
+        Me.cblGenres.DataTextField = "Genre"
+        'where it finds what to put in the list
+        Me.cblGenres.DataValueField = "Genre"
+        'binds it to the ddl
+        Me.cblGenres.DataBind()
 
     End Sub
 End Class

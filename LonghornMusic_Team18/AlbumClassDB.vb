@@ -67,6 +67,37 @@ Public Class AlbumClassDB
             Next
             Throw New Exception(strError & " error is " & ex.Message)
         End Try
+
+    End Sub
+    Public Sub AlbumSearchSort(ByVal strSortValue As String)
+        If strSortValue = "Rating Ascending" Then
+            'sort by the column name in the dataview
+            MyView.Sort = "AvgRatingNbr ASC"
+        End If
+
+        If strSortValue = "Rating Descending" Then
+            'sort by the column name in the dataview
+            MyView.Sort = "AvgRatingNbr DESC"
+        End If
+
+        If strSortValue = "Artist Name Ascending" Then
+            MyView.Sort = "ArtistName ASC"
+        End If
+
+        If strSortValue = "Artist Name Descending" Then
+            MyView.Sort = "ArtistName DESC"
+        End If
+
+        If strSortValue = "Album Name Ascending" Then
+            'sort by the column name in the dataview
+            MyView.Sort = "AlbumTitle ASC"
+        End If
+
+        If strSortValue = "Album Name Descending" Then
+            'sort by the column name in the dataview
+            MyView.Sort = "AlbumTitle DESC"
+        End If
+
     End Sub
 
     'needs to have procedure name put in

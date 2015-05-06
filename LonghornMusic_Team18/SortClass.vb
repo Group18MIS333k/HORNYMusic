@@ -60,6 +60,34 @@ Public Class SortClassDB
 
     End Sub
 
+    'Protected Sub SortRecords(ByVal sender As Object, ByVal e As GridViewSortEventArgs)
+    '    Dim sortExpression As String = e.SortExpression
+    '    Dim direction As String = String.Empty
+    '    If SortDirection = SortDirection.Ascending Then
+    '        SortDirection = SortDirection.Descending
+    '        direction = " DESC"
+    '    Else
+    '        SortDirection = SortDirection.Ascending
+    '        direction = " ASC"
+    '    End If
+    '    Dim table As DataTable = Me.GetData()
+    '    table.DefaultView.Sort = sortExpression & direction
+    '    GridView1.DataSource = table
+    '    GridView1.DataBind()
+    'End Sub
+
+
+    'Public Property SortDirection() As SortDirection
+    '    Get
+    '        If ViewState("SortDirection") Is Nothing Then
+    '            ViewState("SortDirection") = SortDirection.Ascending
+    '        End If
+    '        Return DirectCast(ViewState("SortDirection"), SortDirection)
+    '    End Get
+    '    Set(ByVal value As SortDirection)
+    '        ViewState("SortDirection") = value
+    '    End Set
+    'End Property
 
 
 End Class

@@ -43,7 +43,7 @@
             
              <div id="Genre" style="position:relative; float: right; width: 10%;height:90%;max-height: 100%">
 
-                 <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+                 <asp:CheckBoxList ID="cblGenres" runat="server">
                  </asp:CheckBoxList>
    
         </div>

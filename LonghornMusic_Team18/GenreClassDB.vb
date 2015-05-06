@@ -19,4 +19,28 @@ Public Class GenreClassDB
             Return mDatasetGenre
         End Get
     End Property
+    Public ReadOnly Property MyView() As DataView 'make sure and due this so your views work
+        Get
+            Return mMyView
+        End Get
+    End Property
+    Public Sub GenreGetAll()
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_Genre_getall", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            'clear the dataset before filling
+            mDatasetGenre.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetGenre, "tblGenres")
+            'fill dataview
+            mMyView.Table = mDatasetGenre.Tables("tblGenres")
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
 End Class

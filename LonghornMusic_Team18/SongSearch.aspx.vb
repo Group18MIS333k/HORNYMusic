@@ -113,6 +113,7 @@
         End Try
 
         search.SearchRatings(mdecRatingLower, mdecRatingHigher)
+        SearchGenres()
         DataBindStuff()
         'end sub
 
@@ -165,6 +166,35 @@
         '    'need a do sort
         '    DataBindStuff()
         'End If
+
+
+    End Sub
+    Public Sub SearchGenres()
+
+        Dim i As Integer
+
+        Dim genresSearch As String = ""
+        Dim genreFilter As String = ""
+
+
+
+
+        Dim genreItem As ListItem
+        For Each genreItem In cblGenres.Items
+            If genreItem.Selected Then
+                'genres.Add(cblGenres.SelectedValue.ToString)
+                genreFilter = "Genre = '" & genreItem.Text & "' OR "
+                genresSearch += genreFilter
+            End If
+        Next
+
+
+        If genresSearch.Length > 0 Then
+            genresSearch = genresSearch.Substring(0, genresSearch.Length - 4)
+        End If
+
+
+        search.MyView.RowFilter = genresSearch
 
 
     End Sub
@@ -280,6 +310,7 @@
         End Try
 
         search.SearchRatings(mdecRatingLower, mdecRatingHigher)
+        SearchGenres()
         DataBindStuff()
 
         ''I feel like all of this could be put into a sub. 

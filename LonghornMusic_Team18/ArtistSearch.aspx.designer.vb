@@ -122,13 +122,13 @@ Partial Public Class ArtistSearch
     Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''CheckBoxList1 control.
+    '''cblGenres control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CheckBoxList1 As Global.System.Web.UI.WebControls.CheckBoxList
+    Protected WithEvents cblGenres As Global.System.Web.UI.WebControls.CheckBoxList
 
     '''<summary>
     '''lblRecords control.

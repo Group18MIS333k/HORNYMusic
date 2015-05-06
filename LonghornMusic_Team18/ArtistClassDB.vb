@@ -29,6 +29,8 @@ Public Class ArtistClassDB
     Public Sub SearchRatings(ByVal decRatingLower As Decimal, ByVal decRatingUpper As Decimal)
         mMyView.RowFilter = "AvgRatingNBR > '" & decRatingLower & "' AND avgRatingNBR < '" & decRatingUpper & "'"
     End Sub
+
+
     'Public Sub DoFilterSortListBox(strGenre1 As String, strGenre2 As String, strGenre3 As String, strGenre4 As String, strGenre5 As String)
     '    mMyView.RowFilter = "Genre = '" & strGenre1 & "'"
     'End Sub
@@ -225,12 +227,12 @@ Public Class ArtistClassDB
     Public Sub ArtistSearchSort(ByVal strSortValue As String)
         If strSortValue = "Rating Ascending" Then
             'sort by the column name in the dataview
-            MyView.Sort = "Rating ASC"
+            MyView.Sort = "AvgRatingNbr ASC"
         End If
 
         If strSortValue = "Rating Descending" Then
             'sort by the column name in the dataview
-            MyView.Sort = "Rating DESC"
+            MyView.Sort = "AvgRatingNbr DESC"
         End If
 
         If strSortValue = "Artist Name Ascending" Then

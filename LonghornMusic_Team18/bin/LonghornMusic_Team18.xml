@@ -1527,9 +1527,9 @@ lblMessage control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.AlbumSearch.lbxGenre">
+</member><member name="F:LonghornMusic_Team18.AlbumSearch.cblGenres">
 	<summary>
-lbxGenre control.
+cblGenres control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -1642,6 +1642,14 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:LonghornMusic_Team18.ArtistSearch.lblMessage">
 	<summary>
 lblMessage control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.ArtistSearch.cblGenres">
+	<summary>
+cblGenres control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -2127,9 +2135,9 @@ lblMessage control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.Search.lbxGenre">
+</member><member name="F:LonghornMusic_Team18.Search.CheckBoxList1">
 	<summary>
-lbxGenre control.
+CheckBoxList1 control.
 </summary>
 	<remarks>
 Auto-generated field.

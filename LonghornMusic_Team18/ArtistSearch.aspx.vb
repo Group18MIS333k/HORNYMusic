@@ -1,5 +1,8 @@
-﻿Public Class ArtistSearch
+﻿
+Public Class ArtistSearch
+
     Inherits System.Web.UI.Page
+
     Dim mdecRatingLower As Decimal
     Dim mdecRatingHigher As Decimal
     Dim valid As New ClassSearchValidate
@@ -10,15 +13,16 @@
     Dim mAryParamNames As New ArrayList
     Dim mAryParamValues As New ArrayList
 
-      
+
     Public Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'is postback being false prevents everything from reloading every time you do something
         If IsPostBack = False Then
-            Me.ddlSort.SelectedIndex = 0
-            Me.ddlSort_selectedIndexChanged(Me.ddlSort, System.EventArgs.Empty)
+            genre.GenreGetAll()
+            LoadCheckBoxList()
         End If
 
-   
+
+
 
     End Sub
 
@@ -66,8 +70,9 @@
         End Try
 
         search.SearchRatings(mdecRatingLower, mdecRatingHigher)
+        SearchGenres()
         DataBindStuff()
-        search.ArtistSearchSort(ddlSort.SelectedValue.ToString)
+
 
 
         'figure out the fucking filter on that dumbcunt listbox
@@ -98,13 +103,13 @@
     'End Sub
 
     Protected Sub btnKeywordSearch_Click(sender As Object, e As EventArgs) Handles btnKeywordSearch.Click
-     
+
         mAryParamNames.Add("@artist")
         mAryParamValues.Add(txtName.Text)
 
 
-        'checks and sees if the user inputed a name
-        search.ArtistGetAll()
+        ''checks and sees if the user inputed a name
+        'search.ArtistGetAll()
 
         If txtName.Text IsNot Nothing Then
             search.ArtistSearchWithAnyParameters("usp_artist_search_keyword_artistOnly", mAryParamNames, mAryParamValues)
@@ -143,20 +148,14 @@
         End Try
 
         search.SearchRatings(mdecRatingLower, mdecRatingHigher)
-
+        SearchGenres()
         DataBindStuff()
 
-        search.ArtistSearchSort(ddlSort.SelectedValue.ToString)
 
 
-        'figure out the fucking filter on that dumbcunt listbox
-        'lbxGenre.SelectedItem
 
-        'For Each i In lbxGenre.SelectedItem
 
-        'Next
 
-        
 
     End Sub
     Public Sub DataBindStuff()
@@ -171,10 +170,11 @@
         'eliminate duplicate code for everytime a view needs a databind
 
         'sort by the selected item
-        'sort.DoSort(ddlSort.SelectedValue.ToString)
+
         'bind gridview to myview based on sort
-        gvSearchResults.DataSource = search.ArtistDataset.Tables("tblArtists")
+        gvSearchResults.DataSource = search.ArtistDataset.Tables("Artists")
         gvSearchResults.DataSource = search.MyView 'sets grid to view
+        search.ArtistSearchSort(ddlSort.SelectedValue.ToString)
         gvSearchResults.DataBind()
 
         'count of how many elements are in the view after sort
@@ -182,7 +182,53 @@
     End Sub
 
     Protected Sub ddlSort_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlSort.SelectedIndexChanged
-        Dim index As Integer = Me.ddlSort.SelectedIndex
+
+
+    End Sub
+
+    Protected Sub CheckBoxList1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cblGenres.SelectedIndexChanged
+
+    End Sub
+    Public Sub LoadCheckBoxList()
+
+        'this loads the drop down list with the data from the table
+        'get's the data from the table
+        Me.cblGenres.DataSource = genre.GenreDataset.Tables("tblGenres")
+        'what we want it to say in the list 
+        Me.cblGenres.DataTextField = "Genre"
+        'where it finds what to put in the list
+        Me.cblGenres.DataValueField = "Genre"
+        'binds it to the ddl
+        Me.cblGenres.DataBind()
+
+    End Sub
+    Public Sub SearchGenres()
+
+        Dim i As Integer
+
+        Dim genresSearch As String = ""
+        Dim genreFilter As String = ""
+
+
+
+
+        Dim genreItem As ListItem
+        For Each genreItem In cblGenres.Items
+            If genreItem.Selected Then
+                'genres.Add(cblGenres.SelectedValue.ToString)
+                genreFilter = "Genre = '" & genreItem.Text & "' OR "
+                genresSearch += genreFilter
+            End If
+        Next
+
+
+        If genresSearch.Length > 0 Then
+            genresSearch = genresSearch.Substring(0, genresSearch.Length - 4)
+        End If
+
+
+        search.MyView.RowFilter = genresSearch
+
 
     End Sub
 End Class
