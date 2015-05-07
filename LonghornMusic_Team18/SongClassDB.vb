@@ -27,6 +27,46 @@ Public Class SongClassDB
     Public Sub SearchRatings(ByVal decRatingLower As Decimal, ByVal decRatingUpper As Decimal)
         mMyView.RowFilter = "AvgRatingNBR > '" & decRatingLower & "' AND avgRatingNBR < '" & decRatingUpper & "'"
     End Sub
+    Public Sub SongSearchSort(ByVal strSortValue As String)
+        If strSortValue = "Rating Ascending" Then
+            'sort by the column name in the dataview
+            MyView.Sort = "AvgRatingNbr ASC"
+        End If
+
+        If strSortValue = "Rating Descending" Then
+            'sort by the column name in the dataview
+            MyView.Sort = "AvgRatingNbr DESC"
+        End If
+
+        If strSortValue = "Artist Name Ascending" Then
+            MyView.Sort = "ArtistName ASC"
+        End If
+
+        If strSortValue = "Artist Name Descending" Then
+            MyView.Sort = "ArtistName DESC"
+        End If
+
+        If strSortValue = "Album Name Ascending" Then
+            'sort by the column name in the dataview
+            MyView.Sort = "AlbumTitle ASC"
+        End If
+
+        If strSortValue = "Album Name Descending" Then
+            'sort by the column name in the dataview
+            MyView.Sort = "AlbumTitle DESC"
+        End If
+
+        If strSortValue = "Song Title Ascending" Then
+            'sort by the column name in the dataview
+            MyView.Sort = "SongTitle ASC"
+        End If
+
+        If strSortValue = "Song Title Descending" Then
+            'sort by the column name in the dataview
+            MyView.Sort = "SongTitle DESC"
+        End If
+
+    End Sub
     Public Sub SongSearchWithAnyParameters(ByVal strSPName As String, ByVal aryParamNames As ArrayList, ByVal aryParamValues As ArrayList)
         'purpose to run a stored procedure with one parameter
         'inputs: stored procedure name, table name, dataset name, dataview name, array list of pparameter name, array list of parameter Value

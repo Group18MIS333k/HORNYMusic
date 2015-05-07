@@ -13,6 +13,11 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
+        If IsPostBack = False Then
+            genre.GenreGetAll()
+            LoadCheckBoxList()
+
+        End If
     End Sub
 
 
@@ -83,24 +88,25 @@
 
         'I feel like all of this could be put into a sub. 
         'checks and sees if the user inputed a rating, and if they did it checks if it's a valid numeric decimal
-        If txtRatingLower.Text IsNot Nothing Then
-            mdecRatingLower = valid.CheckRatings(txtRatingLower.Text)
+        If txtRatingLower.Text = "" Then
+            mdecRatingLower = 0
+        Else
+            mdecRatingLower = valid.CheckDecimal(txtRatingLower.Text)
             If mdecRatingLower = -1 Then
                 lblMessage.Text = "Lower rating must be numeric value"
                 Exit Sub
             End If
-        Else
-            mdecRatingLower = 0
         End If
 
-        If txtRatingHigher.Text IsNot Nothing Then
-            valid.CheckRatings(txtRatingHigher.Text)
+
+        If txtRatingHigher.Text = "" Then
+            mdecRatingHigher = 5
+        Else
+            mdecRatingHigher = valid.CheckDecimal(txtRatingHigher.Text)
             If mdecRatingHigher = -1 Then
                 lblMessage.Text = "Higher rating must be numeric value"
                 Exit Sub
             End If
-        Else
-            mdecRatingHigher = 5
         End If
 
         Try
@@ -111,6 +117,7 @@
             lblMessage.Text = "Please put lower rating first"
             Exit Sub
         End Try
+
 
         search.SearchRatings(mdecRatingLower, mdecRatingHigher)
         SearchGenres()
@@ -221,7 +228,7 @@
     Protected Sub btnKeywordSearch_Click(sender As Object, e As EventArgs) Handles btnKeywordSearch.Click
         'searches artist, album, and title
         If txtTitle.Text <> "" And txtArtist.Text <> "" And txtAlbum.Text <> "" Then
-            maryParamNames.Add("@artistame")
+            maryParamNames.Add("@artistname")
             maryParamNames.Add("@albumname")
             maryParamNames.Add("@SongTitle")
             maryParamValues.Add(txtArtist.Text)
@@ -280,24 +287,25 @@
 
         'I feel like all of this could be put into a sub. 
         'checks and sees if the user inputed a rating, and if they did it checks if it's a valid numeric decimal
-        If txtRatingLower.Text IsNot Nothing Then
-            mdecRatingLower = valid.CheckRatings(txtRatingLower.Text)
+        If txtRatingLower.Text = "" Then
+            mdecRatingLower = 0
+        Else
+            mdecRatingLower = valid.CheckDecimal(txtRatingLower.Text)
             If mdecRatingLower = -1 Then
                 lblMessage.Text = "Lower rating must be numeric value"
                 Exit Sub
             End If
-        Else
-            mdecRatingLower = 0
         End If
 
-        If txtRatingHigher.Text IsNot Nothing Then
-            valid.CheckRatings(txtRatingHigher.Text)
+
+        If txtRatingHigher.Text = "" Then
+            mdecRatingHigher = 5
+        Else
+            mdecRatingHigher = valid.CheckDecimal(txtRatingHigher.Text)
             If mdecRatingHigher = -1 Then
-                lblMessage.Text = "Higher rating must be numeric value"
+                lblMessage.Text = "Lower rating must be numeric value"
                 Exit Sub
             End If
-        Else
-            mdecRatingHigher = 5
         End If
 
         Try
@@ -404,13 +412,28 @@
         ' author: Morgan May
         'eliminate duplicate code for everytime a view needs a databind
 
+        gvSearchResults.DataSource = search.SongDataset.Tables("Songs")
         'sort by the selected item
         'sort.DoSort(ddlSort.SelectedValue.ToString)
         'bind gridview to myview based on sort
-        gvSearchResults.DataSource = sort.MyView
+        gvSearchResults.DataSource = search.MyView
+        search.SongSearchSort(ddlSort.SelectedValue.ToString)
         gvSearchResults.DataBind()
 
         'count of how many elements are in the view after sort
-        lblRecords.Text = sort.MyView.Count.ToString()
+        lblRecords.Text = search.MyView.Count.ToString()
+    End Sub
+    Public Sub LoadCheckBoxList()
+
+        'this loads the drop down list with the data from the table
+        'get's the data from the table
+        Me.cblGenres.DataSource = genre.GenreDataset.Tables("tblGenres")
+        'what we want it to say in the list 
+        Me.cblGenres.DataTextField = "Genre"
+        'where it finds what to put in the list
+        Me.cblGenres.DataValueField = "Genre"
+        'binds it to the ddl
+        Me.cblGenres.DataBind()
+
     End Sub
 End Class

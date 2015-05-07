@@ -67,7 +67,7 @@
         Else
             mdecRatingHigher = valid.CheckDecimal(txtRatingHigher.Text)
             If mdecRatingHigher = -1 Then
-                lblMessage.Text = "Lower rating must be numeric value"
+                lblMessage.Text = "Higher rating must be numeric value"
                 Exit Sub
             End If
         End If
@@ -259,8 +259,8 @@
         'sort by the selected item
 
         ''bind gridview to myview based on sort
-        gvSearchResults.DataSource = search.AlbumDataset.Tables("tblAlbums")
-        ' gvSearchResults.DataSource = search.MyView
+        gvSearchResults.DataSource = search.AlbumDataset.Tables("Albums")
+        gvSearchResults.DataSource = search.MyView
         search.AlbumSearchSort(ddlSort.SelectedValue.ToString)
         gvSearchResults.DataBind()
 
@@ -296,36 +296,36 @@
 
 
     End Sub
-    'Public Sub AlbumSearchSort(ByVal strSortValue As String)
-    '    'If strSortValue = "Rating Ascending" Then
-    '    '    'sort by the column name in the dataview
+    Public Sub AlbumSearchSort(ByVal strSortValue As String)
+        'If strSortValue = "Rating Ascending" Then
+        '    'sort by the column name in the dataview
 
-    '    'End If
+        'End If
 
-    '    If strSortValue = "Rating Descending" Then
-    '        'sort by the column name in the dataview
-    '        MyView.Sort = "AvgRatingNbr DESC"
-    '    End If
+        If strSortValue = "Rating Descending" Then
+            'sort by the column name in the dataview
+            search.MyView.Sort = "AvgRatingNbr DESC"
+        End If
 
-    '    If strSortValue = "Artist Name Ascending" Then
-    '        MyView.Sort = "ArtistName ASC"
-    '    End If
+        If strSortValue = "Artist Name Ascending" Then
+            search.MyView.Sort = "ArtistName ASC"
+        End If
 
-    '    If strSortValue = "Artist Name Descending" Then
-    '        MyView.Sort = "ArtistName DESC"
-    '    End If
+        If strSortValue = "Artist Name Descending" Then
+            search.MyView.Sort = "ArtistName DESC"
+        End If
 
-    '    If strSortValue = "Album Name Ascending" Then
-    '        'sort by the column name in the dataview
-    '        MyView.Sort = "AlbumTitle ASC"
-    '    End If
+        If strSortValue = "Album Name Ascending" Then
+            'sort by the column name in the dataview
+            search.MyView.Sort = "AlbumTitle ASC"
+        End If
 
-    '    If strSortValue = "Album Name Descending" Then
-    '        'sort by the column name in the dataview
-    '        MyView.Sort = "AlbumTitle DESC"
-    '    End If
+        If strSortValue = "Album Name Descending" Then
+            'sort by the column name in the dataview
+            search.MyView.Sort = "AlbumTitle DESC"
+        End If
 
-    'End Sub
+    End Sub
 
     Private Sub ddlSort_selectedIndexChanged(dropDownList As DropDownList, Empty As EventArgs)
 

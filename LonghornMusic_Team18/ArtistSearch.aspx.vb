@@ -204,7 +204,7 @@ Public Class ArtistSearch
     End Sub
     Public Sub SearchGenres()
 
-        Dim i As Integer
+
 
         Dim genresSearch As String = ""
         Dim genreFilter As String = ""
@@ -215,7 +215,6 @@ Public Class ArtistSearch
         Dim genreItem As ListItem
         For Each genreItem In cblGenres.Items
             If genreItem.Selected Then
-                'genres.Add(cblGenres.SelectedValue.ToString)
                 genreFilter = "Genre = '" & genreItem.Text & "' OR "
                 genresSearch += genreFilter
             End If
