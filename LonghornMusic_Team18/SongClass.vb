@@ -86,7 +86,6 @@ Public Class SongClass
 
         SelectAllSongs()
         mysongView.RowFilter = "SongTitle = '" & strSOngtitle & "' and AlbumID = ' " & intAlbumID & "'"
-        'mysongView.RowFilter = "AlbumID =" & intAlbumID
 
         'sort filtered view
 
