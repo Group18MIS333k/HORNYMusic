@@ -408,7 +408,9 @@
         intIndex = Me.ddlEmployee.SelectedIndex
         IntID = DB.CustDataset.Tables("Employees").Rows(intIndex).Item("EmpID").ToString
         If Session("EmpType") = DB.CustDataset.Tables("Employees").Rows(intIndex).Item("EmpType").ToString Then
-            Session("EmpType") = "101"
+            If Session("EmpID") = DB.CustDataset.Tables("Employees").Rows(intIndex).Item("EmpType").ToString Then
+                Session("EmpType") = "101"
+            End If
         End If
         DB.PromoteDemoteEmployee(IntID, NewType)
         SetFormRegular()

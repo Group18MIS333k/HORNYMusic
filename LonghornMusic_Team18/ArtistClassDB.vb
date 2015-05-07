@@ -152,9 +152,9 @@ Public Class ArtistClassDB
             'clear dataset
             Me.mDatasetArtist.Clear()
             'open connection and fill dataset
-            mdbDataAdapter.Fill(mDatasetArtist, "tblArtists")
+            mdbDataAdapter.Fill(mDatasetArtist, "Artists")
             'copy dataset to dataview
-            mMyView.Table = mDatasetArtist.Tables("tblArtists")
+            mMyView.Table = mDatasetArtist.Tables("Artists")
 
         Catch ex As Exception
             Dim strError As String = ""

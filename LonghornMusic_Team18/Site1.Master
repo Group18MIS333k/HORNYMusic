@@ -17,8 +17,8 @@
         <br />
         <asp:LinkButton ID="lnkMyMusic" runat="server" PostBackUrl="~/MyMusic.aspx">My Music</asp:LinkButton>
 &nbsp;<asp:LinkButton ID="LnkShoppingCart" runat="server">Shopping Cart</asp:LinkButton>
-&nbsp;<asp:LinkButton ID="lnkMyAccount" runat="server">My Account</asp:LinkButton>
-&nbsp;<asp:LinkButton ID="lnkSearch" runat="server">Search</asp:LinkButton>
+&nbsp;<asp:LinkButton ID="lnkMyAccount" runat="server" PostBackUrl="~/AccountInfo.aspx">My Account</asp:LinkButton>
+&nbsp;<asp:LinkButton ID="lnkSongSearch" runat="server" postbackurl="~/SongSearch.aspx">Search</asp:LinkButton>
         &nbsp;<asp:LinkButton ID="lnkWelcomePage" runat="server" PostBackUrl="~/WelcomePage.aspx">Home</asp:LinkButton>
         
     

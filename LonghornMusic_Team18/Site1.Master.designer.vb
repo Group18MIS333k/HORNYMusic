@@ -68,13 +68,13 @@ Partial Public Class Site1
     Protected WithEvents lnkMyAccount As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''lnkSearch control.
+    '''lnkSongSearch control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lnkSearch As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents lnkSongSearch As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
     '''lnkWelcomePage control.

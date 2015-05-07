@@ -192,6 +192,7 @@ Public Class SongClassDB
         'morgan
         mMyView.RowFilter = "AvgRatingNBR > '" & decRatingLower & "' AND avgRatingNBR < '" & decRatingUpper & "'"
     End Sub
+
     Public Sub SongSearchSort(ByVal strSortValue As String)
         'morgan 
         If strSortValue = "Rating Ascending" Then
@@ -233,6 +234,7 @@ Public Class SongClassDB
         End If
 
     End Sub
+
     Public Sub SongSearchWithAnyParameters(ByVal strSPName As String, ByVal aryParamNames As ArrayList, ByVal aryParamValues As ArrayList)
         'purpose to run a stored procedure with one parameter
         'inputs: stored procedure name, table name, dataset name, dataview name, array list of pparameter name, array list of parameter Value
@@ -257,9 +259,9 @@ Public Class SongClassDB
             'clear dataset
             Me.mDatasetSong.Clear()
             'open connection and fill dataset
-            mdbDataAdapter.Fill(mDatasetSong, "tblAlbums")
+            mdbDataAdapter.Fill(mDatasetSong, "Songs")
             'copy dataset to dataview
-            mMyView.Table = mDatasetSong.Tables("tblAlbums")
+            mMyView.Table = mDatasetSong.Tables("Songs")
 
         Catch ex As Exception
             Dim strError As String = ""

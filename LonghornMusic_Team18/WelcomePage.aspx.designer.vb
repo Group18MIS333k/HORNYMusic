@@ -23,15 +23,6 @@ Partial Public Class WelcomePage
     Protected WithEvents Label17 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label18 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label18 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''gvFeaturedSongs control.
     '''</summary>
     '''<remarks>

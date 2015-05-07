@@ -56,9 +56,9 @@ Public Class AlbumClassDB
             'clear dataset
             Me.mDatasetAlbum.Clear()
             'open connection and fill dataset
-            mdbDataAdapter.Fill(mDatasetAlbum, "tblAlbums")
+            mdbDataAdapter.Fill(mDatasetAlbum, "Albums")
             'copy dataset to dataview
-            mMyView.Table = mDatasetAlbum.Tables("tblAlbums")
+            mMyView.Table = mDatasetAlbum.Tables("Albums")
 
         Catch ex As Exception
             Dim strError As String = ""

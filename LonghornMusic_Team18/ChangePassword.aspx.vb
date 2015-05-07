@@ -5,6 +5,9 @@
     Dim EitherID As New Integer
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Session("EmpType") = "" And Session("CustID") = "" Then
+            Response.Redirect("welcomePage.aspx")
+        End If
 
     End Sub
 
@@ -29,6 +32,7 @@
                 DBEmp.ChangePassword(txtNew.Text, EitherID)
             End If
             lblError.Text = "Password Successfully Updated"
+            Response.Redirect("AccountInfo.aspx")
         Else
             lblError.Text = "Incorrect Password!"
 
