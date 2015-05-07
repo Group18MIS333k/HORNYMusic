@@ -24,6 +24,10 @@
         <asp:Button ID="btnSave" runat="server" Text="Save" Width="232px" CausesValidation="False" style="height: 26px" />
         <br />
         <br />
+        <asp:Button ID="btnAddAlbum" runat="server" Text="Add Album" Width="235px" />
+        <br />
+        <br />
+        <asp:Button ID="Button1" runat="server" Text="Add Song" Width="232px" />
         <br />
         <br />
         <br />
@@ -31,8 +35,17 @@
         <br />
         &nbsp;&nbsp;&nbsp;
         <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         Song List:<br />
-        <asp:GridView ID="gvSongList" runat="server">
+        <asp:GridView ID="gvSongList" runat="server" style="margin-top: 0px">
+            <Columns>
+                <asp:CommandField SelectText="Remove" ShowSelectButton="True" />
+            </Columns>
         </asp:GridView>
         <br />
 &nbsp;
@@ -55,9 +68,8 @@
         &nbsp;&nbsp;<br />
         <asp:Label ID="Label10" runat="server" Text="Album Name"></asp:Label>
         <br />
+        Description<br />
         <asp:Label ID="Label12" runat="server" Text="Artist"></asp:Label>
-        <br />
-        <asp:Label ID="Label13" runat="server" Text="Genre"></asp:Label>
         <br />
         Price<br />
         <asp:Label ID="Label14" runat="server" Text="Discount Price"></asp:Label>
@@ -91,9 +103,9 @@
             <br />
             <asp:TextBox ID="txtAlbum" runat="server"></asp:TextBox>
             <br />
-            <asp:TextBox ID="txtArtist" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtDescription" runat="server"></asp:TextBox>
             <br />
-            <asp:TextBox ID="txtGenre" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtArtist" runat="server" Enabled="False" ReadOnly="True"></asp:TextBox>
             <br />
             <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
             <br />
