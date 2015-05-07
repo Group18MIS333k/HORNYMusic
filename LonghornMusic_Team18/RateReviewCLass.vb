@@ -30,31 +30,7 @@ Public Class RateReviewCLass
     End Property
 
 
-    Public Sub SelectQuery(ByVal strQuery As String)
 
-        ' purpose: run any select query and fill dataset
-
-        Try
-            ' define data connection and data adapter
-            mdbConn = New SqlConnection(mstrConnection)
-            mdbDataAdapter = New SqlDataAdapter(strQuery, mdbConn)
-
-            ' open the connection and dataset 
-            mdbConn.Open()
-
-            ' clear the dataset before filling
-            mDatasetRR.Clear()
-
-            ' fill the dataset
-            mdbDataAdapter.Fill(mDatasetRR, "Ratings")
-
-            ' close the connection
-            mdbConn.Close()
-        Catch ex As Exception
-            Throw New Exception("query is " & strQuery.ToString & "error is " & ex.Message)
-        End Try
-
-    End Sub
     Public Sub SelectAllReviews()
 
         'purpose create dataset with a SP that returns all customers and copy that dataset into a dataview
@@ -88,8 +64,7 @@ Public Class RateReviewCLass
     Public Sub SearchReviewByCustIDandSongID(ByVal intCustID As Integer, ByVal intArtistID As Integer)
 
         SelectAllReviews()
-        myView.RowFilter = "CustID =" & intCustID
-        myView.RowFilter = "SongID =" & intArtistID
+        myView.RowFilter = "CustID = '" & intCustID & "' and SongID = ' " & intArtistID & "'"
         'sort filtered view
 
 
@@ -99,18 +74,250 @@ Public Class RateReviewCLass
         'establish connection
 
         SelectAllReviews()
-        myView.RowFilter = "Artistid=" & intArtistID
-        myView.RowFilter = "SongID =" & intSongID
+        myView.RowFilter = "Artistid= '" & intArtistID & "' and songid = '" & intSongID & "'"
         'sort filtered view
 
 
     End Sub
 
-    'select count ratings from ratings where song id = x
-    'select avg ratings from ratings where song id = x
+    Public Sub ModifySongReview(intCustID As Integer, intSongID As Integer, strReview As String, strRating As String)
+
+        'purpose create dataset with a SP that returns all customers and copy that dataset into a dataview
+        Try
+            'establich connection
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter(" usp_ratings_modify_song", mdbConn)
+
+            'sets the command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'add oaraneter
+
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@CustID", intCustID))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@SongID", intSongID))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@Review", strReview))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@Rating", strRating))
 
 
 
-   
+
+            'clear dataset
+            mDatasetRR.Clear()
+
+            'fill dataset with allcustomers
+            mdbDataAdapter.Fill(mDatasetRR, "Ratings")
+
+            'copy dataset to view
+            myView.Table = mDatasetRR.Tables("Ratings")
+
+
+
+
+
+
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+
+    Public Sub AddSongReview(intCustID As Integer, intSongID As Integer, strReview As String, strRating As String)
+
+        'purpose create dataset with a SP that returns all customers and copy that dataset into a dataview
+        Try
+            'establich connection
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter(" usp_Ratings_add_song", mdbConn)
+
+            'sets the command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'add oaraneter
+
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@CustID", intCustID))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@SongID", intSongID))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@Review", strReview))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@Rating", strRating))
+
+
+
+
+            'clear dataset
+            mDatasetRR.Clear()
+
+            'fill dataset with allcustomers
+            mdbDataAdapter.Fill(mDatasetRR, "Ratings")
+
+            'copy dataset to view
+            myView.Table = mDatasetRR.Tables("Ratings")
+
+
+
+
+
+
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+
+    Public Sub AddArtistReview(intCustID As Integer, intArtistID As Integer, strReview As String, strRating As String)
+
+        'purpose create dataset with a SP that returns all customers and copy that dataset into a dataview
+        Try
+            'establich connection
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter(" usp_Ratings_add_artist", mdbConn)
+
+            'sets the command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'add oaraneter
+
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@CustID", intCustID))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@ArtistID", intArtistID))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@Review", strReview))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@Rating", strRating))
+
+
+
+
+            'clear dataset
+            mDatasetRR.Clear()
+
+            'fill dataset with allcustomers
+            mdbDataAdapter.Fill(mDatasetRR, "Ratings")
+
+            'copy dataset to view
+            myView.Table = mDatasetRR.Tables("Ratings")
+
+
+
+
+
+
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+
+    Public Sub ModifyArtistReview(intCustID As Integer, intArtistID As Integer, strReview As String, strRating As String)
+
+        'purpose create dataset with a SP that returns all customers and copy that dataset into a dataview
+        Try
+            'establich connection
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter(" usp_Ratings_modify_artist", mdbConn)
+
+            'sets the command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'add oaraneter
+
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@CustID", intCustID))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@ArtistID", intArtistID))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@Review", strReview))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@Rating", strRating))
+
+
+
+
+            'clear dataset
+            mDatasetRR.Clear()
+
+            'fill dataset with allcustomers
+            mdbDataAdapter.Fill(mDatasetRR, "Ratings")
+
+            'copy dataset to view
+            myView.Table = mDatasetRR.Tables("Ratings")
+
+
+
+
+
+
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+
+    Public Sub AddAlbumReview(intCustID As Integer, intAlbumID As Integer, strReview As String, strRating As String)
+
+        'purpose create dataset with a SP that returns all customers and copy that dataset into a dataview
+        Try
+            'establich connection
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter(" usp_Ratings_add_album", mdbConn)
+
+            'sets the command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'add oaraneter
+
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@CustID", intCustID))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@AlbumID", intAlbumID))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@Review", strReview))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@Rating", strRating))
+
+
+
+
+            'clear dataset
+            mDatasetRR.Clear()
+
+            'fill dataset with allcustomers
+            mdbDataAdapter.Fill(mDatasetRR, "Ratings")
+
+            'copy dataset to view
+            myView.Table = mDatasetRR.Tables("Ratings")
+
+
+
+
+
+
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+
+    Public Sub ModifyAlbumReview(intCustID As Integer, intAlbumID As Integer, strReview As String, strRating As String)
+
+        'purpose create dataset with a SP that returns all customers and copy that dataset into a dataview
+        Try
+            'establich connection
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter(" usp_Ratings_modify_album", mdbConn)
+
+            'sets the command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'add oaraneter
+
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@CustID", intCustID))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@AlbumID", intAlbumID))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@Review", strReview))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@Rating", strRating))
+
+
+
+
+            'clear dataset
+            mDatasetRR.Clear()
+
+            'fill dataset with allcustomers
+            mdbDataAdapter.Fill(mDatasetRR, "Ratings")
+
+            'copy dataset to view
+            myView.Table = mDatasetRR.Tables("Ratings")
+
+
+
+
+
+
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
 
 End Class

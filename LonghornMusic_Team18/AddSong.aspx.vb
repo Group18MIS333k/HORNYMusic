@@ -1,39 +1,19 @@
 ﻿Public Class AddSong
     Inherits System.Web.UI.Page
 
-    Dim dbvalidations As New ManageProductsValidation
-    Dim dbSong As New SongClass
+
+    Dim dbSongs As New SongClass
     Dim dbArtist As New ArtistClass
+    Dim dbAlbum As New AlbumClass
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
     End Sub
 
     Protected Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        'add validations
-        'get variable name based on clicked song 
+         Dim intartistId As Integer
+        Dim intAlbumID As Integer
 
-        Dim artistID As Integer = 48
-        Dim albumID As Integer = 23
-        Dim strFeature As String
 
-        strFeature = radFeatured.SelectedValue.ToString
-        If txtSong.Text = "" Then
-            lblError.Text = "Please enter proper Song Title"
-            Exit Sub
-        End If
-
-        If txtPrice.Text = "" Then
-            lblError.Text = "Please enter proper Price"
-            Exit Sub
-        End If
-        'enter code for check if string is all numbers from class
-
-        If radFeatured.SelectedItem.Text = "Yes" Then
-            'check to see if featured already exists, if it does, give error, if not, allow
-            'search for featured, if row = 0 then it doesnt exist
-        End If
-
-        'check that artist exists
         dbArtist.SelectArtist(txtArtist.Text)
 
         If dbArtist.myArtistview1.Count = 0 Then
@@ -41,25 +21,34 @@
             Exit Sub
         End If
 
-        'initialize artistID here
+        gvArtist.DataSource = dbArtist.myArtistview1
+        gvArtist.DataBind()
 
-        'check that song is not duplicate
-
-        dbSong.SelectASongwithTitleandArtist(txtSong.Text, artistID)
-        gvSong.DataSource = dbSong.mySongView1
-        gvSong.DataBind()
-
-        'If dbSong.mySongView1.Count > 0 Then
-        'lblError.Text = "Song with same artist already exists"
-        'Exit Sub
-        'End If
+        intartistId = gvArtist.Rows(0).Cells(5).Text
 
 
+        DBSongs.SelectASongwithTitleandArtist(txtSong.Text, intartistId)
+        If DBSongs.mySongView1.Count > 0 Then
+            lblError.Text = "Song with same artist already exists"
+            Exit Sub
+        End If
 
-        dbSong.AddSong(txtSong.Text, txtDescription.Text, artistID, txtPrice.Text, albumID, strFeature)
-        lblError.Text = "song added"
+        DBAlbum.GetAlbumFromTitle(txtAlbum.Text)
+
+        gvAlbum.DataSource = DBAlbum.myAlbumView1
+        gvAlbum.DataBind()
 
 
+        If DbAlbum.myAlbumView1.Count = 0 Then
+            dbSongs.AddSongwithNoAlbum(txtSong.Text, txtDescription.Text, intartistId, Convert.ToDecimal(txtPrice.Text), radFeatured.SelectedValue.ToString)
+        Else
+            intAlbumID = gvAlbum.Rows(0).Cells(8).Text
+            dbSongs.AddSong(txtSong.Text, txtDescription.Text, intartistId, Convert.ToDecimal(txtPrice.Text), intAlbumID, radFeatured.SelectedValue.ToString)
+        End If
 
+        lblError.Text = "Song has been added"
+        btnAdd.Visible = False
     End Sub
+
+    
 End Class

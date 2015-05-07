@@ -32,15 +32,6 @@ Partial Public Class EditProduct
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''btnRemovefrmAlbum control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnRemovefrmAlbum As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''btnSave control.
     '''</summary>
     '''<remarks>
@@ -48,15 +39,6 @@ Partial Public Class EditProduct
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnSave As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''btnBack control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnBack As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''btnAddSong control.
@@ -84,6 +66,24 @@ Partial Public Class EditProduct
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents gvArtist As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''gvAlbum control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvAlbum As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''gvSongs control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvSongs As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
     '''Label6 control.
@@ -149,7 +149,7 @@ Partial Public Class EditProduct
     Protected WithEvents txtSong As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''txtSong0 control.
+    '''txtDescription control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.

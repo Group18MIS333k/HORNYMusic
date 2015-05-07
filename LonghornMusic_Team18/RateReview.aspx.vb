@@ -25,12 +25,12 @@ Public Class RateReview
 
             If db.myView1.Count <> 0 Then
                 btnAdd.Visible = False
-                radRating.SelectedValue = db.myView1.Table.Rows(1).Item("rating").ToString
-                txtReview.Text = db.myView1.Table.Rows(1).Item("reviewcomments").ToString
+                gvReview.DataSource = db.myView1
+                gvReview.DataBind()
+                radRating.SelectedValue = gvReview.Rows(0).Cells(5).Text
+                txtReview.Text = gvReview.Rows(0).Cells(4).Text
                 'fill revew textbox with review from database
             End If
-            gvReview.DataSource = db.myView1
-            gvReview.DataBind()
         End If
 
 
@@ -53,6 +53,7 @@ Public Class RateReview
         lblError.Text = ""
         txtReview.Text = ""
 
+        db.ModifySongReview(10001, 2, txtReview.Text, radRating.SelectedValue.ToString)
         'add code to modify to database here
     End Sub
 
@@ -66,6 +67,7 @@ Public Class RateReview
             Exit Sub
         End If
 
+        db.AddSongReview(10001, 2, txtReview.Text, radRating.SelectedValue.ToString)
         'add coded to add to database
     End Sub
 

@@ -41,7 +41,7 @@ Partial Public Class EditArtist
     Protected WithEvents btnSave As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''btnAddSong control.
+    '''btnAddArtist control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
@@ -57,6 +57,15 @@ Partial Public Class EditArtist
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblError As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''gvArtist control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvArtist As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
     '''Label12 control.

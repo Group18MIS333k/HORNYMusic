@@ -66,6 +66,29 @@ Public Class AlbumClass
 
     End Sub
 
+    Public Sub GetAlbumFromTitle(strAlbumTitle As String)
+
+
+        SelectAllAlbums()
+        myAlbumView.RowFilter = "AlbumTitle = '" & strAlbumTitle & "'"
+
+
+        'sort filtered view
+
+
+    End Sub
+    Public Sub GetAlbumFromAlbumID(intAlbumID As Integer)
+
+
+        SelectAllAlbums()
+        myAlbumView.RowFilter = "AlbumTitle =" & intAlbumID
+
+
+        'sort filtered view
+
+
+    End Sub
+
     Public Sub AddAlbum(intArtistID As Integer, DecOriginalPrice As Decimal)
 
         'purpose create dataset with a SP that returns all customers and copy that dataset into a dataview

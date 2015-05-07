@@ -50,6 +50,24 @@ Partial Public Class AddArtist
     Protected WithEvents lblError As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''gvNewArtist control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvNewArtist As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''gvAlbum control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvAlbum As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
     '''Label12 control.
     '''</summary>
     '''<remarks>
@@ -77,6 +95,15 @@ Partial Public Class AddArtist
     Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Label18 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label18 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Label10 control.
     '''</summary>
     '''<remarks>
@@ -93,15 +120,6 @@ Partial Public Class AddArtist
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label13 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label14 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label14 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Label17 control.
@@ -147,6 +165,15 @@ Partial Public Class AddArtist
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtSong As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtSongDescription control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtSongDescription As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''txtAlbum control.
@@ -210,15 +237,6 @@ Partial Public Class AddArtist
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtPrice As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''txtDiscountPrice control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtDiscountPrice As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''radFeatured0 control.

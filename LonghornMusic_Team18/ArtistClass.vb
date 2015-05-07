@@ -68,6 +68,29 @@ Public Class ArtistClass
 
 
     End Sub
+    Public Sub SelectArtistwithArtistID(intArtistID As Integer)
+
+
+        SelectAllArtists()
+        myArtistView.RowFilter = "ArtistID =" & intArtistID
+
+
+        'sort filtered view
+
+
+    End Sub
+    Public Sub SelectNewArtist()
+
+
+        SelectAllArtists()
+        myArtistView.RowFilter = "Description is null"
+
+
+        'sort filtered view
+
+
+    End Sub
+
 
     Public Sub ModifyArtist(strArtistName As String, intArtistID As Integer, strDescription As String, strFlag As String)
 
@@ -75,16 +98,17 @@ Public Class ArtistClass
         Try
             'establich connection
             mdbConn = New SqlConnection(mstrConnection)
-            mdbDataAdapter = New SqlDataAdapter("usp_song_modify_by_manager", mdbConn)
+            mdbDataAdapter = New SqlDataAdapter("usp_artist_modify", mdbConn)
 
             'sets the command type to stored procedure
             mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
 
             'add oaraneter
 
-            ' mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@songtitle", strSongTitle))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@ArtistName", strArtistName))
             mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@description", strDescription))
             mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@artistID", intArtistID))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@FeaturedFlg", strFlag))
 
 
 
@@ -95,10 +119,10 @@ Public Class ArtistClass
             mDatasetArtist.Clear()
 
             'fill dataset with allcustomers
-            mdbDataAdapter.Fill(mDatasetArtist, "Songs")
+            mdbDataAdapter.Fill(mDatasetArtist, "Artists")
 
             'copy dataset to view
-            myArtistView.Table = mDatasetArtist.Tables("Songs")
+            myArtistView.Table = mDatasetArtist.Tables("Artists")
 
 
 
@@ -110,5 +134,44 @@ Public Class ArtistClass
         End Try
     End Sub
 
+    Public Sub AddArtist(strArtistName As String)
+
+        'purpose create dataset with a SP that returns all customers and copy that dataset into a dataview
+        Try
+            'establich connection
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_artist_add", mdbConn)
+
+            'sets the command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'add oaraneter
+
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@ArtistName", strArtistName))
+
+
+
+
+
+
+
+            'clear dataset
+            mDatasetArtist.Clear()
+
+            'fill dataset with allcustomers
+            mdbDataAdapter.Fill(mDatasetArtist, "Artists")
+
+            'copy dataset to view
+            myArtistView.Table = mDatasetArtist.Tables("Artists")
+
+
+
+
+
+
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
 
 End Class

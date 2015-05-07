@@ -20,13 +20,9 @@
     
         <br />
         <br />
-        <asp:Button ID="btnRemovefrmAlbum" runat="server" Text="Remove " Width="231px" />
         <br />
         <br />
         <asp:Button ID="btnSave" runat="server" Text="Save" Width="232px" CausesValidation="False" style="height: 26px" />
-        <br />
-        <br />
-        <asp:Button ID="btnBack" runat="server" Text="Back" Width="232px" />
         <br />
         <br />
         <asp:Button ID="btnAddSong" runat="server" Text="Add Song" Width="232px" />
@@ -41,11 +37,15 @@
 &nbsp;
         &nbsp;
         &nbsp;
-        <asp:GridView ID="gvArtist" runat="server">
+        <asp:GridView ID="gvArtist" runat="server" Visible="False">
         </asp:GridView>
         <br />
         <br />
+        <asp:GridView ID="gvAlbum" runat="server" Visible="False">
+        </asp:GridView>
         <br />
+        <asp:GridView ID="gvSongs" runat="server" Visible="False">
+        </asp:GridView>
         <br />
         <br />
     

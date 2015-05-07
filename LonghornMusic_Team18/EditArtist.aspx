@@ -32,6 +32,8 @@
         <br />
         &nbsp;&nbsp;&nbsp;
         <br />
+        <asp:GridView ID="gvArtist" runat="server">
+        </asp:GridView>
         <br />
 &nbsp;
         &nbsp;

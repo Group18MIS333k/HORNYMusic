@@ -24,18 +24,19 @@
         <asp:Button ID="btnAdd" runat="server" Text="Add" Width="232px" CausesValidation="False" style="height: 26px" />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
         <asp:Label ID="lblError" runat="server"></asp:Label>
         <br />
         &nbsp;&nbsp;&nbsp;
         <br />
+        <asp:GridView ID="gvNewArtist" runat="server" Visible="False">
+        </asp:GridView>
         <br />
 &nbsp;
         &nbsp;
         &nbsp;
         <br />
+        <asp:GridView ID="gvAlbum" runat="server" Visible="False">
+        </asp:GridView>
         <br />
         <br />
         <br />
@@ -62,6 +63,8 @@
         </strong><br />
         <asp:Label ID="Label6" runat="server" Text="Song Name"></asp:Label>
         &nbsp;<br />
+        <asp:Label ID="Label18" runat="server" Text="Description"></asp:Label>
+        <br />
         <asp:Label ID="Label10" runat="server" Text="Album Name"></asp:Label>
         <br />
         <asp:Label ID="Label13" runat="server" Text="Genre"></asp:Label>
@@ -71,8 +74,6 @@
         Genre 4<br />
         Genre5<br />
         Price<br />
-        <asp:Label ID="Label14" runat="server" Text="Discount Price"></asp:Label>
-        <br />
         <asp:Label ID="Label17" runat="server" Text="Featured"></asp:Label>
         <br />
         <br />
@@ -110,6 +111,10 @@
             <asp:TextBox ID="txtSong" runat="server" style="margin-top: 0px"></asp:TextBox>
        
             <br />
+       
+            <asp:TextBox ID="txtSongDescription" runat="server" style="margin-top: 0px"></asp:TextBox>
+       
+            <br />
             <asp:TextBox ID="txtAlbum" runat="server"></asp:TextBox>
             <br />
             <asp:TextBox ID="txtGenre1" runat="server"></asp:TextBox>
@@ -123,8 +128,6 @@
             <asp:TextBox ID="txtGenre5" runat="server"></asp:TextBox>
             <br />
             <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
-            <br />
-            <asp:TextBox ID="txtDiscountPrice" runat="server"></asp:TextBox>
             <br />
             <asp:RadioButtonList ID="radFeatured0" runat="server">
                 <asp:ListItem>Yes</asp:ListItem>
