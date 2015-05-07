@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class ManageCustomer
 
     '''<summary>
+    '''lnkEmpSpash control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lnkEmpSpash As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
     '''ddlCustomer control.
     '''</summary>
     '''<remarks>
@@ -120,6 +129,42 @@ Partial Public Class ManageCustomer
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtPhone As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtCCType1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtCCType1 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtCCN1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtCCN1 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtCCType2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtCCType2 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtCCN2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtCCN2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''btnDelete control.

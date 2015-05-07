@@ -101,17 +101,13 @@ Public Class ValidationClass
         Return False
 
     End Function
-    Public Function CheckState(strIN As String) As Boolean
+    Public Function CheckSSN(strIN As String) As Boolean
 
-        If strIN.Length <> 2 Then
-            Return False
-        End If
-
-        If CheckNotIntegers(strIN) = False Then
-            Return False
-        Else
+        If strIN.Length = 9 Then
             Return True
         End If
+        Return False
+
     End Function
     Public Function CheckInitial(strIN As String) As Boolean
 

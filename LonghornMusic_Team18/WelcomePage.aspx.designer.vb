@@ -14,24 +14,6 @@ Option Explicit On
 Partial Public Class WelcomePage
 
     '''<summary>
-    '''Head1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Head1 As Global.System.Web.UI.HtmlControls.HtmlHead
-
-    '''<summary>
-    '''form1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-
-    '''<summary>
     '''Label17 control.
     '''</summary>
     '''<remarks>
@@ -113,13 +95,13 @@ Partial Public Class WelcomePage
     Protected WithEvents lnkRegister As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''Panel1 control.
+    '''PanelAccount control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents PanelAccount As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
     '''lnkAccount control.

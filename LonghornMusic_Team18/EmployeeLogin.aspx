@@ -10,7 +10,7 @@
         <strong>Please Log In:</strong></p>
     <p style="font-size: medium; text-align: center">
         Employee ID:&nbsp;
-        <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtEmpID" runat="server"></asp:TextBox>
     </p>
     <p style="font-size: medium; text-align: center">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Password:&nbsp;
@@ -21,6 +21,8 @@
         <asp:Button ID="btnLogin" runat="server" Text="Login" Width="144px" />
     </p>
     <p style="font-size: medium; text-align: center">
+        Login Tries:
+        <asp:TextBox ID="txtCount" runat="server" Width="16px"></asp:TextBox>
         <asp:Label ID="lblError" runat="server" Text="[lblError]"></asp:Label>
     </p>
 

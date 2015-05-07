@@ -25,6 +25,7 @@
 #right
 {
 	position: relative;
+    float: right;
 	width: 44%;
     height: 400px;
     top: 0px;
@@ -62,9 +63,6 @@
     position: relative;
     float: left;
     width: 30%;
-    line-height: 23px;
-    top: 0px;
-    left: 4px;
     height: 400px;
 }		
 #price {

@@ -14,121 +14,13 @@ Option Explicit On
 Partial Public Class NewUserRegistration
 
     '''<summary>
-    '''Head1 control.
+    '''txtFirstName control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Head1 As Global.System.Web.UI.HtmlControls.HtmlHead
-
-    '''<summary>
-    '''form1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-
-    '''<summary>
-    '''Label3 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label6 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label10 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label10 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label5 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label9 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label9 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label11 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label11 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label12 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label12 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label13 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label13 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label14 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label14 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label15 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label15 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label16 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label16 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txtFirstName As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''txtLastName control.
@@ -140,33 +32,6 @@ Partial Public Class NewUserRegistration
     Protected WithEvents txtLastName As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''RequiredFieldValidator1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator1 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''txtFirstName control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtFirstName As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''RequiredFieldValidator2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
     '''txtInitial control.
     '''</summary>
     '''<remarks>
@@ -176,6 +41,15 @@ Partial Public Class NewUserRegistration
     Protected WithEvents txtInitial As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''txtEmail control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtEmail As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''txtPassword control.
     '''</summary>
     '''<remarks>
@@ -183,15 +57,6 @@ Partial Public Class NewUserRegistration
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtPassword As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''RequiredFieldValidator4 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator4 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''txtAddress control.
@@ -230,33 +95,6 @@ Partial Public Class NewUserRegistration
     Protected WithEvents txtZip As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''txtEmail control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtEmail As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''RequiredFieldValidator5 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator5 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''RegularExpressionValidator1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RegularExpressionValidator1 As Global.System.Web.UI.WebControls.RegularExpressionValidator
-
-    '''<summary>
     '''txtPhone control.
     '''</summary>
     '''<remarks>
@@ -266,6 +104,42 @@ Partial Public Class NewUserRegistration
     Protected WithEvents txtPhone As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''txtCCType1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtCCType1 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtCCN1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtCCN1 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtCCType2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtCCType2 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtCCN2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtCCN2 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''lblError control.
     '''</summary>
     '''<remarks>
@@ -273,33 +147,6 @@ Partial Public Class NewUserRegistration
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblError As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''TextBox1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TextBox2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''TextBox3 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents TextBox3 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''btnRegister control.

@@ -14,13 +14,13 @@ Option Explicit On
 Partial Public Class EmployeeLogin
 
     '''<summary>
-    '''txtEmail control.
+    '''txtEmpID control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtEmail As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtEmpID As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''txtPassword control.
@@ -39,6 +39,15 @@ Partial Public Class EmployeeLogin
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnLogin As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''txtCount control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtCount As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''lblError control.

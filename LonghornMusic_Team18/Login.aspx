@@ -17,9 +17,10 @@
     </p>
     <p style="font-size: medium; text-align: center">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnLogin" runat="server" Text="Login" Width="144px" />
+        <asp:Button ID="btnLogin" runat="server" Text="Login" Width="144px" style="height: 26px" />
     </p>
     <p style="font-size: medium; text-align: center">
+        Login Tries:<asp:TextBox ID="txtCount" runat="server" Width="16px" ReadOnly="True"></asp:TextBox>
         <asp:Label ID="lblError" runat="server" Text="[lblError]"></asp:Label>
     </p>
 
