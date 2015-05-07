@@ -1,11 +1,5 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/site1.Master" CodeBehind="AccountInfo.aspx.vb" Inherits="LonghornMusic_Team18.AccountInfo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<body>
-    <form id="form1" runat="server">
     <div id ="banner">
     
         <asp:Label ID="Label3" runat="server" Font-Size="XX-Large" Text="Account Information"></asp:Label>    
@@ -75,8 +69,5 @@
   
         </div>
 
-       
-    </form>
-</body>
-</html>
+
 </asp:Content>
