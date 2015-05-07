@@ -161,6 +161,20 @@
       <DependentUpon>AccountInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="AddAlbum.aspx.designer.vb">
+      <DependentUpon>AddAlbum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddAlbum.aspx.vb">
+      <DependentUpon>AddAlbum.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AddArtist.aspx.designer.vb">
+      <DependentUpon>AddArtist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddArtist.aspx.vb">
+      <DependentUpon>AddArtist.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="AddSong.aspx.designer.vb">
       <DependentUpon>AddSong.aspx</DependentUpon>
     </Compile>
@@ -168,6 +182,14 @@
       <DependentUpon>AddSong.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="AddSongtoexistingAlbum.aspx.designer.vb">
+      <DependentUpon>AddSongtoexistingAlbum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddSongtoexistingAlbum.aspx.vb">
+      <DependentUpon>AddSongtoexistingAlbum.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AlbumClass.vb" />
     <Compile Include="AlbumDetail.aspx.designer.vb">
       <DependentUpon>AlbumDetail.aspx</DependentUpon>
     </Compile>
@@ -196,6 +218,13 @@
     </Compile>
     <Compile Include="EditAlbum.aspx.vb">
       <DependentUpon>EditAlbum.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="EditArtist.aspx.designer.vb">
+      <DependentUpon>EditArtist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditArtist.aspx.vb">
+      <DependentUpon>EditArtist.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="EditSong.aspx.designer.vb">
@@ -318,8 +347,12 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <Content Include="AddAlbum.aspx" />
+    <Content Include="AddArtist.aspx" />
     <Content Include="AddSong.aspx" />
+    <Content Include="AddSongtoexistingAlbum.aspx" />
     <Content Include="EditAlbum.aspx" />
+    <Content Include="EditArtist.aspx" />
     <Content Include="EditSong.aspx" />
     <Content Include="packages.config" />
     <Content Include="RateReview.aspx" />

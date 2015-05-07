@@ -20,6 +20,10 @@
                         <b>Artist:</b><asp:Label ID="LblArtistName" runat="server"></asp:Label>
                         <br />
                         <br />
+                        <br />
+                        <asp:Button ID="btnEdit" runat="server" Text="Edit; Manager Only" Width="145px" />
+                        <br />
+                        <br />
                         <b>Album List:</b><br />
                         <asp:GridView ID="gvAlbumList" runat="server">
                             <Columns>

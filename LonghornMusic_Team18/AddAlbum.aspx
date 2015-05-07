@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="EditSong.aspx.vb" Inherits="LonghornMusic_Team18.EditProduct" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AddAlbum.aspx.vb" Inherits="LonghornMusic_Team18.AddAlbum" %>
 
 <!DOCTYPE html>
 
@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
     <div id ="banner">
     
-        Edit Song<br />
+        Add Album<br />
     
     </div>
 
@@ -20,29 +20,56 @@
     
         <br />
         <br />
-        <asp:Button ID="btnRemovefrmAlbum" runat="server" Text="Remove " Width="231px" />
+        <br />
+        <asp:Button ID="btnAdd" runat="server" Text="Add" Width="232px" CausesValidation="False" style="height: 26px" Enabled="False" />
         <br />
         <br />
-        <asp:Button ID="btnSave" runat="server" Text="Save" Width="232px" CausesValidation="False" style="height: 26px" />
-        <br />
-        <br />
-        <asp:Button ID="btnBack" runat="server" Text="Back" Width="232px" />
-        <br />
-        <br />
-        <asp:Button ID="btnAddSong" runat="server" Text="Add Song" Width="232px" />
-        <br />
+        <asp:Button ID="btnHome" runat="server" Text="Go Home" Visible="False" Width="233px" />
         <br />
         <br />
         <asp:Label ID="lblError" runat="server"></asp:Label>
         <br />
-        &nbsp;&nbsp;&nbsp;
+        &nbsp;<asp:Label ID="lblalbum" runat="server" Text="Label" Visible="False"></asp:Label>
+        &nbsp;&nbsp;
+        <br />
+        <asp:Label ID="lblartist" runat="server" Text="Label" Visible="False"></asp:Label>
+        <br />
+        <br />
+        <asp:GridView ID="GridView1" runat="server" Visible="False">
+        </asp:GridView>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <asp:Label ID="lblArtistSearch" runat="server" Text="Artist Search"></asp:Label>
+        <br />
+        <asp:TextBox ID="txtArtistSearch" runat="server"></asp:TextBox>
+&nbsp;&nbsp;
+        <asp:Button ID="btnSearchArtist" runat="server" Text="Search Artist" Width="116px" />
+        <br />
+        <asp:GridView ID="gvArtistSearch" runat="server" style="margin-top: 0px">
+            <Columns>
+                <asp:CommandField ShowSelectButton="True" />
+            </Columns>
+        </asp:GridView>
+        <br />
+        <asp:Label ID="lblPickSongs" runat="server" Text="Pick Songs:"></asp:Label>
+        <br />
+        <asp:GridView ID="gvSongs" runat="server">
+            <Columns>
+                <asp:CommandField SelectText="Add Song" ShowSelectButton="True" />
+            </Columns>
+        </asp:GridView>
         <br />
         <br />
 &nbsp;
         &nbsp;
         &nbsp;
-        <asp:GridView ID="gvArtist" runat="server">
-        </asp:GridView>
         <br />
         <br />
         <br />
@@ -57,19 +84,12 @@
         <link href="LoginStyleSheet.css" rel="stylesheet" />
         <br />
         <br />
-        &nbsp;<asp:Label ID="Label6" runat="server" Text="Song Name"></asp:Label>
-        &nbsp;<br />
-        Description<br />
+        &nbsp;&nbsp;<br />
         <asp:Label ID="Label10" runat="server" Text="Album Name"></asp:Label>
         <br />
+        Description<br />
         <asp:Label ID="Label12" runat="server" Text="Artist"></asp:Label>
         <br />
-        <asp:Label ID="Label13" runat="server" Text="Genre"></asp:Label>
-        1<br />
-        Genre2<br />
-        Genre3<br />
-        Genre 4<br />
-        Genre5<br />
         Price<br />
         <asp:Label ID="Label14" runat="server" Text="Discount Price"></asp:Label>
         <br />
@@ -99,30 +119,16 @@
             <br />
             <br />
        
-            <asp:TextBox ID="txtSong" runat="server" style="margin-top: 0px"></asp:TextBox>
-       
-            <br />
-       
-            <asp:TextBox ID="txtDescription" runat="server" style="margin-top: 0px"></asp:TextBox>
-       
             <br />
             <asp:TextBox ID="txtAlbum" runat="server"></asp:TextBox>
             <br />
-            <asp:TextBox ID="txtArtist" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtDescription" runat="server"></asp:TextBox>
             <br />
-            <asp:TextBox ID="txtGenre1" runat="server"></asp:TextBox>
-            <br />
-            <asp:TextBox ID="txtGenre2" runat="server"></asp:TextBox>
-            <br />
-            <asp:TextBox ID="txtGenre3" runat="server"></asp:TextBox>
-            <br />
-            <asp:TextBox ID="txtGenre4" runat="server"></asp:TextBox>
-            <br />
-            <asp:TextBox ID="txtGenre5" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtArtist" runat="server" ReadOnly="True"></asp:TextBox>
             <br />
             <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
             <br />
-            <asp:TextBox ID="txtDiscountPrice" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtDiscountPrice" runat="server">0</asp:TextBox>
             <br />
             <asp:RadioButtonList ID="radFeatured" runat="server">
                 <asp:ListItem>Yes</asp:ListItem>
@@ -145,5 +151,3 @@
     </form>
 </body>
 </html>
-
-

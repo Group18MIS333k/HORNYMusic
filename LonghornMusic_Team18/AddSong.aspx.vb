@@ -11,30 +11,18 @@
     Protected Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         'add validations
         'get variable name based on clicked song 
-        Dim intsongID As Integer = 356
+
         Dim artistID As Integer = 48
         Dim albumID As Integer = 23
-        Dim strFeature As String = "n"
-        Dim intAverage As Integer = 0
-        Dim intnotcust As Integer = 0
+        Dim strFeature As String
 
+        strFeature = radFeatured.SelectedValue.ToString
         If txtSong.Text = "" Then
             lblError.Text = "Please enter proper Song Title"
             Exit Sub
         End If
-        If txtAlbum.Text = "" Then
-            lblError.Text = "Album Title Required"
-            Exit Sub
-        End If
-        If txtArtist.Text = "" Then
-            lblError.Text = "Artist Title Required"
-            Exit Sub
-        End If
-        If txtGenre1.Text = "" Then
-            lblError.Text = "Genre Required"
-            Exit Sub
-        End If
-        If dbvalidations.Checkfordigits(txtPrice.Text) = False Then
+
+        If txtPrice.Text = "" Then
             lblError.Text = "Please enter proper Price"
             Exit Sub
         End If
@@ -53,17 +41,22 @@
             Exit Sub
         End If
 
+        'initialize artistID here
+
         'check that song is not duplicate
 
-        dbSong.SelectASongwithTitle(txtSong.Text, artistID)
-        If dbSong.mySongView1.Count > 0 Then
-            lblError.Text = "Song with same artist already exists"
-            Exit Sub
-        End If
+        dbSong.SelectASongwithTitleandArtist(txtSong.Text, artistID)
+        gvSong.DataSource = dbSong.mySongView1
+        gvSong.DataBind()
+
+        'If dbSong.mySongView1.Count > 0 Then
+        'lblError.Text = "Song with same artist already exists"
+        'Exit Sub
+        'End If
 
 
 
-        dbSong.AddSong(txtSong.Text, intsongID, txtDescription.Text, artistID, txtPrice.Text, txtDiscountPrice.Text, albumID, strFeature, intAverage, intnotcust)
+        dbSong.AddSong(txtSong.Text, txtDescription.Text, artistID, txtPrice.Text, albumID, strFeature)
         lblError.Text = "song added"
 
 

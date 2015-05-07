@@ -41,6 +41,24 @@ Partial Public Class EditAlbum
     Protected WithEvents btnSave As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''btnAddAlbum control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnAddAlbum As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Button1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''lblError control.
     '''</summary>
     '''<remarks>
@@ -77,15 +95,6 @@ Partial Public Class EditAlbum
     Protected WithEvents Label12 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label13 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label13 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''Label14 control.
     '''</summary>
     '''<remarks>
@@ -113,6 +122,15 @@ Partial Public Class EditAlbum
     Protected WithEvents txtAlbum As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''txtDescription control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtDescription As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''txtArtist control.
     '''</summary>
     '''<remarks>
@@ -120,15 +138,6 @@ Partial Public Class EditAlbum
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtArtist As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''txtGenre control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtGenre As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''txtPrice control.

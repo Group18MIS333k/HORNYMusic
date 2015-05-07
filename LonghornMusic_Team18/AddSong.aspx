@@ -36,6 +36,8 @@
 &nbsp;
         &nbsp;
         &nbsp;
+        <asp:GridView ID="gvSong" runat="server">
+        </asp:GridView>
         <br />
         <br />
         <br />
@@ -117,8 +119,8 @@
             <asp:TextBox ID="txtDiscountPrice" runat="server"></asp:TextBox>
             <br />
             <asp:RadioButtonList ID="radFeatured" runat="server">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem Selected="True">No</asp:ListItem>
+                <asp:ListItem Value="Y">Yes</asp:ListItem>
+                <asp:ListItem Selected="True" Value="N">No</asp:ListItem>
             </asp:RadioButtonList>
             <br />
             <br />

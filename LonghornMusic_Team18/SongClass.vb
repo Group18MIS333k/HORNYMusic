@@ -68,7 +68,7 @@ Public Class SongClass
     End Sub
 
 
-    Public Sub SelectASongwithTitle(strSongTitle As String, intArtistID As Integer)
+    Public Sub SelectASongwithTitleandArtist(strSongTitle As String, intArtistID As Integer)
 
 
         SelectAllSongs()
@@ -80,7 +80,28 @@ Public Class SongClass
 
     End Sub
 
-    Public Sub AddSong(strSongTitle As String, intSongID As Integer, strDescription As String, intArtistID As Integer, decOriginalPrice As Decimal, decDiscountPrice As Decimal, intAlbumID As Integer, strFlag As String, decRating As Decimal, intNoCustRate As Integer)
+
+    Public Sub SelectASongwithAlbumandTitle(strSOngtitle As String, intAlbumID As Integer)
+
+
+        SelectAllSongs()
+        mysongView.RowFilter = "SongTitle = '" & strSOngtitle & "' and AlbumID = ' " & intAlbumID & "'"
+        'mysongView.RowFilter = "AlbumID =" & intAlbumID
+
+        'sort filtered view
+
+
+    End Sub
+
+
+
+    Public Sub SelectSongsbyArtist(intArtistID As Integer)
+        SelectAllSongs()
+        mysongView.RowFilter = "ArtistID =" & intArtistID
+
+    End Sub
+
+    Public Sub AddSong(strSongTitle As String, strDescription As String, intArtistID As Integer, decOriginalPrice As Decimal, intAlbumID As Integer, strFlag As String)
 
         'purpose create dataset with a SP that returns all customers and copy that dataset into a dataview
         Try
@@ -92,16 +113,14 @@ Public Class SongClass
             mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
 
             'add oaraneter
-            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@songid", intSongID))
+
             mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@songtitle", strSongTitle))
             mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@description", strDescription))
             mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@artistID", intArtistID))
             mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@OriginalPrice", decOriginalPrice))
-            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@DiscountPrice", decDiscountPrice))
             mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@AlbumID", intAlbumID))
             mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@FeaturedFlg", strFlag))
-            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@AverageRatingNBR", decRating))
-            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@NoCustRate", intNoCustRate))
+
 
 
 
@@ -156,6 +175,52 @@ Public Class SongClass
             Throw New Exception("error is " & ex.Message)
         End Try
     End Sub
+
+    Public Sub ModifySong(strSongTitle As String, strDescription As String, intArtistID As Integer, decOriginalPrice As Decimal, intAlbumID As Integer, strFlag As String, decDiscountPrice As Decimal, intSongID As Integer)
+
+        'purpose create dataset with a SP that returns all customers and copy that dataset into a dataview
+        Try
+            'establich connection
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_song_modify_by_manager", mdbConn)
+
+            'sets the command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'add oaraneter
+
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@songtitle", strSongTitle))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@description", strDescription))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@artistID", intArtistID))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@OriginalPrice", decOriginalPrice))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@AlbumID", intAlbumID))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@FeaturedFlg", strFlag))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@SongID", intSongID))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@DiscountPrice", decDiscountPrice))
+
+
+
+
+
+            'clear dataset
+            mDatasetSong.Clear()
+
+            'fill dataset with allcustomers
+            mdbDataAdapter.Fill(mDatasetSong, "Songs")
+
+            'copy dataset to view
+            mysongView.Table = mDatasetSong.Tables("Songs")
+
+
+
+
+
+
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+
 
 
 End Class

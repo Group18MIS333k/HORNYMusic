@@ -5,4 +5,7 @@
 
     End Sub
 
+    Protected Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        Response.Redirect("editalbum.aspx")
+    End Sub
 End Class

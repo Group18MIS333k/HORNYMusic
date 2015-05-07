@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class AddSong
+Partial Public Class AddArtist
 
     '''<summary>
     '''Head1 control.
@@ -50,13 +50,22 @@ Partial Public Class AddSong
     Protected WithEvents lblError As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''gvSong control.
+    '''Label12 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents gvSong As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents Label12 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Label15 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label15 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Label6 control.
@@ -77,15 +86,6 @@ Partial Public Class AddSong
     Protected WithEvents Label10 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label12 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label12 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''Label13 control.
     '''</summary>
     '''<remarks>
@@ -104,22 +104,22 @@ Partial Public Class AddSong
     Protected WithEvents Label14 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label15 control.
+    '''Label17 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label15 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Label17 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''txtSong control.
+    '''txtArtist control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtSong As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtArtist As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''txtDescription control.
@@ -131,6 +131,24 @@ Partial Public Class AddSong
     Protected WithEvents txtDescription As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''radFeatured control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents radFeatured As Global.System.Web.UI.WebControls.RadioButtonList
+
+    '''<summary>
+    '''txtSong control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtSong As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''txtAlbum control.
     '''</summary>
     '''<remarks>
@@ -138,15 +156,6 @@ Partial Public Class AddSong
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtAlbum As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''txtArtist control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtArtist As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''txtGenre1 control.
@@ -212,11 +221,11 @@ Partial Public Class AddSong
     Protected WithEvents txtDiscountPrice As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''radFeatured control.
+    '''radFeatured0 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents radFeatured As Global.System.Web.UI.WebControls.RadioButtonList
+    Protected WithEvents radFeatured0 As Global.System.Web.UI.WebControls.RadioButtonList
 End Class

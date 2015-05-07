@@ -68,6 +68,15 @@ Partial Public Class AlbumDetail
     Protected WithEvents gvTrackList As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
+    '''btnEdit control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnEdit As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''lblPrice control.
     '''</summary>
     '''<remarks>

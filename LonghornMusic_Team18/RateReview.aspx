@@ -34,13 +34,11 @@
         <br />
         &nbsp;&nbsp;&nbsp;
         <br />
-        <asp:Button ID="Button1" runat="server" Text="Email" />
         <br />
 &nbsp;
         &nbsp;
         &nbsp;
         <br />
-        <asp:Button ID="Button2" runat="server" Text="Checkout" />
         <br />
         <br />
         <br />

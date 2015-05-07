@@ -106,6 +106,10 @@ Public Class RateReviewCLass
 
     End Sub
 
+    'select count ratings from ratings where song id = x
+    'select avg ratings from ratings where song id = x
+
+
 
    
 

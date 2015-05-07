@@ -33,6 +33,10 @@
                             </Columns>
                         </asp:GridView>
                         
+                        <br />
+                        <asp:Button ID="btnEdit" runat="server" Text="Edit; Manager Only" Width="147px" />
+                        <br />
+                        
     </div>         
             
     <div id="RightDesc">

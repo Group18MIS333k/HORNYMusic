@@ -17,7 +17,7 @@
         Dim strArtistName As String = "test artist"
         Dim strSongname As String = "testing code"
         Dim artistId As String
-
+        Dim strFlag As String
         artistId = 0
 
         DBArtist.SelectArtist(strArtistName)
@@ -33,20 +33,21 @@
         'DBArtist.myArtistview1.Table.Rows(0).Item("artistID")
 
 
+        strFlag = radFeatured.SelectedValue.ToString
 
 
         'check that song is not duplicate
 
-        DBSongs.SelectASongwithTitle(strSongname, artistId)
+        DBSongs.SelectASongwithTitleandArtist(strSongname, artistId)
         If DBSongs.mySongView1.Count > 0 Then
             lblError.Text = "Song with same artist already exists"
             Exit Sub
         End If
 
 
+        'add code to modify song
 
-
-
+        DBSongs.ModifySong(txtSong.Text, txtDescription.Text, "artistid", Convert.ToDecimal(txtPrice.Text), "albumID", strFlag, Convert.ToDecimal(txtDiscountPrice.Text), "songID")
 
 
 
@@ -75,5 +76,9 @@
         lblError.Text = "song removed"
 
 
+    End Sub
+
+    Protected Sub btnAddSong_Click(sender As Object, e As EventArgs) Handles btnAddSong.Click
+        Response.Redirect("addsong.aspx")
     End Sub
 End Class
