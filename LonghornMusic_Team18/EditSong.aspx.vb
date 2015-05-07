@@ -1,8 +1,8 @@
 ﻿Public Class EditProduct
     Inherits System.Web.UI.Page
 
-    Dim DBSongs As New SongClass
-    Dim DBArtist As New ArtistClass
+    Dim DBSongs As New SongClassDB
+    Dim DBArtist As New ArtistClassDB
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'get information of song from db and selected value from the gridview
 

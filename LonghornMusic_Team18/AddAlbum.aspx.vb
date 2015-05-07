@@ -1,10 +1,10 @@
 ﻿Public Class AddAlbum
     Inherits System.Web.UI.Page
 
-    Dim dbArtist As New ArtistClass
-    Dim dbsong As New SongClass
+    Dim dbArtist As New ArtistClassDB
+    Dim dbsong As New SongClassDB
     Dim martistID As Integer
-    Dim dbAlbum As New AlbumClass
+    Dim dbAlbum As New AlbumClassDB
     Dim malbumID As Integer
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 

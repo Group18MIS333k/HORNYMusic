@@ -18,6 +18,28 @@ Public Class ValidationClass
         End If
         Return decCheck
     End Function
+    Public Function CheckDecimalwNull(strInput As String) As Decimal
+        'declare vairables 
+        Dim decResult As Decimal
+
+        'Try/Catch 
+        Try
+            decResult = Convert.ToDecimal(strInput)
+        Catch ex As Exception
+            Return -1
+        End Try
+
+        'Positive 
+        If decResult < 0 Then
+            Return -1
+        End If
+
+        If decResult = "" Then
+            Return 0
+        End If
+
+        Return decResult
+    End Function
     'Check Integer - Checks any Integer to be valid and positive
 
     Public Function CheckInteger(strCheck As String) As Integer

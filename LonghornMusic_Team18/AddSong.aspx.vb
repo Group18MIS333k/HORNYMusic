@@ -1,8 +1,8 @@
 ﻿Public Class AddSong
     Inherits System.Web.UI.Page
 
-    Dim dbSong As New SongClass
-    Dim dbArtist As New ArtistClass
+    Dim dbSong As New SongClassDB
+    Dim dbArtist As New ArtistClassDB
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
     End Sub

@@ -1,8 +1,8 @@
 ﻿Public Class EditAlbum
     Inherits System.Web.UI.Page
 
-    Dim DBSong As New SongClass
-    Dim DBAlbum As New AlbumClass
+    Dim DBSong As New SongClassDB
+    Dim DBAlbum As New AlbumClassDB
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim albumid As Integer = 2
 
