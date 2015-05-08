@@ -1054,9 +1054,9 @@ Image1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.AlbumDetail.LblAlbumName">
+</member><member name="F:LonghornMusic_Team18.AlbumDetail.gvAlbumDescription">
 	<summary>
-LblAlbumName control.
+gvAlbumDescription control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -1094,17 +1094,17 @@ lblPrice control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.AlbumDetail.lblAlbumDescription">
+</member><member name="F:LonghornMusic_Team18.AlbumDetail.lblRatingsNReviews">
 	<summary>
-lblAlbumDescription control.
+lblRatingsNReviews control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.AlbumDetail.lblRatingsNReviews">
+</member><member name="F:LonghornMusic_Team18.AlbumDetail.gvAlbumRR">
 	<summary>
-lblRatingsNReviews control.
+gvAlbumRR control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -1134,9 +1134,9 @@ Image1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.ArtistDetail.LblArtistName">
+</member><member name="F:LonghornMusic_Team18.ArtistDetail.gvArtistDescription">
 	<summary>
-LblArtistName control.
+gvArtistDescription control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -1158,17 +1158,9 @@ gvSongList control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.ArtistDetail.lblArtistDescription">
+</member><member name="F:LonghornMusic_Team18.ArtistDetail.gvArtistRR">
 	<summary>
-lblArtistDescription control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.ArtistDetail.LblRatingsNReviews">
-	<summary>
-LblRatingsNReviews control.
+gvArtistRR control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -2230,6 +2222,14 @@ gvSong control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:LonghornMusic_Team18.Checkout.gvCart">
+	<summary>
+gvCart control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:LonghornMusic_Team18.Checkout.pnlInitialCheckout">
 	<summary>
 pnlInitialCheckout control.
@@ -2535,9 +2535,9 @@ Image1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.SongDetail.lblSongName">
+</member><member name="F:LonghornMusic_Team18.SongDetail.gvSongDescription">
 	<summary>
-lblSongName control.
+gvSongDescription control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -2575,9 +2575,9 @@ LnkAlbum control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.SongDetail.gvSongList">
+</member><member name="F:LonghornMusic_Team18.SongDetail.gvGenres">
 	<summary>
-gvSongList control.
+gvGenres control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -2591,17 +2591,9 @@ lblPrice control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.SongDetail.lblSongDescription">
+</member><member name="F:LonghornMusic_Team18.SongDetail.gvSongRR">
 	<summary>
-lblSongDescription control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.SongDetail.LblRatingsNReviews">
-	<summary>
-LblRatingsNReviews control.
+gvSongRR control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -2610,6 +2602,22 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:LonghornMusic_Team18.SongDetail.BtnAdd2Cart">
 	<summary>
 BtnAdd2Cart control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.SongDetail.btnLogin">
+	<summary>
+btnLogin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.SongDetail.gvAdd2Cart">
+	<summary>
+gvAdd2Cart control.
 </summary>
 	<remarks>
 Auto-generated field.

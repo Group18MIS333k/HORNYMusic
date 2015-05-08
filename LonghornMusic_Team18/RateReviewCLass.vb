@@ -26,6 +26,69 @@ Public Class RateReviewCLass
             Return mMyview
         End Get
     End Property
+    Public Sub GetArtistRatingReviews(ByVal intArtistID As Integer)
+        'morgan
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_artists_get_RatingReview", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@artistID", intArtistID))
+            'clear the dataset before filling
+            mDatasetRR.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetRR, "Ratings")
+            'fill dataview
+            mMyView.Table = mDatasetRR.Tables("Ratings")
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+    Public Sub GetAlbumRatingReviews(ByVal intAlbumID As Integer)
+        'morgan
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_album_get_RatingReview", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@albumID", intAlbumID))
+            'clear the dataset before filling
+            mDatasetRR.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetRR, "Ratings")
+            'fill dataview
+            mMyView.Table = mDatasetRR.Tables("Ratings")
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+    Public Sub GetSongRatingReviews(ByVal intSongID As Integer)
+        'morgan
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_song_get_RatingReview", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@SongID", intSongID))
+            'clear the dataset before filling
+            mDatasetRR.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetRR, "Ratings")
+            'fill dataview
+            mMyView.Table = mDatasetRR.Tables("Ratings")
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
 
 
     Public Sub SelectQuery(ByVal strQuery As String)

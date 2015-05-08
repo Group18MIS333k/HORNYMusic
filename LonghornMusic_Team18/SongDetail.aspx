@@ -18,7 +18,10 @@
     </div>
         
     <div id="LeftDesc">
-                        <b>Song:</b><asp:Label ID="lblSongName" runat="server"></asp:Label>
+                        <b>Song:<br />
+                        <asp:GridView ID="gvSongDescription" runat="server">
+                        </asp:GridView>
+                        </b>
                         <br />
                         <br />
                         <b>Artist:</b><asp:Label ID="LblArtistName" runat="server"></asp:Label>
@@ -31,8 +34,8 @@
                         <asp:LinkButton ID="LnkAlbum" runat="server" PostBackUrl="~/AlbumDetail.aspx">Go To Album</asp:LinkButton>
                         <br />
                         <br />
-                        <b>Song List:</b>                        
-                        <asp:GridView ID="gvSongList" runat="server">
+                        <b>Genres:</b>                        
+                        <asp:GridView ID="gvGenres" runat="server">
                         </asp:GridView>
     </div>         
 
@@ -40,14 +43,19 @@
         <b>Price:</b>
         <asp:Label ID="lblPrice" runat="server"></asp:Label>
         <br />
-        <br />
-        <b>Song Description:</b>
-        <asp:Label ID="lblSongDescription" runat="server"></asp:Label>
+       
         <br /><br />
         <b>Ratings & Reviews:</b>
-                        <asp:Label ID="LblRatingsNReviews" runat="server"></asp:Label>
+                        <br />
+        <asp:GridView ID="gvSongRR" runat="server">
+        </asp:GridView>
                         <br /><br />
                         <asp:Button ID="BtnAdd2Cart" runat="server" Text="Add To Cart" />
+
+        <br />
+        <asp:Button ID="btnLogin" runat="server" Text="Login" />
+        <asp:GridView ID="gvAdd2Cart" runat="server">
+        </asp:GridView>
 
     </div>
        

@@ -2,6 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p style="font-size: x-large; text-align: center">
         <strong>Checkout</strong></p>
+    <asp:GridView ID="gvCart" runat="server">
+    </asp:GridView>
     <br />
     <asp:Panel ID="pnlInitialCheckout" runat="server" Height="526px" Width="802px">
         <p style="font-size: medium; text-align: left">

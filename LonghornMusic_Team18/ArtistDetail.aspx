@@ -18,7 +18,10 @@
     </div>
         
     <div id="LeftDesc">
-                        <b>Artist:</b><asp:Label ID="LblArtistName" runat="server"></asp:Label>
+                        <b>Artist:<br />
+                        <asp:GridView ID="gvArtistDescription" runat="server">
+                        </asp:GridView>
+                        </b>
                         <br />
                         <br />
                         <b>Album List:</b><br />
@@ -39,11 +42,11 @@
 
     <div id="RightDesc">
 
-        <b>Artist Description:</b>
-        <asp:Label ID="lblArtistDescription" runat="server"></asp:Label>
-        <br /><br />
+    
         <b>Ratings & Reviews:</b>
-                        <asp:Label ID="LblRatingsNReviews" runat="server"></asp:Label>
+                        <br />
+        <asp:GridView ID="gvArtistRR" runat="server">
+        </asp:GridView>
 
     </div>
        

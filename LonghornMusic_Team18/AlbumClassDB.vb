@@ -138,6 +138,50 @@ Public Class AlbumClassDB
             Throw New Exception("error is " & ex.Message)
         End Try
     End Sub
+    Public Sub GetAlbumListByArtist(ByVal ArtistID As Integer)
+        Try
+            'establich connection
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_AllAlbums_ByArtist", mdbConn)
+
+            'sets the command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@artistID", ArtistID))
+            'clear dataset
+            mDatasetAlbum.Clear()
+
+            'fill dataset with allcustomers
+            mdbDataAdapter.Fill(mDatasetAlbum, "Albums")
+
+            'copy dataset to view
+            mMyAlbumView.Table = mDatasetAlbum.Tables("Albums")
+
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+    Public Sub GetAlbumDescription(ByVal ArtistID As Integer)
+        Try
+            'establich connection
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_album_get_description", mdbConn)
+
+            'sets the command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@albumID", ArtistID))
+            'clear dataset
+            mDatasetAlbum.Clear()
+
+            'fill dataset with allcustomers
+            mdbDataAdapter.Fill(mDatasetAlbum, "Albums")
+
+            'copy dataset to view
+            mMyAlbumView.Table = mDatasetAlbum.Tables("Albums")
+
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
 
     Public Sub AlbumGetAll()
         'morgan 

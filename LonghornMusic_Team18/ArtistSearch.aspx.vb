@@ -229,4 +229,12 @@ Public Class ArtistSearch
 
 
     End Sub
+
+    Protected Sub gvSearchResults_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvSearchResults.SelectedIndexChanged
+        Dim intArtistID As Integer
+        intArtistID = CInt(gvSearchResults.SelectedRow.Cells(2).Text)
+        Session("ArtistID") = intArtistID
+        Response.Redirect("~/ArtistDetail.aspx")
+
+    End Sub
 End Class

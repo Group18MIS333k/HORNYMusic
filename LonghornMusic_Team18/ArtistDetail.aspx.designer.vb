@@ -32,13 +32,13 @@ Partial Public Class ArtistDetail
     Protected WithEvents Image1 As Global.System.Web.UI.WebControls.Image
 
     '''<summary>
-    '''LblArtistName control.
+    '''gvArtistDescription control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LblArtistName As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents gvArtistDescription As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
     '''gvAlbumList control.
@@ -59,20 +59,11 @@ Partial Public Class ArtistDetail
     Protected WithEvents gvSongList As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
-    '''lblArtistDescription control.
+    '''gvArtistRR control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblArtistDescription As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''LblRatingsNReviews control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LblRatingsNReviews As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents gvArtistRR As Global.System.Web.UI.WebControls.GridView
 End Class

@@ -32,13 +32,13 @@ Partial Public Class SongDetail
     Protected WithEvents Image1 As Global.System.Web.UI.WebControls.Image
 
     '''<summary>
-    '''lblSongName control.
+    '''gvSongDescription control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblSongName As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents gvSongDescription As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
     '''LblArtistName control.
@@ -77,13 +77,13 @@ Partial Public Class SongDetail
     Protected WithEvents LnkAlbum As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''gvSongList control.
+    '''gvGenres control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents gvSongList As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents gvGenres As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
     '''lblPrice control.
@@ -95,22 +95,13 @@ Partial Public Class SongDetail
     Protected WithEvents lblPrice As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''lblSongDescription control.
+    '''gvSongRR control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblSongDescription As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''LblRatingsNReviews control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LblRatingsNReviews As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents gvSongRR As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
     '''BtnAdd2Cart control.
@@ -120,4 +111,22 @@ Partial Public Class SongDetail
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BtnAdd2Cart As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btnLogin control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnLogin As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''gvAdd2Cart control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvAdd2Cart As Global.System.Web.UI.WebControls.GridView
 End Class

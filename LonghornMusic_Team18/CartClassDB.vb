@@ -27,7 +27,7 @@ Public Class CartClassDB
             Return mMyView
         End Get
     End Property
-    Public Sub UseSPforInsertQuery(ByVal strUSPname As String, ByVal aryParamNames As ArrayList, ByVal aryParamValues As ArrayList)
+    Public Sub AddToCart(ByVal strUSPname As String, ByVal aryParamNames As ArrayList, ByVal aryParamValues As ArrayList)
         'Purpose: insert inputs into cart table 
         'argument: stored procedure name, array list of paramerter names, and araylist of parameter values
         'return: nothing 

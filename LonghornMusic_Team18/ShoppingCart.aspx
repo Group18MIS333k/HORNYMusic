@@ -9,7 +9,6 @@
         <asp:GridView ID="gvShoppingCart" runat="server">
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
-                <asp:CommandField ShowDeleteButton="True" />
             </Columns>
         </asp:GridView>
     </p>
