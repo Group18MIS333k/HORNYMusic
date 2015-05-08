@@ -9,17 +9,7 @@
     Public Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If IsPostBack = False Then
 
-            'load the grid
-            'get searched song info
-            SongDB.SelectAllSongs()
-
-
-            gvSongList.Visible = True
-            SongDB.mySongView1.RowFilter = "SongID = '1'"
-            'declare session variables 
-            Session("CountGoodSearches") = 0
-            DataBindStuff()
-
+            
             Dim intSongid = 1
             dbratereview.SearchReviewBySong(intSongid)
             gvComments.DataSource = dbratereview.myView1

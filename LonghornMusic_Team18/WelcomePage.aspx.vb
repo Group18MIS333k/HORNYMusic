@@ -1,5 +1,8 @@
 ﻿Public Class WelcomePage
     Inherits System.Web.UI.Page
+    Dim SongDB As New SongClassDB
+    Dim ArtistDB As New ArtistClassDB
+    Dim AlbumDB As New AlbumClassDB
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Session("EmpType") <> "" Or Session("CustID") <> "" Then
@@ -32,7 +35,44 @@
             lnkAccount.Visible = False
             lnkAccount.Enabled = False
         End If
+        If IsPostBack = False Then
+            GetFeatures()
+
+        End If
     End Sub
+    Public Sub GetFeatures()
+        'Featured Song
+        SongDB.GetFeaturedSong()
+        gvFeaturedSongs.DataSource = SongDB.SongDataset.Tables("Songs")
+        gvFeaturedSongs.DataSource = SongDB.mySongView1
+        gvFeaturedSongs.DataBind()
+
+        'Featured Artist
+        ArtistDB.GetFeaturedArtist()
+        gvFeaturedArtists.DataSource = ArtistDB.ArtistDataset.Tables("Artists")
+        gvFeaturedArtists.DataSource = ArtistDB.myArtistview1
+        gvFeaturedArtists.DataBind()
+
+        'Featured Album
+        AlbumDB.GetFeaturedAlbum()
+        gvFeaturedAlbums.DataSource = AlbumDB.AlbumDataset.Tables("Albums")
+        gvFeaturedAlbums.DataSource = AlbumDB.myAlbumView1
+        gvFeaturedAlbums.DataBind()
+
+        'Discounted Song
+        SongDB.SelectDiscountedSongs()
+        gvDiscountedSongs.DataSource = SongDB.SongDataset.Tables("Songs")
+        gvDiscountedSongs.DataSource = SongDB.mySongView1
+        gvDiscountedSongs.DataBind()
+
+        'Discounted Album
+        AlbumDB.SelectDiscountedAlbum()
+        gvDiscountedAlbums.DataSource = AlbumDB.AlbumDataset.Tables("Albums")
+        gvDiscountedAlbums.DataSource = AlbumDB.myAlbumView1
+        gvDiscountedAlbums.DataBind()
+ 
+    End Sub
+
 
     Protected Sub lnkLogout_Click(sender As Object, e As EventArgs) Handles lnkLogout.Click
         'Reset Session Variables

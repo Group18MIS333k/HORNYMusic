@@ -56,6 +56,7 @@ Public Class SongClassDB
             Throw New Exception("error is " & ex.Message)
         End Try
     End Sub
+
     Public Sub SelectSongfromSongID(intSongid As Integer)
 
 
@@ -66,6 +67,7 @@ Public Class SongClassDB
 
 
     End Sub
+
     Public Sub GetAllSongsinAlbum(intAlbumID As Integer)
 
 
@@ -79,25 +81,13 @@ Public Class SongClassDB
 
     Public Sub GetFeaturedSong()
 
+        SelectFeaturedSongs()
 
-        SelectAllSongs()
-        mysongView.RowFilter = "FeaturedFlg = 'Y'"
-
-        'sort filtered view
 
 
     End Sub
 
-    Public Sub GetDiscountSong()
 
-
-        SelectAllSongs()
-        mysongView.RowFilter = "DiscountPrice > 0"
-
-        'sort filtered view
-
-
-    End Sub
 
     Public Sub SelectASongwithTitleandArtist(strSongTitle As String, intArtistID As Integer)
 
@@ -172,6 +162,7 @@ Public Class SongClassDB
             Throw New Exception("error is " & ex.Message)
         End Try
     End Sub
+
     Public Sub AddSongwithNoAlbum(strSongTitle As String, strDescription As String, intArtistID As Integer, decOriginalPrice As Decimal, strFlag As String)
 
         'purpose create dataset with a SP that returns all customers and copy that dataset into a dataview
@@ -212,6 +203,7 @@ Public Class SongClassDB
             Throw New Exception("error is " & ex.Message)
         End Try
     End Sub
+
     Public Sub RemoveSong(ByVal intSongID As Integer)
 
         'purpose create dataset with a SP that returns all customers and copy that dataset into a dataview
@@ -334,6 +326,53 @@ Public Class SongClassDB
         End Try
     End Sub
 
+    Public Sub SelectFeaturedSongs()
+
+        Try
+            'establich connection
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_getfeatured_song", mdbConn)
+
+            'sets the command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'clear dataset
+            mDatasetSong.Clear()
+
+            'fill dataset with allcustomers
+            mdbDataAdapter.Fill(mDatasetSong, "Songs")
+
+            'copy dataset to view
+            mysongView.Table = mDatasetSong.Tables("Songs")
+
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+
+    Public Sub SelectDiscountedSongs()
+
+        Try
+            'establich connection
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_DiscountedSongs_GetALL", mdbConn)
+
+            'sets the command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'clear dataset
+            mDatasetSong.Clear()
+
+            'fill dataset with allcustomers
+            mdbDataAdapter.Fill(mDatasetSong, "Songs")
+
+            'copy dataset to view
+            mysongView.Table = mDatasetSong.Tables("Songs")
+
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
 
 End Class
 

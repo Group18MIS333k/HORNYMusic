@@ -10,7 +10,6 @@
         ' If Session("CustID") Is Nothing Then
         'Response.Redirect("Login.aspx")
         '  End If
-        Session("CustID") = 10005
         intCommentID = Session("CommentID")
         dbratereview.SearchReviewByComment(intCommentID)
         gvComments.DataSource = dbratereview.myView1
@@ -57,7 +56,11 @@
 
         Dim NumVotes As Integer
         intCommentID = Session("CommentID")
-        NumVotes = CInt(gvComments.Rows(0).Cells(6).Text)
+        If gvComments.Rows(0).Cells(6).Text = "&nbsp;" Then
+            NumVotes = 0
+        Else
+            NumVotes = CInt(gvComments.Rows(0).Cells(6).Text)
+        End If
         NumVotes = (NumVotes + 1)
         If (intPrevote = -1) Then
             NumVotes = (NumVotes + 1)
@@ -99,4 +102,5 @@
     Protected Sub btnBack_Click(sender As Object, e As EventArgs)
 
     End Sub
+
 End Class

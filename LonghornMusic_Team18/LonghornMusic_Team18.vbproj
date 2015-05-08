@@ -314,19 +314,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="MyMusic.aspx.designer.vb">
-      <DependentUpon>MyMusic.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="MyMusic.aspx.vb">
-      <DependentUpon>MyMusic.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="MyMusicPage.aspx.designer.vb">
       <DependentUpon>MyMusicPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="MyMusicPage.aspx.vb">
       <DependentUpon>MyMusicPage.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NewEmployee.aspx.designer.vb">
       <DependentUpon>NewEmployee.aspx</DependentUpon>
@@ -475,7 +468,6 @@
     <Content Include="LoginStyleSheet.css" />
     <Content Include="ManageCustomer.aspx" />
     <Content Include="MasterPageStyleSheet.css" />
-    <Content Include="MyMusic.aspx" />
     <Content Include="NewUserRegistration.aspx" />
     <Content Include="ShoppingCart.aspx" />
     <Content Include="SongDetail.aspx" />

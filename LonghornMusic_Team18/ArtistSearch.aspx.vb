@@ -179,6 +179,11 @@ Public Class ArtistSearch
         'count of how many elements are in the view after sort
         lblRecords.Text = gvSearchResults.Rows.Count.ToString
     End Sub
+    Protected Sub ResultGrid_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles gvSearchResults.RowDataBound
+
+        e.Row.Cells(2).Visible = False
+
+    End Sub
 
     Protected Sub ddlSort_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlSort.SelectedIndexChanged
 
@@ -215,9 +220,9 @@ Public Class ArtistSearch
         Next
         If genresSearch.Length > 0 Then
             genresSearch = genresSearch.Substring(0, genresSearch.Length - 4)
-            search.MyView.RowFilter = "AvgRatingNBR > '" & decRatingLower & "' AND avgRatingNBR < '" & decRatingUpper & "' AND " & genresSearch
+            search.MyView.RowFilter = "AvgRatingNBR >= '" & decRatingLower & "' AND avgRatingNBR <= '" & decRatingUpper & "' AND" & genresSearch
         Else
-            search.MyView.RowFilter = "AvgRatingNBR > '" & decRatingLower & "' AND avgRatingNBR < '" & decRatingUpper & "'"
+            search.MyView.RowFilter = "AvgRatingNBR >= '" & decRatingLower & "' AND avgRatingNBR <= '" & decRatingUpper & "'"
         End If
     End Sub
     'Public Sub SearchGenres()
@@ -248,4 +253,8 @@ Public Class ArtistSearch
 
 
     'End Sub
+
+    Protected Sub gvSearchResults_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvSearchResults.SelectedIndexChanged
+
+    End Sub
 End Class

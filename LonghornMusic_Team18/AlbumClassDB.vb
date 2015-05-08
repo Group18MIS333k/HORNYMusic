@@ -252,22 +252,61 @@ Public Class AlbumClassDB
     End Sub
     Public Sub GetFeaturedAlbum()
 
-        SelectAllAlbums()
-        mMyAlbumView.RowFilter = "FeaturedFlg = 'Y'"
+        SelectFeaturedAlbum()
 
-        'sort filtered view
 
 
     End Sub
 
-    Public Sub GetDiscountAlbum()
 
+    Public Sub SelectFeaturedAlbum()
+        'peter
+        'use SP to get all albums
+        Try
+            'establich connection
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_getfeatured_album", mdbConn)
 
-        SelectAllAlbums()
-        mMyAlbumView.RowFilter = "DiscountPrice > 0"
+            'sets the command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
 
-        'sort filtered view
+            'clear dataset
+            mDatasetAlbum.Clear()
 
+            'fill dataset with allcustomers
+            mdbDataAdapter.Fill(mDatasetAlbum, "Albums")
 
+            'copy dataset to view
+            mMyAlbumView.Table = mDatasetAlbum.Tables("Albums")
+
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
     End Sub
+
+    Public Sub SelectDiscountedAlbum()
+        'peter
+        'use SP to get all albums
+        Try
+            'establich connection
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_DiscountedAlbums_getall", mdbConn)
+
+            'sets the command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'clear dataset
+            mDatasetAlbum.Clear()
+
+            'fill dataset with allcustomers
+            mdbDataAdapter.Fill(mDatasetAlbum, "Albums")
+
+            'copy dataset to view
+            mMyAlbumView.Table = mDatasetAlbum.Tables("Albums")
+
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+
 End Class

@@ -79,6 +79,24 @@ Public Class RateReviewCLass
 
 
     End Sub
+    Public Sub SearchReviewByAlbum(ByVal intSongID As Integer)
+        'establish connection
+
+        SelectAllReviews()
+        myView.RowFilter = "AlbumID =" & intSongID
+        'sort filtered view
+
+
+    End Sub
+    Public Sub SearchReviewByArtist(ByVal intSongID As Integer)
+        'establish connection
+
+        SelectAllReviews()
+        myView.RowFilter = "Artistid =" & intSongID
+        'sort filtered view
+
+
+    End Sub
 
     Public Sub ModifySongReview(intCustID As Integer, intSongID As Integer, strReview As String, strRating As String)
 

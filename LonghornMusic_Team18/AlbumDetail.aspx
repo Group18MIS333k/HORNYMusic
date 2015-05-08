@@ -33,6 +33,12 @@
                             </Columns>
                         </asp:GridView>
                         
+                        <asp:GridView ID="gvComments" runat="server">
+                            <Columns>
+                                <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Vote" ShowHeader="True" Text="Vote" />
+                            </Columns>
+                        </asp:GridView>
+                        
     </div>         
             
     <div id="RightDesc">

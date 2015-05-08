@@ -5,7 +5,7 @@
                 <asp:Label ID="Label4" runat="server" Text="Music Search" Font-Size="larger"></asp:Label>
                 <br />
                 <asp:LinkButton ID="lnkSongs" runat="server" PostBackUrl="~/SearchSong.aspx">Songs</asp:LinkButton>    &nbsp;  
-                <asp:LinkButton ID="LnkArtists" runat="server">Artists</asp:LinkButton>                &nbsp;
+                <asp:LinkButton ID="LnkArtists" runat="server" PostBackUrl="~/ArtistSearch.aspx">Artists</asp:LinkButton>                &nbsp;
                 <asp:LinkButton ID="LnkAlbums" runat="server" Enabled="False">Albums</asp:LinkButton>
             </div>
 

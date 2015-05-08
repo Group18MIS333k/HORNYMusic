@@ -32,15 +32,6 @@ Partial Public Class WelcomePage
     Protected WithEvents gvFeaturedSongs As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
-    '''Label19 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label19 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''gvFeaturedAlbums control.
     '''</summary>
     '''<remarks>
@@ -48,6 +39,33 @@ Partial Public Class WelcomePage
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents gvFeaturedAlbums As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''gvFeaturedArtists control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvFeaturedArtists As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''gvDiscountedSongs control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvDiscountedSongs As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''gvDiscountedAlbums control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvDiscountedAlbums As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
     '''PanelLogin control.

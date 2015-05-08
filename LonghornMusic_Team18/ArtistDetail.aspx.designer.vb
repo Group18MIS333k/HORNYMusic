@@ -59,6 +59,15 @@ Partial Public Class ArtistDetail
     Protected WithEvents gvSongList As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
+    '''gvComments control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvComments As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
     '''lblArtistDescription control.
     '''</summary>
     '''<remarks>
