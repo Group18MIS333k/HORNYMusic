@@ -6,7 +6,7 @@
         'get session variable from artist detail
         'SESSION
         If IsPostBack = False Then
-            Dim artistID As Integer = 68
+            Dim artistID As Integer = Session("ArtistID")
 
             DBartists.SelectArtistwithArtistID(artistID)
             gvArtist.DataSource = DBartists.myArtistview1
@@ -36,7 +36,7 @@
 
         'get artist ID from artist details page
         'SESSIONs
-        DBartists.ModifyArtist(txtArtist.Text, 68, txtDescription.Text, radFeatured.SelectedValue.ToString)
+        DBartists.ModifyArtist(txtArtist.Text, Session("ArtistID"), txtDescription.Text, radFeatured.SelectedValue.ToString)
 
         lblError.Text = "artist has been modified"
     End Sub

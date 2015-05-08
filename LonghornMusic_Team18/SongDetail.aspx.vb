@@ -20,7 +20,7 @@
             Session("CountGoodSearches") = 0
             DataBindStuff()
 
-            Dim intSongid = 1
+            Dim intSongid = Session("SongID")
             dbratereview.SearchReviewBySong(intSongid)
             gvComments.DataSource = dbratereview.myView1
             gvComments.DataBind()

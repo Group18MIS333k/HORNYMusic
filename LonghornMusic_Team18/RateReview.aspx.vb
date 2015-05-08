@@ -15,14 +15,12 @@ Public Class RateReview
 
         If IsPostBack = False Then
             'SESSION'
-            Dim custid As Integer
+            Dim custid As Integer = Session("CustID")
 
             If Session("RateType") = "Song" Then
                 'Session
 
-                Dim songid As Integer
-                custid = 10001
-                songid = 2
+                Dim songid As Integer = Session("SongID")
                 db.SearchReviewByCustIDandSongID(custid, songid)
                 If db.myView1.Count = 0 Then
                     btnSave.Visible = False
@@ -41,9 +39,8 @@ Public Class RateReview
             If Session("RateType") = "Artist" Then
                 'Session
 
-                Dim artistid As Integer
-                custid = 10001
-                Artistid = 2
+                Dim artistid As Integer = Session("ArtistID")
+
                 db.SearchReviewByCustIDandArtistID(custid, artistid)
                 If db.myView1.Count = 0 Then
                     btnSave.Visible = False
@@ -62,9 +59,8 @@ Public Class RateReview
             If Session("RateType") = "Album" Then
                 'Session
 
-                Dim albumid As Integer
-                custid = 10001
-                albumid = 2
+                Dim albumid As Integer = Session("AlbumID")
+
                 db.SearchReviewByCustIDandALbumID(custid, albumid)
                 If db.myView1.Count = 0 Then
                     btnSave.Visible = False
@@ -93,24 +89,24 @@ Public Class RateReview
             Exit Sub
         End If
 
-        If Session("ratetype") = "song" Then
+        If Session("RateType") = "Song" Then
             'SESSION
-            db.ModifySongReview(10001, 2, txtReview.Text, radRating.SelectedValue.ToString)
+            db.ModifySongReview(Session("CustID"), Session("SongID"), txtReview.Text, radRating.SelectedValue.ToString)
             lblError.Text = "song has been modified"
             btnSave.Visible = False
             btnDelete.Visible = False
         End If
 
-        If Session("ratetype") = "artist" Then
+        If Session("RateType") = "Artist" Then
             'SESSION
-            db.ModifyArtistReview(10001, 2, txtReview.Text, radRating.SelectedValue.ToString)
+            db.ModifyArtistReview(Session("CustID"), Session("ArtistID"), txtReview.Text, radRating.SelectedValue.ToString)
             lblError.Text = "artist has been modified"
             btnSave.Visible = False
             btnDelete.Visible = False
         End If
-        If Session("ratetype") = "Album" Then
+        If Session("RateType") = "Album" Then
             'SESSION
-            db.ModifyAlbumReview(10001, 2, txtReview.Text, radRating.SelectedValue.ToString)
+            db.ModifyAlbumReview(Session("CustID"), Session("AlbumID"), txtReview.Text, radRating.SelectedValue.ToString)
             lblError.Text = "Album has been modified"
             btnSave.Visible = False
             btnDelete.Visible = False
@@ -123,23 +119,23 @@ Public Class RateReview
         lblError.Text = ""
         txtReview.Text = ""
 
-        If Session("ratetype") = "song" Then
-            db.ModifySongReview(10001, 2, txtReview.Text, radRating.SelectedValue.ToString)
+        If Session("RateType") = "Song" Then
+            db.ModifySongReview(Session("CustID"), Session("SongID"), txtReview.Text, radRating.SelectedValue.ToString)
             lblError.Text = "review has been deleted"
             btnDelete.Visible = False
             btnAdd.Visible = False
             btnSave.Visible = False
         End If
-        If Session("ratetype") = "artist" Then
-            db.ModifyArtistReview(10001, 2, txtReview.Text, radRating.SelectedValue.ToString)
+        If Session("RateType") = "Artist" Then
+            db.ModifyArtistReview(Session("CustID"), Session("ArtistID"), txtReview.Text, radRating.SelectedValue.ToString)
             lblError.Text = "review has been deleted"
             btnDelete.Visible = False
             btnAdd.Visible = False
             btnSave.Visible = False
         End If
 
-        If Session("ratetype") = "album" Then
-            db.ModifyAlbumReview(10001, 2, txtReview.Text, radRating.SelectedValue.ToString)
+        If Session("RateType") = "Album" Then
+            db.ModifyAlbumReview(Session("CustID"), Session("AlbumID"), txtReview.Text, radRating.SelectedValue.ToString)
             lblError.Text = "review has been deleted"
             btnDelete.Visible = False
             btnAdd.Visible = False
@@ -160,26 +156,26 @@ Public Class RateReview
             Exit Sub
         End If
 
-        If Session("ratetype") = "song" Then
+        If Session("RateType") = "Song" Then
             'session
-            db.AddSongReview(10001, 2, txtReview.Text, radRating.SelectedValue.ToString)
+            db.AddSongReview(Session("CustID"), Session("SongID"), txtReview.Text, radRating.SelectedValue.ToString)
             lblError.Text = "review has been added"
             btnAdd.Visible = False
             btnDelete.Visible = False
             'add coded to add to database
         End If
 
-        If Session("ratetype") = "artist" Then
+        If Session("RateType") = "Artist" Then
             'session
-            db.AddArtistReview(10001, 2, txtReview.Text, radRating.SelectedValue.ToString)
+            db.AddArtistReview(Session("CustID"), Session("ArtistID"), txtReview.Text, radRating.SelectedValue.ToString)
             lblError.Text = "review has been added"
             btnAdd.Visible = False
             btnDelete.Visible = False
             'add coded to add to database
         End If
-        If Session("ratetype") = "Album" Then
+        If Session("RateType") = "Album" Then
             'session
-            db.AddAlbumReview(10001, 2, txtReview.Text, radRating.SelectedValue.ToString)
+            db.AddAlbumReview(Session("CustID"), Session("AlbumID"), txtReview.Text, radRating.SelectedValue.ToString)
             lblError.Text = "review has been added"
             btnAdd.Visible = False
             btnDelete.Visible = False

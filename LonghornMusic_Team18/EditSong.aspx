@@ -85,11 +85,11 @@
         </asp:GridView>
         <asp:GridView ID="gvAlbum" runat="server" Visible="False">
         </asp:GridView>
-        <asp:GridView ID="gvArtist" runat="server">
+        <asp:GridView ID="gvArtist" runat="server" Visible="False">
         </asp:GridView>
        
     
-        <asp:GridView ID="gvSongs" runat="server">
+        <asp:GridView ID="gvSongs" runat="server" Visible="False">
         </asp:GridView>
        
     

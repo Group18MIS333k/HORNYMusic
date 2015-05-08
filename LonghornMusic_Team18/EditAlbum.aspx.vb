@@ -7,7 +7,7 @@
     Dim dbvalidations As New ValidationClass
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'SESSION
-        Dim albumid As Integer = 2
+        Dim albumid As Integer = Session("AlbumID")
         Dim intartistID As Integer
 
         DBSong.GetAllSongsinAlbum(albumid)
@@ -49,7 +49,7 @@
         'get intsongid from the selected song list
         Dim intSongID As Integer
         'SESSSION
-        Dim albumid As Integer = 2
+        Dim albumid As Integer = Session("AlbumID")
         intSongID = gvSongList.SelectedRow.Cells(2).Text
 
 
@@ -101,7 +101,7 @@
         End If
 
 
-        DBAlbum.ModifyAlbum(txtAlbum.Text, txtDescription.Text, radFeatured.SelectedValue.ToString, Convert.ToDecimal(txtPrice.Text), decDiscountprice, "intalbumID")
+        DBAlbum.ModifyAlbum(txtAlbum.Text, txtDescription.Text, radFeatured.SelectedValue.ToString, Convert.ToDecimal(txtPrice.Text), decDiscountprice, Session("AlbumID"))
 
     End Sub
 

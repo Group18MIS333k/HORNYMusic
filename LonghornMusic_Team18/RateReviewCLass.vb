@@ -95,6 +95,24 @@ Public Class RateReviewCLass
 
 
     End Sub
+    Public Sub SearchReviewByArtist(ByVal intArtistID As Integer)
+        'establish connection
+
+        SelectAllReviews()
+        myView.RowFilter = "Artistid =" & intArtistID
+        'sort filtered view
+
+
+    End Sub
+    Public Sub SearchReviewByAlbum(ByVal intAlbumID As Integer)
+        'establish connection
+
+        SelectAllReviews()
+        myView.RowFilter = "Albumid =" & intAlbumID
+        'sort filtered view
+
+
+    End Sub
 
     Public Sub ModifySongReview(intCustID As Integer, intSongID As Integer, strReview As String, strRating As String)
 
@@ -102,7 +120,7 @@ Public Class RateReviewCLass
         Try
             'establich connection
             mdbConn = New SqlConnection(mstrConnection)
-            mdbDataAdapter = New SqlDataAdapter(" usp_ratings_modify_song", mdbConn)
+            mdbDataAdapter = New SqlDataAdapter("usp_ratings_modify_song", mdbConn)
 
             'sets the command type to stored procedure
             mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
@@ -182,7 +200,7 @@ Public Class RateReviewCLass
         Try
             'establich connection
             mdbConn = New SqlConnection(mstrConnection)
-            mdbDataAdapter = New SqlDataAdapter(" usp_Ratings_add_artist", mdbConn)
+            mdbDataAdapter = New SqlDataAdapter("usp_Ratings_add_artist", mdbConn)
 
             'sets the command type to stored procedure
             mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
@@ -222,7 +240,7 @@ Public Class RateReviewCLass
         Try
             'establich connection
             mdbConn = New SqlConnection(mstrConnection)
-            mdbDataAdapter = New SqlDataAdapter(" usp_Ratings_modify_artist", mdbConn)
+            mdbDataAdapter = New SqlDataAdapter("usp_Ratings_modify_artist", mdbConn)
 
             'sets the command type to stored procedure
             mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
@@ -262,7 +280,7 @@ Public Class RateReviewCLass
         Try
             'establich connection
             mdbConn = New SqlConnection(mstrConnection)
-            mdbDataAdapter = New SqlDataAdapter(" usp_Ratings_add_album", mdbConn)
+            mdbDataAdapter = New SqlDataAdapter("usp_Ratings_add_album", mdbConn)
 
             'sets the command type to stored procedure
             mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
@@ -302,7 +320,7 @@ Public Class RateReviewCLass
         Try
             'establich connection
             mdbConn = New SqlConnection(mstrConnection)
-            mdbDataAdapter = New SqlDataAdapter(" usp_Ratings_modify_album", mdbConn)
+            mdbDataAdapter = New SqlDataAdapter("usp_Ratings_modify_album", mdbConn)
 
             'sets the command type to stored procedure
             mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
