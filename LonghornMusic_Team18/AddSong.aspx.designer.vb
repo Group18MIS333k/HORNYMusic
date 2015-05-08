@@ -257,11 +257,29 @@ Partial Public Class AddSong
     Protected WithEvents lblError As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''gvSong control.
+    '''gvSongGenre control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents gvSong As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents gvSongGenre As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''gvArtist control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvArtist As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''gvAlbum control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvAlbum As Global.System.Web.UI.WebControls.GridView
 End Class

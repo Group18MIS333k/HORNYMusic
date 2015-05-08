@@ -257,15 +257,6 @@ Partial Public Class EditProduct
     Protected WithEvents radFeatured As Global.System.Web.UI.WebControls.RadioButtonList
 
     '''<summary>
-    '''btnRemovefrmAlbum control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnRemovefrmAlbum As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''btnSave control.
     '''</summary>
     '''<remarks>
@@ -273,15 +264,6 @@ Partial Public Class EditProduct
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnSave As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''btnBack control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnBack As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''btnAddSong control.
@@ -302,6 +284,24 @@ Partial Public Class EditProduct
     Protected WithEvents lblError As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''gvsonggenre control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvsonggenre As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''gvAlbum control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvAlbum As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
     '''gvArtist control.
     '''</summary>
     '''<remarks>
@@ -309,4 +309,13 @@ Partial Public Class EditProduct
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents gvArtist As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''gvSongs control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvSongs As Global.System.Web.UI.WebControls.GridView
 End Class

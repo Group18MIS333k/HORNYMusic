@@ -78,9 +78,13 @@
         <asp:Label ID="lblError" runat="server"></asp:Label>
         <br />
         <br />
-        <br />
-        <asp:GridView ID="gvSong" runat="server">
+        <asp:GridView ID="gvSongGenre" runat="server" Visible="False">
         </asp:GridView>
+    
+             <asp:GridView ID="gvArtist" runat="server" Visible="False">
+             </asp:GridView>
+             <asp:GridView ID="gvAlbum" runat="server">
+             </asp:GridView>
     
         </div>
 

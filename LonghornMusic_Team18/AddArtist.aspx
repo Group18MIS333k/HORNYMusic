@@ -21,10 +21,11 @@
         <br />
         <br />
         <br />
-        <strong>&nbsp;Song<br />
-        </strong><br />
+        <strong>&nbsp;Song</strong><br />
         <asp:Label ID="Label6" runat="server" Text="Song Name"></asp:Label>
         &nbsp;<br />
+        <asp:Label ID="Label18" runat="server" Text="Description"></asp:Label>
+        <br />
         <asp:Label ID="Label10" runat="server" Text="Album Name"></asp:Label>
         <br />
         <asp:Label ID="Label13" runat="server" Text="Genre 1"></asp:Label>
@@ -42,6 +43,8 @@
         <asp:Label ID="Label14" runat="server" Text="Discount Price"></asp:Label>
         <br />
         <asp:Label ID="Label17" runat="server" Text="Featured"></asp:Label>
+
+        <br />
 
     </div>
 
@@ -62,6 +65,10 @@
             <br />
        
             <asp:TextBox ID="txtSong" runat="server" style="margin-top: 0px"></asp:TextBox>
+       
+            <br />
+       
+            <asp:TextBox ID="txtSongDescription" runat="server" style="margin-top: 0px"></asp:TextBox>
        
             <br />
             <asp:TextBox ID="txtAlbum" runat="server"></asp:TextBox>
@@ -85,6 +92,8 @@
                 <asp:ListItem Selected="True">No</asp:ListItem>
             </asp:RadioButtonList>
 
+            <br />
+
         </div>
 
            <div id="left" style="height:auto">
@@ -92,6 +101,22 @@
         <br />
         <br />
         <asp:Label ID="lblError" runat="server"></asp:Label>
+               <br />
+               <asp:GridView ID="gvNewArtist" runat="server">
+               </asp:GridView>
+               <asp:GridView ID="gvAlbum" runat="server">
+               </asp:GridView>
+               <br />
+               <br />
+               <br />
+               <br />
+               <br />
+               <br />
+               <br />
+               <br />
+               <br />
+               <br />
+               <br />
         </div>
 
   

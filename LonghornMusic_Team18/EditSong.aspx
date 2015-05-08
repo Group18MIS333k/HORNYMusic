@@ -79,13 +79,9 @@
 
 
     <div id="left" style="height:auto">
-        <asp:Button ID="btnRemovefrmAlbum" runat="server" Text="Remove " Width="235px" />
         <br />
         <br />
         <asp:Button ID="btnSave" runat="server" Text="Save" Width="235px" CausesValidation="False" />
-        <br />
-        <br />
-        <asp:Button ID="btnBack" runat="server" Text="Back" Width="235px" />
         <br />
         <br />
         <asp:Button ID="btnAddSong" runat="server" Text="Add Song" Width="235px" />
@@ -93,8 +89,15 @@
         <br />
         <asp:Label ID="lblError" runat="server"></asp:Label>
         <br />
-        <br />
+        <asp:GridView ID="gvsonggenre" runat="server">
+        </asp:GridView>
+        <asp:GridView ID="gvAlbum" runat="server">
+        </asp:GridView>
         <asp:GridView ID="gvArtist" runat="server">
+        </asp:GridView>
+       
+    
+        <asp:GridView ID="gvSongs" runat="server">
         </asp:GridView>
        
     

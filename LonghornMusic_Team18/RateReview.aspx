@@ -30,11 +30,10 @@
         <br />
         <asp:Label ID="lblError" runat="server"></asp:Label>
         <br />
-        <br />
-        <br />
-
         <asp:GridView ID="gvReview" runat="server">
         </asp:GridView>
+        <br />
+        <br />
 
     
         </div>
@@ -68,10 +67,6 @@
                 <asp:ListItem Selected="True">5</asp:ListItem>
             </asp:RadioButtonList>
             <br />
-            Gift?<asp:RadioButtonList ID="radgift" runat="server">
-                <asp:ListItem>yes</asp:ListItem>
-                <asp:ListItem>no</asp:ListItem>
-            </asp:RadioButtonList>
            
         </div>
 

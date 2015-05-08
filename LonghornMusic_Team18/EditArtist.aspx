@@ -26,6 +26,16 @@
         <br />
         <asp:Label ID="lblError" runat="server"></asp:Label>
 
+        <br />
+        <br />
+        <asp:GridView ID="gvArtist" runat="server">
+        </asp:GridView>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
         </div>
 
     

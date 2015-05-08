@@ -68,6 +68,15 @@ Partial Public Class EditArtist
     Protected WithEvents lblError As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''gvArtist control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvArtist As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
     '''Label12 control.
     '''</summary>
     '''<remarks>

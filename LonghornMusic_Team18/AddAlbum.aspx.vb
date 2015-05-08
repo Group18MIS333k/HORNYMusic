@@ -6,6 +6,7 @@
     Dim martistID As Integer
     Dim dbAlbum As New AlbumClassDB
     Dim malbumID As Integer
+    Dim dbvalidations As New ValidationClass
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
         If IsPostBack = False Then
@@ -16,30 +17,33 @@
     End Sub
 
     Protected Sub btnSearchArtist_Click(sender As Object, e As EventArgs) Handles btnSearchArtist.Click
+        'see if artist exists
 
-        'search for artist
         dbArtist.SelectArtist(txtArtistSearch.Text)
 
-        'check if artist exists
         If dbArtist.myArtistview1.Count = 0 Then
             lblError.Text = "Artist doest not exist, please add artist first"
             Exit Sub
         End If
 
-        'bind data
+
         gvArtistSearch.DataSource = dbArtist.myArtistview1
+
         gvArtistSearch.DataBind()
+
+
+
+
     End Sub
 
     Public Sub gvArtistSearch_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvArtistSearch.SelectedIndexChanged
 
-        'declare original price as filler value, will later be changed
+
+
         Dim decOriginalPrice As Decimal = 0
 
-        'fill artist textbox with selected artist
         txtArtist.Text = gvArtistSearch.SelectedRow.Cells(1).Text
 
-        'get artist id from gridview
         martistID = gvArtistSearch.SelectedRow.Cells(6).Text
         lblArtistSearch.Visible = False
         txtArtistSearch.Visible = False
@@ -51,19 +55,21 @@
         lblPickSongs.Visible = True
         gvSongs.Visible = True
 
-        'get all songs by searched artist and bind to songs gridview
         dbsong.SelectSongsbyArtist(martistID)
 
         gvSongs.DataSource = dbsong.mySongView1
         gvSongs.DataBind()
 
 
+
+
         'create a new albumID fill with artist ID
-        dbAlbum.AddAlbum(martistID, decOriginalPrice)
-        lblError.Text = "new album added, please add at least one song"
 
 
         'get albumID by searching blank 
+        dbAlbum.AddAlbum(martistID, decOriginalPrice)
+        lblError.Text = "new album added, please add at least one song"
+
         dbAlbum.GetNewAlbumID()
 
         gvNewAlbum.DataSource = dbAlbum.myAlbumView1
@@ -78,8 +84,7 @@
     End Sub
 
     Public Sub gvSongs_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvSongs.SelectedIndexChanged
-        'declare variables to transfer song information
-
+        'check that song does not exist in album already
         Dim intsongID As Integer
         Dim strSongtitle As String
         Dim strDescription As String
@@ -89,17 +94,31 @@
         Dim intalbum As Integer
         Dim intartistID As Integer
 
+
         intalbum = lblalbum.Text
         intartistID = lblartist.Text
 
         strSongtitle = gvSongs.SelectedRow.Cells(1).Text
         strDescription = gvSongs.SelectedRow.Cells(2).Text
         decOriginalPrice = gvSongs.SelectedRow.Cells(4).Text
-        ' decDiscountPrice = gvSongs.SelectedRow.Cells(5).Text
-        strfeaturedFlg = gvSongs.SelectedRow.Cells(7).Text
-        intsongID = gvSongs.SelectedRow.Cells(10).Text
 
-        'Check that song does not exist in album already
+        If gvSongs.SelectedRow.Cells(5).Text Then
+            decDiscountPrice = 0.0
+        Else
+            decDiscountPrice = gvSongs.SelectedRow.Cells(5).Text
+        End If
+
+
+
+        If gvSongs.SelectedRow.Cells(7).Text = "&nbsp;" Then
+            strfeaturedFlg = "N"
+        Else
+            strfeaturedFlg = gvSongs.SelectedRow.Cells(7).Text
+        End If
+        strfeaturedFlg = gvSongs.SelectedRow.Cells(7).Text
+
+
+        intsongID = gvSongs.SelectedRow.Cells(10).Text
         dbsong.SelectASongwithAlbumandTitle(strSongtitle, intalbum)
 
         If dbsong.mySongView1.Count > 0 Then
@@ -109,25 +128,30 @@
 
 
 
-        'If song has an albumID, add a new song. If song has no album ID, modify the song record
-        If Convert.ToInt32(gvSongs.SelectedRow.Cells(6).Text) = 0 Then
+        'if sone has albumd id, add song, if not, modify
+        If gvSongs.SelectedRow.Cells(6).Text = "&nbsp;" Then
             'modify song
-            lblError.Text = "modify"
-            'dbsong.ModifySong(strSongtitle, strDescription, martistID, decOriginalPrice, malbumID, strfeaturedFlg, decDiscountPrice, intsongID)
+
+            dbsong.ModifySong(strSongtitle, strDescription, martistID, decOriginalPrice, intalbum, strfeaturedFlg, decDiscountPrice, intsongID)
         Else
-            'add sibg
-            dbsong.AddSong(strSongtitle, strDescription, intartistID, decOriginalPrice, intalbum, strfeaturedFlg)
+
+            dbsong.AddSong(strSongtitle, strDescription, intartistID, decOriginalPrice, decDiscountPrice, intalbum, strfeaturedFlg)
             lblError.Text = "song has been added"
         End If
 
-        'reload grid view to be able to add more songs
+
         dbsong.SelectSongsbyArtist(intartistID)
 
         gvSongs.DataSource = dbsong.mySongView1
         gvSongs.DataBind()
 
-        'when one song is added, allow user to add the rest of the album information
+
+
+
         btnAdd.Enabled = True
+
+        'add rest of information to album
+
 
     End Sub
 
@@ -138,7 +162,8 @@
         intalbum2 = lblalbum.Text
         intartistID = lblartist.Text
 
-        'validate fields
+
+
         If txtAlbum.Text = "" Then
             lblError.Text = "Enter Album Name"
             Exit Sub
@@ -149,20 +174,38 @@
             Exit Sub
         End If
 
-        If txtPrice.Text = "" Then
-            lblError.Text = "Enter Price"
+        If dbvalidations.CheckDecimal(txtPrice.Text) = -1 Then
+            lblError.Text = "Enter decimal Price"
             Exit Sub
         End If
 
-        If txtDiscountPrice.Text = "" Then
+        If dbvalidations.CheckDecimal(txtDiscountPrice.Text) = "" Then
             lblError.Text = "Enter Discount Price"
             Exit Sub
+        End If
+        If radFeatured.SelectedValue = "Y" Then
+            'check no other featured values
+            dbsong.GetFeaturedSong()
+            If dbsong.mySongView1.Count > 0 Then
+                lblError.Text = "Featured Song already exists"
+                Exit Sub
+            End If
+            dbArtist.GetFeaturedArtist()
+            If dbArtist.myArtistview1.Count > 0 Then
+                lblError.Text = "Featured Artist already exists"
+                Exit Sub
+            End If
+            dbAlbum.GetFeaturedAlbum()
+            If dbAlbum.myAlbumView1.Count > 0 Then
+                lblError.Text = "Featured album already exists"
+                Exit Sub
+            End If
         End If
 
         btnAdd.Visible = False
         gvSongs.Visible = False
 
-        'add the rest of the information to created album
+
         dbAlbum.ModifyAlbum(txtAlbum.Text, txtDescription.Text, radFeatured.SelectedValue.ToString, Convert.ToDecimal(txtPrice.Text), Convert.ToDecimal(txtDiscountPrice.Text), intalbum2)
         lblError.Text = "album has been added"
     End Sub
