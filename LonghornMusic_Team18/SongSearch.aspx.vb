@@ -417,12 +417,11 @@
         Next
         If genresSearch.Length > 0 Then
             genresSearch = genresSearch.Substring(0, genresSearch.Length - 4)
-            If decRatingLower > 0 And decRatingUpper > 0 Then
-                search.MyView.RowFilter = "AvgRatingNBR > '" & decRatingLower & "' AND avgRatingNBR < '" & decRatingUpper & "' AND " & genresSearch
-            Else
-                search.MyView.RowFilter = genresSearch
-            End If
+            search.MyView.RowFilter = "AvgRatingNBR > '" & decRatingLower & "' AND avgRatingNBR < '" & decRatingUpper & "' AND " & genresSearch
+        Else
+            search.MyView.RowFilter = "AvgRatingNBR > '" & decRatingLower & "' AND avgRatingNBR < '" & decRatingUpper & "'"
         End If
+
 
     End Sub
 End Class
