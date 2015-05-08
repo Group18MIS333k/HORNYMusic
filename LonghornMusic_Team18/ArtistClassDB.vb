@@ -34,10 +34,11 @@ Public Class ArtistClassDB
         End Get
     End Property
 
-    Public Sub SearchRatings(ByVal decRatingLower As Decimal, ByVal decRatingUpper As Decimal)
-        'morgan 
-        mMyView.RowFilter = "AvgRatingNBR > '" & decRatingLower & "' AND avgRatingNBR < '" & decRatingUpper & "'"
-    End Sub
+    'Public Sub SearchRatings(ByVal decRatingLower As Decimal, ByVal decRatingUpper As Decimal)
+    '    'morgan 
+    '    mMyView.RowFilter = "AvgRatingNBR > '" & decRatingLower & "' AND avgRatingNBR < '" & decRatingUpper & "'"
+    'End Sub
+
 
 
     Public Sub SelectAllArtists()

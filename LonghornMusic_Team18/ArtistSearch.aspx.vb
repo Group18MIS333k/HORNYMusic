@@ -68,8 +68,8 @@ Public Class ArtistSearch
             Exit Sub
         End Try
 
-        search.SearchRatings(mdecRatingLower, mdecRatingHigher)
-        SearchGenres()
+
+        SearchGenresAndRatings(mdecRatingLower, mdecRatingHigher)
         DataBindStuff()
 
 
@@ -146,8 +146,8 @@ Public Class ArtistSearch
             Exit Sub
         End Try
 
-        search.SearchRatings(mdecRatingLower, mdecRatingHigher)
-        SearchGenres()
+        SearchGenresAndRatings(mdecRatingLower, mdecRatingHigher)
+
         DataBindStuff()
 
 
@@ -201,32 +201,51 @@ Public Class ArtistSearch
         Me.cblGenres.DataBind()
 
     End Sub
-    Public Sub SearchGenres()
-
-
+    Public Sub SearchGenresAndRatings(ByVal decRatingLower As Decimal, ByVal decRatingUpper As Decimal)
 
         Dim genresSearch As String = ""
         Dim genreFilter As String = ""
-
-
-
-
         Dim genreItem As ListItem
         For Each genreItem In cblGenres.Items
             If genreItem.Selected Then
+                'genres.Add(cblGenres.SelectedValue.ToString)
                 genreFilter = "Genre = '" & genreItem.Text & "' OR "
                 genresSearch += genreFilter
             End If
         Next
-
-
         If genresSearch.Length > 0 Then
             genresSearch = genresSearch.Substring(0, genresSearch.Length - 4)
+            search.MyView.RowFilter = "AvgRatingNBR > '" & decRatingLower & "' AND avgRatingNBR < '" & decRatingUpper & "' AND " & genresSearch
+        Else
+            search.MyView.RowFilter = "AvgRatingNBR > '" & decRatingLower & "' AND avgRatingNBR < '" & decRatingUpper & "'"
         End If
-
-
-        search.MyView.RowFilter = genresSearch
-
-
     End Sub
+    'Public Sub SearchGenres()
+
+
+
+    '    Dim genresSearch As String = ""
+    '    Dim genreFilter As String = ""
+
+
+
+
+    '    Dim genreItem As ListItem
+    '    For Each genreItem In cblGenres.Items
+    '        If genreItem.Selected Then
+    '            genreFilter = "Genre = '" & genreItem.Text & "' OR "
+    '            genresSearch += genreFilter
+    '        End If
+    '    Next
+
+
+    '    If genresSearch.Length > 0 Then
+    '        genresSearch = genresSearch.Substring(0, genresSearch.Length - 4)
+    '    End If
+
+
+    '    search.MyView.RowFilter = genresSearch
+
+
+    'End Sub
 End Class

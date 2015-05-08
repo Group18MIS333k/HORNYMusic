@@ -27,10 +27,10 @@ Public Class AlbumClassDB
 
     End Property
 
-    Public Sub SearchRatings(ByVal decRatingLower As Decimal, ByVal decRatingUpper As Decimal)
-        'morgan
-        mMyView.RowFilter = "AvgRatingNBR > '" & decRatingLower & "' AND avgRatingNBR < '" & decRatingUpper & "'"
-    End Sub
+    'Public Sub SearchRatings(ByVal decRatingLower As Decimal, ByVal decRatingUpper As Decimal)
+    '    'morgan
+    '    mMyView.RowFilter = "AvgRatingNBR > '" & decRatingLower & "' AND avgRatingNBR < '" & decRatingUpper & "'"
+    'End Sub
     'THIS WILL RUN ALL THE PROCEDURES NECESSARY FROM THE ARTIST TABLE
     Public Sub AlbumSearchWithAnyParameters(ByVal strSPName As String, ByVal aryParamNames As ArrayList, ByVal aryParamValues As ArrayList)
         'purpose to run a stored procedure with one parameter

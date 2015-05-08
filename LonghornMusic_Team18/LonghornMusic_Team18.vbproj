@@ -320,6 +320,13 @@
       <DependentUpon>MyMusic.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="MyMusicPage.aspx.designer.vb">
+      <DependentUpon>MyMusicPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyMusicPage.aspx.vb">
+      <DependentUpon>MyMusicPage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="NewEmployee.aspx.designer.vb">
       <DependentUpon>NewEmployee.aspx</DependentUpon>
     </Compile>
@@ -359,6 +366,8 @@
     </Compile>
     <Compile Include="RateReviewCLass.vb" />
     <Compile Include="ReformatClass.vb" />
+    <Compile Include="SearchAlbumDB.vb" />
+    <Compile Include="SearchSongDB.vb" />
     <Compile Include="ShoppingCart.aspx.designer.vb">
       <DependentUpon>ShoppingCart.aspx</DependentUpon>
     </Compile>
@@ -379,13 +388,6 @@
     </Compile>
     <Compile Include="SongDetail.aspx.vb">
       <DependentUpon>SongDetail.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SongSearch.aspx.designer.vb">
-      <DependentUpon>SongSearch.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SongSearch.aspx.vb">
-      <DependentUpon>SongSearch.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Validationclass.vb" />
@@ -427,12 +429,12 @@
     <Content Include="EditSong.aspx" />
     <Content Include="EmployeeSplash.aspx" />
     <Content Include="ManageEmployees.aspx" />
+    <Content Include="MyMusicPage.aspx" />
     <Content Include="NewEmployee.aspx" />
     <Content Include="OrderDetail.aspx" />
     <Content Include="OrderHistory.aspx" />
     <Content Include="packages.config" />
     <Content Include="RateReview.aspx" />
-    <Content Include="SongSearch.aspx" />
     <Content Include="Web.config" />
     <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">

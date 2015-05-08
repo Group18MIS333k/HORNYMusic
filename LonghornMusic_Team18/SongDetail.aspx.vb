@@ -15,7 +15,7 @@
 
 
             gvSongList.Visible = True
-            SongDB.MyView.RowFilter = "SongID = '1'"
+            SongDB.mySongView1.RowFilter = "SongID = '1'"
             'declare session variables 
             Session("CountGoodSearches") = 0
             DataBindStuff()
@@ -35,7 +35,7 @@
         gvSongList.DataSource = SongDB.SongDataset.Tables("Songs")
 
         'bind gridview to myview based on sort 
-        gvSongList.DataSource = SongDB.MyView
+        gvSongList.DataSource = SongDB.mySongView1
         gvSongList.DataBind()
 
         'count of how many elements are in the view after sort
