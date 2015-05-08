@@ -102,7 +102,7 @@
         strDescription = gvSongs.SelectedRow.Cells(2).Text
         decOriginalPrice = gvSongs.SelectedRow.Cells(4).Text
 
-        If gvSongs.SelectedRow.Cells(5).Text Then
+        If gvSongs.SelectedRow.Cells(5).Text = "&nbsp;" Then
             decDiscountPrice = 0.0
         Else
             decDiscountPrice = gvSongs.SelectedRow.Cells(5).Text
@@ -115,7 +115,6 @@
         Else
             strfeaturedFlg = gvSongs.SelectedRow.Cells(7).Text
         End If
-        strfeaturedFlg = gvSongs.SelectedRow.Cells(7).Text
 
 
         intsongID = gvSongs.SelectedRow.Cells(10).Text
@@ -132,7 +131,7 @@
         If gvSongs.SelectedRow.Cells(6).Text = "&nbsp;" Then
             'modify song
 
-            dbsong.ModifySong(strSongtitle, strDescription, martistID, decOriginalPrice, intalbum, strfeaturedFlg, decDiscountPrice, intsongID)
+            dbsong.ModifySong(strSongtitle, strDescription, intartistID, decOriginalPrice, intalbum, strfeaturedFlg, decDiscountPrice, intsongID)
         Else
 
             dbsong.AddSong(strSongtitle, strDescription, intartistID, decOriginalPrice, decDiscountPrice, intalbum, strfeaturedFlg)
@@ -179,7 +178,7 @@
             Exit Sub
         End If
 
-        If dbvalidations.CheckDecimal(txtDiscountPrice.Text) = "" Then
+        If dbvalidations.CheckDecimal(txtDiscountPrice.Text) = -1 Then
             lblError.Text = "Enter Discount Price"
             Exit Sub
         End If
@@ -209,4 +208,6 @@
         dbAlbum.ModifyAlbum(txtAlbum.Text, txtDescription.Text, radFeatured.SelectedValue.ToString, Convert.ToDecimal(txtPrice.Text), Convert.ToDecimal(txtDiscountPrice.Text), intalbum2)
         lblError.Text = "album has been added"
     End Sub
+
+    
 End Class

@@ -61,10 +61,26 @@ Public Class RateReviewCLass
         End Try
     End Sub
 
-    Public Sub SearchReviewByCustIDandSongID(ByVal intCustID As Integer, ByVal intArtistID As Integer)
+    Public Sub SearchReviewByCustIDandArtistID(ByVal intCustID As Integer, ByVal intArtistID As Integer)
 
         SelectAllReviews()
         myView.RowFilter = "CustID = '" & intCustID & "' and SongID = ' " & intArtistID & "'"
+        'sort filtered view
+
+
+    End Sub
+    Public Sub SearchReviewByCustIDandALbumID(ByVal intCustID As Integer, ByVal intAlbumID As Integer)
+
+        SelectAllReviews()
+        myView.RowFilter = "CustID = '" & intCustID & "' and SongID = ' " & intAlbumID & "'"
+        'sort filtered view
+
+
+    End Sub
+    Public Sub SearchReviewByCustIDandSongID(ByVal intCustID As Integer, ByVal intSongID As Integer)
+
+        SelectAllReviews()
+        myView.RowFilter = "CustID = '" & intCustID & "' and SongID = ' " & intSongID & "'"
         'sort filtered view
 
 

@@ -57,8 +57,8 @@
             <asp:TextBox ID="txtDescription" runat="server"></asp:TextBox>
             <br />
             <asp:RadioButtonList ID="radFeatured" runat="server">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem Selected="True">No</asp:ListItem>
+                <asp:ListItem Value="Y">Yes</asp:ListItem>
+                <asp:ListItem Selected="True" Value="N">No</asp:ListItem>
             </asp:RadioButtonList>
             <br />
             <br />
@@ -102,9 +102,9 @@
         <br />
         <asp:Label ID="lblError" runat="server"></asp:Label>
                <br />
-               <asp:GridView ID="gvNewArtist" runat="server">
+               <asp:GridView ID="gvNewArtist" runat="server" Visible="False">
                </asp:GridView>
-               <asp:GridView ID="gvAlbum" runat="server">
+               <asp:GridView ID="gvAlbum" runat="server" Visible="False">
                </asp:GridView>
                <br />
                <br />

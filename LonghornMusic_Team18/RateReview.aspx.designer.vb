@@ -77,7 +77,7 @@ Partial Public Class RateReview
     Protected WithEvents lblError As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''GridView1 control.
+    '''gvReview control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.

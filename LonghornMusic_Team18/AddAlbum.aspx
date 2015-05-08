@@ -37,8 +37,6 @@
     </p>
 
     <p style="position: relative;float: left;width: 15%;text-align: left;line-height: 23px;height: auto;top: 0px;left: 0px"> 
-         <br />
-        <br />
         <br />
         <asp:Label ID="Label10" runat="server" Text="Album Name"></asp:Label>
         <br />
@@ -53,6 +51,8 @@
         <asp:Label ID="Label15" runat="server" Text="Featured"></asp:Label>
         <br />
          <br />
+         <br />
+         <br />
         <br />
         <asp:Label ID="lblError" runat="server"></asp:Label>
         <br />
@@ -63,8 +63,6 @@
     </p>
 
     <p style="position: relative;float: left;width: 30%;line-height: 23px;top: 0px;left: 4px;height: auto">
-            <br />
-            <br />
             <br />
             <asp:TextBox ID="txtAlbum" runat="server"></asp:TextBox>
             <br />
@@ -77,8 +75,8 @@
             <asp:TextBox ID="txtDiscountPrice" runat="server"></asp:TextBox>
             <br />
             <asp:RadioButtonList ID="radFeatured" runat="server">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem Selected="True">No</asp:ListItem>
+                <asp:ListItem Value="Y">Yes</asp:ListItem>
+                <asp:ListItem Selected="True" Value="N">No</asp:ListItem>
             </asp:RadioButtonList>
 
     </p>

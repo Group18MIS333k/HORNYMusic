@@ -3,15 +3,44 @@
 
     Dim DBSong As New SongClassDB
     Dim DBAlbum As New AlbumClassDB
+    Dim Dbartist As New ArtistClassDB
     Dim dbvalidations As New ValidationClass
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'SESSION
         Dim albumid As Integer = 2
+        Dim intartistID As Integer
 
         DBSong.GetAllSongsinAlbum(albumid)
 
         gvSongList.DataSource = DBSong.mySongView1
         gvSongList.DataBind()
+
+        DBAlbum.GetAlbumFromAlbumID(albumid)
+        gvAlbum.DataSource = DBAlbum.myAlbumView1
+        gvAlbum.DataBind()
+
+        txtAlbum.Text = gvAlbum.Rows(0).Cells(0).Text
+        txtDescription.Text = gvAlbum.Rows(0).Cells(1).Text
+        txtPrice.Text = gvAlbum.Rows(0).Cells(3).Text
+
+        If gvAlbum.Rows(0).Cells(4).Text = "&nbsp;" Then
+            txtDiscountPrice.Text = ""
+        Else
+            txtDiscountPrice.Text = gvAlbum.Rows(0).Cells(4).Text
+        End If
+
+        intartistID = gvAlbum.Rows(0).Cells(2).Text
+
+        Dbartist.SelectArtistwithArtistID(intartistID)
+        gvAlbum.DataSource = Dbartist.myArtistview1
+        gvAlbum.DataBind()
+
+        txtArtist.Text = gvAlbum.Rows(0).Cells(0).Text
+
+
+
+
+
 
     End Sub
 
