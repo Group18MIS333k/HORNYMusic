@@ -54,6 +54,7 @@
 
         <br />
         <asp:Button ID="btnLogin" runat="server" Text="Login" />
+        <asp:Button ID="btnDelete" runat="server" Text="Delete From Cart" />
         <asp:GridView ID="gvAdd2Cart" runat="server">
         </asp:GridView>
 

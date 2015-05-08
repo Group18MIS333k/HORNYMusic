@@ -5,6 +5,10 @@
     <asp:GridView ID="gvCart" runat="server">
     </asp:GridView>
     <br />
+    <br />
+    <asp:GridView ID="gvCustomer" runat="server">
+    </asp:GridView>
+    <br />
     <asp:Panel ID="pnlInitialCheckout" runat="server" Height="526px" Width="802px">
         <p style="font-size: medium; text-align: left">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Subtotal:

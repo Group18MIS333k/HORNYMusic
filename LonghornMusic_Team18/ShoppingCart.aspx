@@ -19,7 +19,7 @@
     </p>
     <p>
 &nbsp; Savings:
-        <asp:Label ID="LabelSavings" runat="server" Text="[lblDiscount]"></asp:Label>
+        <asp:Label ID="lblSavings" runat="server" Text="[lblDiscount]"></asp:Label>
     </p>
     <p>
 &nbsp;&nbsp;Tax @ 8.25%:

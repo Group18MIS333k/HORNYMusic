@@ -4,11 +4,26 @@
     Dim AlbumDB As New AlbumClassDB
     Dim SongDB As New SongClassDB
     Dim RRDB As New RateReviewCLass
+    Dim CartDB As New CartClassDB
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim intAlbumID As Integer = Session("AlbumID")
-        'If IsPostBack = False Then
 
-        intAlbumID = 4
+        If Session("CustID") <> "" Then
+            BtnAdd2Cart.Visible = True
+            btnLogin.Visible = False
+
+        Else
+            BtnAdd2Cart.Visible = False
+            btnLogin.Visible = True
+
+        End If
+
+        If Session("Cart") <> "" Then
+            BtnAdd2Cart.Visible = False
+            btnLogin.Visible = False
+            btnDelete.Visible = True
+        End If
+
         'load the grid
         'get searched song info
         'SongDB.SelectAllSongs()
@@ -30,6 +45,7 @@
         DataBindTrackGV()
         DataBindDescriptionGV()
         DataBindRatingReviewGV()
+        DataBindAdd2CartGV()
 
 
 
@@ -105,8 +121,71 @@
         'count of how many elements are in the view after sort
 
     End Sub
+    Public Sub DataBindAdd2CartGV()
+        'purpose: elimate duplicate code for everytime a view needs a databind 
+
+        'sort by the selected item 
+        'SongDB.DoSort(radSort.SelectedValue.ToString)
+
+        'sets gv to dataset &bind
+        gvAdd2Cart.DataSource = CartDB.CartDataset.Tables("Cart")
+
+        'bind gridview to myview based on sort 
+        gvAdd2Cart.DataSource = CartDB.MyView
+        gvAdd2Cart.DataBind()
+
+        'count of how many elements are in the view after sort
+
+    End Sub
 
     Protected Sub BtnAdd2Cart_Click(sender As Object, e As EventArgs) Handles BtnAdd2Cart.Click
+        Dim aryNames As New ArrayList
+        Dim aryValues As New ArrayList
+        Dim intcustID As Integer
+        intcustID = Session("CustID")
+
+        aryNames.Add("@custID")
+        aryNames.Add("@songID")
+        aryNames.Add("@albumID")
+        aryNames.Add("@originalPriceID")
+        aryNames.Add("@discountPriceID")
+
+
+        'check and make sure this is going to right grid view
+        For row = 0 To gvAdd2Cart.Rows.Count - 1
+            For cell = 0 To gvTrackList.Rows(row).Cells.Count - 1
+                aryValues.Add(intcustID)
+                aryValues.Add(gvTrackList.Rows(row).Cells(cell).Text)
+            Next
+        Next
+
+        CartDB.AddToCart("usp_cart_Add_Item", aryNames, aryValues)
+
+
+    End Sub
+
+    Protected Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        Dim aryNames As New ArrayList
+        Dim aryValues As New ArrayList
+        Dim intcustID As Integer
+        intcustID = Session("CustID")
+
+        aryNames.Add("@custID")
+        aryNames.Add("@songID")
+        aryNames.Add("@albumID")
+        aryNames.Add("@originalPriceID")
+        aryNames.Add("@discountPriceID")
+
+
+        For row = 0 To gvAdd2Cart.Rows.Count - 1
+            For cell = 0 To gvAdd2Cart.Rows(row).Cells.Count - 1
+                aryValues.Add(intcustID)
+                aryValues.Add(gvAdd2Cart.Rows(row).Cells(cell).Text)
+            Next
+        Next
+
+        CartDB.DeleteFromCart("usp_cart_Delete_Item", aryNames, aryValues)
+
 
     End Sub
 End Class

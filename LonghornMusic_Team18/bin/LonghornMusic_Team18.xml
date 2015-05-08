@@ -1118,6 +1118,30 @@ BtnAdd2Cart control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:LonghornMusic_Team18.AlbumDetail.btnLogin">
+	<summary>
+btnLogin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.AlbumDetail.btnDelete">
+	<summary>
+btnDelete control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.AlbumDetail.gvAdd2Cart">
+	<summary>
+gvAdd2Cart control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:LonghornMusic_Team18.ArtistDetail.Label3">
 	<summary>
 Label3 control.
@@ -2615,6 +2639,14 @@ btnLogin control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:LonghornMusic_Team18.SongDetail.btnDelete">
+	<summary>
+btnDelete control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:LonghornMusic_Team18.SongDetail.gvAdd2Cart">
 	<summary>
 gvAdd2Cart control.
@@ -2687,9 +2719,9 @@ lblSubtotal control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.ShoppingCart.LabelSavings">
+</member><member name="F:LonghornMusic_Team18.ShoppingCart.lblSavings">
 	<summary>
-LabelSavings control.
+lblSavings control.
 </summary>
 	<remarks>
 Auto-generated field.

@@ -369,7 +369,7 @@ Public Class SongClassDB
         Try
             'define dataconnection and data adapter
             mdbConn = New SqlConnection(mstrConnection)
-            mdbDataAdapter = New SqlDataAdapter("usp_song_get_Cart_Values", mdbConn)
+            mdbDataAdapter = New SqlDataAdapter("usp_song_get_CartValues", mdbConn)
             'sets command type to stored procedure
             mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
             mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@songID", intSongID))

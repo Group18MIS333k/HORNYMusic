@@ -107,4 +107,18 @@
         'count of how many elements are in the view after sort
 
     End Sub
+
+    Protected Sub gvAlbumList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvAlbumList.SelectedIndexChanged
+        Dim intAlbumID As Integer
+        intAlbumID = CInt(gvAlbumList.SelectedRow.Cells(0).Text)
+        Session("AlbumID") = intAlbumID
+        Response.Redirect("~/AlbumDetail.aspx")
+    End Sub
+
+    Protected Sub gvSongList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvSongList.SelectedIndexChanged
+        Dim intSongID As Integer
+        intSongID = CInt(gvSongList.SelectedRow.Cells(0).Text)
+        Session("AlbumID") = intSongID
+        Response.Redirect("~/SongDetail.aspx")
+    End Sub
 End Class

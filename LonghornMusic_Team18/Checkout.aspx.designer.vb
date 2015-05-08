@@ -23,6 +23,15 @@ Partial Public Class Checkout
     Protected WithEvents gvCart As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
+    '''gvCustomer control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvCustomer As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
     '''pnlInitialCheckout control.
     '''</summary>
     '''<remarks>

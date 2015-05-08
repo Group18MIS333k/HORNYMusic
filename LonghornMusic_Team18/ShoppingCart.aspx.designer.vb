@@ -41,13 +41,13 @@ Partial Public Class ShoppingCart
     Protected WithEvents lblSubtotal As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''LabelSavings control.
+    '''lblSavings control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LabelSavings As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblSavings As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''lblTax control.

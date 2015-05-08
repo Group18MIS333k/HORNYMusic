@@ -51,6 +51,15 @@
                         <br /><br />
                         <asp:Button ID="BtnAdd2Cart" runat="server" Text="Add To Cart" />
 
+                        <br />
+                        <asp:Button ID="btnLogin" runat="server" Text="Login" />
+                        <br />
+                        <asp:Button ID="btnDelete" runat="server" Text="Delete" />
+
+                        <br />
+                        <asp:GridView ID= "gvAdd2Cart" runat="server">
+                        </asp:GridView>
+
     </div>
        
 </body>
