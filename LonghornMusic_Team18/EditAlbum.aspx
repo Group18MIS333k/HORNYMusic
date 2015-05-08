@@ -1,15 +1,8 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="EditAlbum.aspx.vb" Inherits="LonghornMusic_Team18.EditAlbum" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
-    <title></title>
-    <link href="LoginStyleSheet.css" rel="stylesheet" type="text/css" />
-    </head>
-<body>
-    <form id="form1" runat="server">
+
     <div id ="banner">
     
         <asp:Label ID="Label1" runat="server" Text="Edit Album"></asp:Label><br />
@@ -37,6 +30,8 @@
             <Columns>
                 <asp:CommandField SelectText="Remove" ShowSelectButton="True" />
             </Columns>
+        </asp:GridView>
+        <asp:GridView ID="gvAlbum" runat="server" Visible="False">
         </asp:GridView>
         </div>
 
@@ -69,16 +64,13 @@
             <asp:TextBox ID="txtDiscountPrice" runat="server"></asp:TextBox>
             <br />
             <asp:RadioButtonList ID="radFeatured" runat="server">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem Selected="True">No</asp:ListItem>
+                <asp:ListItem Value="Y">Yes</asp:ListItem>
+                <asp:ListItem Selected="True" Value="N">No</asp:ListItem>
             </asp:RadioButtonList>
         </div>
 
-  
-    </form>
-</body>
-</html>
 
-</asp:content>
+
+</asp:Content>
 
 

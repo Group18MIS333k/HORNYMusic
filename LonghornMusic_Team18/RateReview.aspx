@@ -1,15 +1,7 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="RateReview.aspx.vb" Inherits="LonghornMusic_Team18.RateReview" MasterPageFile="~/Site1.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
-    <title></title>
-    <link href="LoginStyleSheet.css" rel="stylesheet" type="text/css" />
-    </head>
-<body>
-    <form id="form1" runat="server">
     <div id ="banner">
     
         <asp:Label ID="Label1" runat="server" Text="Rate and Review"></asp:Label>
@@ -60,19 +52,17 @@
             <br />
             <br />
             <asp:RadioButtonList ID="radRating" runat="server">
-                <asp:ListItem>1</asp:ListItem>
-                <asp:ListItem>2</asp:ListItem>
-                <asp:ListItem>3</asp:ListItem>
-                <asp:ListItem>4</asp:ListItem>
-                <asp:ListItem Selected="True">5</asp:ListItem>
+                <asp:ListItem Value="1.0">1</asp:ListItem>
+                <asp:ListItem Value="2.0">2</asp:ListItem>
+                <asp:ListItem Value="3.0">3</asp:ListItem>
+                <asp:ListItem Value="4.0">4</asp:ListItem>
+                <asp:ListItem Selected="True" Value="5.0">5</asp:ListItem>
             </asp:RadioButtonList>
             <br />
            
         </div>
 
   
-    </form>
-</body>
-</html>
+
 
 </asp:Content>

@@ -47,7 +47,7 @@
 
 
         End If
-        'Response.Redirect("RateReview.Aspx")
+        Response.Redirect("ratereview.aspx")
     End Sub
 
     Protected Sub ddlRateReview_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlRateReview.SelectedIndexChanged

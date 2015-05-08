@@ -10,7 +10,7 @@
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If IsPostBack = False Then
             'session variable song id
-            Dim intsongid As Integer = 1
+            Dim intsongid As Integer = Session("SongID")
             Dim intartistid As Integer
             Dim intalbumID As Integer
             Dim intNumberofGenres As Integer
@@ -95,7 +95,7 @@
         Dim intartistId As Integer
         Dim intAlbumID As Integer
         Dim decDiscountPrice As Decimal
-        Dim intSongID As Integer = 1
+        Dim intSongID As Integer = Session("SongID")
         'Session("intSongID")
 
 
@@ -224,6 +224,10 @@
     End Sub
 
     Protected Sub txtGenre1_TextChanged(sender As Object, e As EventArgs) Handles txtGenre1.TextChanged
+
+    End Sub
+
+    Protected Sub gvsonggenre_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvsonggenre.SelectedIndexChanged
 
     End Sub
 End Class
