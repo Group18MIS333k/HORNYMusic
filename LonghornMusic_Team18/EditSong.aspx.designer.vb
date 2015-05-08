@@ -59,6 +59,15 @@ Partial Public Class EditProduct
     Protected WithEvents lblError As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''gvSongGenre control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvSongGenre As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
     '''gvArtist control.
     '''</summary>
     '''<remarks>

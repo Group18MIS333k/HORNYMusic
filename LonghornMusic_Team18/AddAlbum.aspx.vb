@@ -6,6 +6,7 @@
     Dim martistID As Integer
     Dim dbAlbum As New AlbumClass
     Dim malbumID As Integer
+    Dim dbvalidations As New ValidationClass
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
         If IsPostBack = False Then
@@ -100,10 +101,21 @@
         strSongtitle = gvSongs.SelectedRow.Cells(1).Text
         strDescription = gvSongs.SelectedRow.Cells(2).Text
         decOriginalPrice = gvSongs.SelectedRow.Cells(4).Text
-        ' decDiscountPrice = gvSongs.SelectedRow.Cells(5).Text
+
+        If gvSongs.SelectedRow.Cells(5).Text Then
+            decDiscountPrice = 0.0
+        Else
+            decDiscountPrice = gvSongs.SelectedRow.Cells(5).Text
+        End If
+
+
+
+        If gvSongs.SelectedRow.Cells(7).Text = "&nbsp;" Then
+            strfeaturedFlg = "N"
+        Else
+            strfeaturedFlg = gvSongs.SelectedRow.Cells(7).Text
+        End If
         strfeaturedFlg = gvSongs.SelectedRow.Cells(7).Text
-
-
 
 
         intsongID = gvSongs.SelectedRow.Cells(10).Text
@@ -117,14 +129,13 @@
 
 
         'if sone has albumd id, add song, if not, modify
-        If Convert.ToInt32(gvSongs.SelectedRow.Cells(6).Text) = 0 Then
+        If gvSongs.SelectedRow.Cells(6).Text = "&nbsp;" Then
             'modify song
-            lblError.Text = "modify"
-            'dbsong.ModifySong(strSongtitle, strDescription, martistID, decOriginalPrice, malbumID, strfeaturedFlg, decDiscountPrice, intsongID)
-        Else
-            lblError.Text = "add"
 
-            dbsong.AddSong(strSongtitle, strDescription, intartistID, decOriginalPrice, intalbum, strfeaturedFlg)
+            dbsong.ModifySong(strSongtitle, strDescription, martistID, decOriginalPrice, intalbum, strfeaturedFlg, decDiscountPrice, intsongID)
+        Else
+
+            dbsong.AddSong(strSongtitle, strDescription, intartistID, decOriginalPrice, decDiscountPrice, intalbum, strfeaturedFlg)
             lblError.Text = "song has been added"
         End If
 
@@ -163,17 +174,34 @@
             Exit Sub
         End If
 
-        If txtPrice.Text = "" Then
-            lblError.Text = "Enter Price"
+        If dbvalidations.CheckDecimal(txtPrice.Text) = -1 Then
+            lblError.Text = "Enter decimal Price"
             Exit Sub
         End If
 
-        If txtDiscountPrice.Text = "" Then
+        If dbvalidations.CheckDecimal(txtDiscountPrice.Text) = "" Then
             lblError.Text = "Enter Discount Price"
             Exit Sub
         End If
+        If radFeatured.SelectedValue = "Y" Then
+            'check no other featured values
+            dbsong.GetFeaturedSong()
+            If dbsong.mySongView1.Count > 0 Then
+                lblError.Text = "Featured Song already exists"
+                Exit Sub
+            End If
+            dbArtist.GetFeaturedArtist()
+            If dbArtist.myArtistview1.Count > 0 Then
+                lblError.Text = "Featured Artist already exists"
+                Exit Sub
+            End If
+            dbAlbum.GetFeaturedAlbum()
+            If dbAlbum.myAlbumView1.Count > 0 Then
+                lblError.Text = "Featured album already exists"
+                Exit Sub
+            End If
+        End If
 
-        btnHome.Visible = True
         btnAdd.Visible = False
         gvSongs.Visible = False
 

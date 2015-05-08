@@ -81,7 +81,7 @@ Public Class AlbumClass
 
 
         SelectAllAlbums()
-        myAlbumView.RowFilter = "AlbumTitle =" & intAlbumID
+        myAlbumView.RowFilter = "AlbumID =" & intAlbumID
 
 
         'sort filtered view
@@ -173,6 +173,27 @@ Public Class AlbumClass
             Throw New Exception("error is " & ex.Message)
         End Try
 
+
+
+    End Sub
+
+    Public Sub GetFeaturedAlbum
+
+        SelectAllAlbums()
+        myAlbumView.RowFilter = "FeaturedFlg = 'Y'"
+
+        'sort filtered view
+
+
+    End Sub
+
+    Public Sub GetDiscountSong()
+
+
+        SelectAllAlbums()
+        myAlbumView.RowFilter = "DiscountPrice > 0"
+
+        'sort filtered view
 
 
     End Sub

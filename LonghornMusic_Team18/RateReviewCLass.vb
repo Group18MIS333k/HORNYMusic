@@ -70,11 +70,11 @@ Public Class RateReviewCLass
 
     End Sub
 
-    Public Sub SearchReviewBySong(ByVal intArtistID As Integer, ByVal intSongID As Integer)
+    Public Sub SearchReviewBySong(ByVal intSongID As Integer)
         'establish connection
 
         SelectAllReviews()
-        myView.RowFilter = "Artistid= '" & intArtistID & "' and songid = '" & intSongID & "'"
+        myView.RowFilter = "songid =" & intSongID
         'sort filtered view
 
 
@@ -126,7 +126,7 @@ Public Class RateReviewCLass
         Try
             'establich connection
             mdbConn = New SqlConnection(mstrConnection)
-            mdbDataAdapter = New SqlDataAdapter(" usp_Ratings_add_song", mdbConn)
+            mdbDataAdapter = New SqlDataAdapter("usp_Ratings_add_song", mdbConn)
 
             'sets the command type to stored procedure
             mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure

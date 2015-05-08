@@ -77,6 +77,27 @@ Public Class SongClass
 
     End Sub
 
+    Public Sub GetFeaturedSong()
+
+
+        SelectAllSongs()
+        mysongView.RowFilter = "FeaturedFlg = 'Y'"
+
+        'sort filtered view
+
+
+    End Sub
+
+    Public Sub GetDiscountSong()
+
+
+        SelectAllSongs()
+        mysongView.RowFilter = "DiscountPrice > 0"
+
+        'sort filtered view
+
+
+    End Sub
 
     Public Sub SelectASongwithTitleandArtist(strSongTitle As String, intArtistID As Integer)
 
@@ -109,7 +130,7 @@ Public Class SongClass
 
     End Sub
 
-    Public Sub AddSong(strSongTitle As String, strDescription As String, intArtistID As Integer, decOriginalPrice As Decimal, intAlbumID As Integer, strFlag As String)
+    Public Sub AddSong(strSongTitle As String, strDescription As String, intArtistID As Integer, decOriginalPrice As Decimal, decdiscountprice As Decimal, intAlbumID As Integer, strFlag As String)
 
         'purpose create dataset with a SP that returns all customers and copy that dataset into a dataview
         Try
@@ -126,6 +147,7 @@ Public Class SongClass
             mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@description", strDescription))
             mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@artistID", intArtistID))
             mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@OriginalPrice", decOriginalPrice))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@DiscountPrice", decdiscountprice))
             mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@AlbumID", intAlbumID))
             mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@FeaturedFlg", strFlag))
 

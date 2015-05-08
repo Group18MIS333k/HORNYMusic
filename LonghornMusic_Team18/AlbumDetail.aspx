@@ -37,6 +37,10 @@
                         <asp:Button ID="btnEdit" runat="server" Text="Edit; Manager Only" Width="147px" />
                         <br />
                         
+                        <br />
+                        <asp:GridView ID="gvComments" runat="server">
+                        </asp:GridView>
+                        
     </div>         
             
     <div id="RightDesc">

@@ -3,7 +3,9 @@
 
     Dim DBSong As New SongClass
     Dim DBAlbum As New AlbumClass
+    Dim dbvalidations As New ValidationClass
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        'SESSION
         Dim albumid As Integer = 2
 
         DBSong.GetAllSongsinAlbum(albumid)
@@ -17,6 +19,7 @@
     Protected Sub gvSongList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvSongList.SelectedIndexChanged
         'get intsongid from the selected song list
         Dim intSongID As Integer
+        'SESSSION
         Dim albumid As Integer = 2
         intSongID = gvSongList.SelectedRow.Cells(2).Text
 
@@ -41,6 +44,9 @@
     End Sub
 
     Protected Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        Dim decDiscountprice As Decimal
+
+
         If txtAlbum.Text = "" Then
             lblError.Text = "Enter Album Name"
             Exit Sub
@@ -51,17 +57,22 @@
             Exit Sub
         End If
 
-        If txtPrice.Text = "" Then
-            lblError.Text = "Enter Price"
+        If dbvalidations.CheckDecimal(txtPrice.Text) = -1 Then
+            lblError.Text = "Enter decimal Price"
             Exit Sub
         End If
 
         If txtDiscountPrice.Text = "" Then
-            lblError.Text = "Enter Discount Price"
-            Exit Sub
+            decDiscountprice = 0
+        Else
+            If dbvalidations.CheckDecimal(txtDiscountPrice.Text) = -1 Then
+                lblError.Text = "Enter Decimal Discount Price"
+                Exit Sub
+            End If
         End If
+       
 
-        DBAlbum.ModifyAlbum(txtAlbum.Text, txtDescription.Text, radFeatured.SelectedValue.ToString, Convert.ToDecimal(txtPrice.Text), Convert.ToDecimal(txtDiscountPrice.Text), "intalbumID")
+        DBAlbum.ModifyAlbum(txtAlbum.Text, txtDescription.Text, radFeatured.SelectedValue.ToString, Convert.ToDecimal(txtPrice.Text), decDiscountprice, "intalbumID")
 
     End Sub
 

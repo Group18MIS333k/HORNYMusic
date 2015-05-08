@@ -175,6 +175,13 @@
       <DependentUpon>AddArtist.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="AddGenre.aspx.designer.vb">
+      <DependentUpon>AddGenre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddGenre.aspx.vb">
+      <DependentUpon>AddGenre.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="AddSong.aspx.designer.vb">
       <DependentUpon>AddSong.aspx</DependentUpon>
     </Compile>
@@ -320,6 +327,7 @@
       <DependentUpon>SongDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="SongGenreClass.vb" />
     <Compile Include="Validationclass.vb" />
     <Compile Include="WelcomePage.aspx.designer.vb">
       <DependentUpon>WelcomePage.aspx</DependentUpon>
@@ -349,6 +357,7 @@
     </None>
     <Content Include="AddAlbum.aspx" />
     <Content Include="AddArtist.aspx" />
+    <Content Include="AddGenre.aspx" />
     <Content Include="AddSong.aspx" />
     <Content Include="AddSongtoexistingAlbum.aspx" />
     <Content Include="EditAlbum.aspx" />

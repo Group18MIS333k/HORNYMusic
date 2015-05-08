@@ -4,8 +4,7 @@
     Dim dbratereview As New RateReviewCLass
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim songid As Integer = 1
-        Dim artistid As Integer = 54
-        dbratereview.SearchReviewBySong(artistid, songid)
+        dbratereview.SearchReviewBySong(songid)
 
         gvComments.DataSource = dbratereview.myView1
         gvComments.DataBind()

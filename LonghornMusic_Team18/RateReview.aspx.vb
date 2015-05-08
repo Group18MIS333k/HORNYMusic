@@ -45,6 +45,11 @@ Public Class RateReview
             Exit Sub
         End If
 
+        db.ModifySongReview(10001, 2, txtReview.Text, radRating.SelectedValue.ToString)
+        lblError.Text = "song has been modified"
+        btnSave.Visible = False
+        btnDelete.Visible = False
+
         'add code to modify information to database here'
 
     End Sub
@@ -54,6 +59,11 @@ Public Class RateReview
         txtReview.Text = ""
 
         db.ModifySongReview(10001, 2, txtReview.Text, radRating.SelectedValue.ToString)
+        lblError.Text = "review has been deleted"
+        btnDelete.Visible = False
+        btnAdd.Visible = False
+        btnSave.Visible = False
+
         'add code to modify to database here
     End Sub
 
@@ -68,6 +78,9 @@ Public Class RateReview
         End If
 
         db.AddSongReview(10001, 2, txtReview.Text, radRating.SelectedValue.ToString)
+        lblError.Text = "review has been added"
+        btnAdd.Visible = False
+        btnDelete.Visible = False
         'add coded to add to database
     End Sub
 

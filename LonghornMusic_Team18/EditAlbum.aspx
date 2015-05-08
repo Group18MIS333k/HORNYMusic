@@ -35,18 +35,13 @@
         <br />
         &nbsp;&nbsp;&nbsp;
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
         Song List:<br />
         <asp:GridView ID="gvSongList" runat="server" style="margin-top: 0px">
             <Columns>
                 <asp:CommandField SelectText="Remove" ShowSelectButton="True" />
             </Columns>
         </asp:GridView>
+        <br />
         <br />
 &nbsp;
         &nbsp;

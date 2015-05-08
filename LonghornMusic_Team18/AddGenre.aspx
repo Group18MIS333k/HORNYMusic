@@ -1,19 +1,14 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="EditArtist.aspx.vb" Inherits="LonghornMusic_Team18.EditArtist" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
-    <title></title>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="AddGenre.aspx.vb" Inherits="LonghornMusic_Team18.AddGenre" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+  
+   
     <link href="LoginStyleSheet.css" rel="stylesheet" type="text/css" />
-    </head>
-<body>
-    <form id="form1" runat="server">
+   
+
+    
     <div id ="banner">
     
-        Edit Artist<br />
-    
-    </div>
+        Add Genre</div>
 
        
     <div id="left">
@@ -24,16 +19,13 @@
         <asp:Button ID="btnSave" runat="server" Text="Save" Width="232px" CausesValidation="False" style="height: 26px" />
         <br />
         <br />
-        <asp:Button ID="btnAddArtist" runat="server" Text="Add Artist" Width="232px" />
+        <asp:Label ID="lblerror" runat="server"></asp:Label>
         <br />
         <br />
         <br />
-        <asp:Label ID="lblError" runat="server"></asp:Label>
         <br />
         &nbsp;&nbsp;&nbsp;
         <br />
-        <asp:GridView ID="gvArtist" runat="server" Visible="False">
-        </asp:GridView>
         <br />
 &nbsp;
         &nbsp;
@@ -52,10 +44,8 @@
         <link href="LoginStyleSheet.css" rel="stylesheet" />
         <br />
         <br />
-        <asp:Label ID="Label12" runat="server" Text="Artist"></asp:Label>
+        Genre<br />
         <br />
-        Description<br />
-        <asp:Label ID="Label15" runat="server" Text="Featured"></asp:Label>
         <br />
         <br />
         <br />
@@ -80,14 +70,9 @@
 
             <br />
             <br />
-            <asp:TextBox ID="txtArtist" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtGenre" runat="server"></asp:TextBox>
             <br />
-            <asp:TextBox ID="txtDescription" runat="server"></asp:TextBox>
             <br />
-            <asp:RadioButtonList ID="radFeatured" runat="server">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem Selected="True">No</asp:ListItem>
-            </asp:RadioButtonList>
             <br />
             <br />
             <br />
@@ -102,6 +87,6 @@
         </div>
 
   
-    </form>
-</body>
-</html>
+   
+
+</asp:Content>

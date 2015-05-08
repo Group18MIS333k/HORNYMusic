@@ -74,6 +74,8 @@
         Genre 4<br />
         Genre5<br />
         Price<br />
+        <asp:Label ID="lblDiscountPrice" runat="server" Text="Discount Price"></asp:Label>
+        <br />
         <asp:Label ID="Label17" runat="server" Text="Featured"></asp:Label>
         <br />
         <br />
@@ -128,6 +130,8 @@
             <asp:TextBox ID="txtGenre5" runat="server"></asp:TextBox>
             <br />
             <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
+            <br />
+            <asp:TextBox ID="txtDiscountPrice" runat="server"></asp:TextBox>
             <br />
             <asp:RadioButtonList ID="radFeatured0" runat="server">
                 <asp:ListItem>Yes</asp:ListItem>

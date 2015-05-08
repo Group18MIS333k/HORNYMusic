@@ -24,7 +24,6 @@
         <asp:Button ID="btnAdd" runat="server" Text="Add" Width="232px" CausesValidation="False" style="height: 26px" Enabled="False" />
         <br />
         <br />
-        <asp:Button ID="btnHome" runat="server" Text="Go Home" Visible="False" Width="233px" />
         <br />
         <br />
         <asp:Label ID="lblError" runat="server"></asp:Label>

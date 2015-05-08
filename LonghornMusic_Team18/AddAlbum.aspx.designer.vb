@@ -41,15 +41,6 @@ Partial Public Class AddAlbum
     Protected WithEvents btnAdd As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''btnHome control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnHome As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''lblError control.
     '''</summary>
     '''<remarks>

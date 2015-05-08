@@ -27,8 +27,9 @@
         <br />
         <asp:Label ID="lblError" runat="server"></asp:Label>
         <br />
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:GridView ID="gvArtist" runat="server" Visible="False">
+        &nbsp;&nbsp;&nbsp;&nbsp;<asp:GridView ID="gvsonggenre" runat="server" Visible="False">
+        </asp:GridView>
+&nbsp;<asp:GridView ID="gvArtist" runat="server" Visible="False">
         </asp:GridView>
         <br />
         <asp:GridView ID="gvAlbum" runat="server" Visible="False">
@@ -60,6 +61,8 @@
         Genre 4<br />
         Genre 5<br />
         Price<br />
+        <asp:Label ID="Label16" runat="server" Text="Discount Price"></asp:Label>
+        <br />
         <asp:Label ID="Label15" runat="server" Text="Featured"></asp:Label>
         <br />
         <br />
@@ -106,7 +109,9 @@
             <br />
             <asp:TextBox ID="txtGenre5" runat="server"></asp:TextBox>
             <br />
-            <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtPrice" runat="server" MaxLength="4"></asp:TextBox>
+            <br />
+            <asp:TextBox ID="txtDiscountPrice" runat="server" MaxLength="4"></asp:TextBox>
             <br />
             <asp:RadioButtonList ID="radFeatured" runat="server">
                 <asp:ListItem Value="Y">Yes</asp:ListItem>

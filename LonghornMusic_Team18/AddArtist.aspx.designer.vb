@@ -122,6 +122,15 @@ Partial Public Class AddArtist
     Protected WithEvents Label13 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Label19 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblDiscountPrice As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Label17 control.
     '''</summary>
     '''<remarks>
@@ -237,6 +246,15 @@ Partial Public Class AddArtist
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtPrice As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtPrice0 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtDiscountPrice As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''radFeatured0 control.

@@ -173,5 +173,15 @@ Public Class ArtistClass
             Throw New Exception("error is " & ex.Message)
         End Try
     End Sub
+    Public Sub GetFeaturedArtist()
+
+
+        SelectAllArtists()
+        myArtistView.RowFilter = "FeaturedFlg = 'Y'"
+
+        'sort filtered view
+
+
+    End Sub
 
 End Class
