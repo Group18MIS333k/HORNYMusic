@@ -9,18 +9,16 @@
         <asp:GridView ID="gvShoppingCart" runat="server">
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
-                <asp:CommandField ShowDeleteButton="True" />
             </Columns>
         </asp:GridView>
     </p>
 
       <p>
-&nbsp; Subtotal:
-        <asp:Label ID="lblSubtotal" runat="server" Text="[lblSubtotal]"></asp:Label>
+&nbsp; Subtotal without Savings: <asp:Label ID="lblSubtotal" runat="server" Text="[lblSubtotal]"></asp:Label>
     </p>
     <p>
-&nbsp; Savings:
-        <asp:Label ID="LabelSavings" runat="server" Text="[lblDiscount]"></asp:Label>
+        &nbsp; Subtotal with Discount :
+        <asp:Label ID="lblSavings" runat="server" Text="[lblSavings]"></asp:Label>
     </p>
     <p>
 &nbsp;&nbsp;Tax @ 8.25%:
