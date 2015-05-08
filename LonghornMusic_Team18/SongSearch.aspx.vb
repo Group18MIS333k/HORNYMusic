@@ -432,4 +432,8 @@
         Me.cblGenres.DataBind()
 
     End Sub
+
+    Protected Sub gvSearchResults_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvSearchResults.SelectedIndexChanged
+        'Response.Redirect("SongDetail.aspx?SongID=" & Me.gvSearchResults.SelectedRow.Cells())
+    End Sub
 End Class

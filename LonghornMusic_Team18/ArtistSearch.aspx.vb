@@ -22,13 +22,13 @@ Public Class ArtistSearch
 
 
 
-
     End Sub
-
+    Protected Sub gvSearchResults_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles gvSearchResults.RowDataBound
+        e.Row.Cells(2).Visible = False
+    End Sub
     Public Sub btnPartialSearch_Click(sender As Object, e As EventArgs) Handles btnPartialSearch.Click
         mAryParamNames.Add("@artist")
         mAryParamValues.Add(txtName.Text)
-
 
 
 
@@ -226,6 +226,14 @@ Public Class ArtistSearch
 
 
         search.MyView.RowFilter = genresSearch
+
+
+    End Sub
+
+    Protected Sub gvSearchResults_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvSearchResults.SelectedIndexChanged
+
+        Session("ArtistID") = CInt(Me.gvSearchResults.SelectedRow.Cells(2).Text)
+        Response.Redirect("ArtistDetail.aspx")
 
 
     End Sub

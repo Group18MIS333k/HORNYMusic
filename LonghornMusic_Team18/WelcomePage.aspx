@@ -14,7 +14,7 @@
 
        
     <div id="left" style="height:auto;position:relative; float:left">
-        <%--<asp:Label ID="Label18" runat="server" Text="Featured Songs"></asp:Label>--%>
+        <asp:Label ID="Label18" runat="server" Text="Featured Songs"></asp:Label>
         <br />
         <asp:GridView ID="gvFeaturedSongs" runat="server">
         </asp:GridView>

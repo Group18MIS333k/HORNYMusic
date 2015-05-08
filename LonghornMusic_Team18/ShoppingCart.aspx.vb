@@ -8,6 +8,7 @@
         If IsPostBack = False Then
 
             Session("Cart") = 0
+            /":|
 
             maryParamNames.Add("@CustID")
             maryParamNames.Add("@SongID")
@@ -20,6 +21,14 @@
                 'get each individual cell value from row and put in maryParamValues arrayList
                 maryParamValues.Add(gvShoppingCart.Rows(0).Cells.ToString)
 
+            Next
+
+            For Each item As DataColumn In row.Table.Columns
+                Dim rowValue As New ColumnValue
+                rowValue.ColumnName = item.Caption
+                rowValue.ColumnValue = row.item(item.Ordinal)
+                RowValues.Add(rowValue)
+                rowValue = Nothing
             Next
 
             CartDB.UseSPforInsertQuery("usp_cart_Add_Item", maryParamNames, maryParamValues)
