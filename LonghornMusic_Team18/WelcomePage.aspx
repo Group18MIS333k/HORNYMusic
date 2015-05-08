@@ -14,15 +14,21 @@
 
        
     <div id="left" style="height:auto;position:relative; float:left">
-        <%--<asp:Label ID="Label18" runat="server" Text="Featured Songs"></asp:Label>--%>
+        <%--<asp:Label ID="Label18" runat="server" Text="Featured Songs"></asp:Label>--%>Featured Items<br />
         <br />
         <asp:GridView ID="gvFeaturedSongs" runat="server">
         </asp:GridView>
         <br />
-        <asp:Label ID="Label19" runat="server" Text="Featured Albums"></asp:Label>
-        <br />
-        <br />
         <asp:GridView ID="gvFeaturedAlbums" runat="server">
+        </asp:GridView>
+        <br />
+        <asp:GridView ID="gvFeaturedArtists" runat="server">
+        </asp:GridView>
+        <br />
+        Discounted Items<asp:GridView ID="gvDiscountedSongs" runat="server">
+        </asp:GridView>
+        <br />
+        <asp:GridView ID="gvDiscountedAlbums" runat="server">
         </asp:GridView>
         </div>
 

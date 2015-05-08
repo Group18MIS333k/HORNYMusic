@@ -189,5 +189,39 @@ Public Class ArtistClassDB
         End If
 
     End Sub
+    Public Sub GetFeaturedArtist()
 
+
+        SelectFeaturedArtist()
+        'mMyArtistView.RowFilter = "FeaturedFlg = 'Y'"
+
+        'sort filtered view
+
+
+    End Sub
+
+
+    Public Sub SelectFeaturedArtist()
+        'peter
+        Try
+            'establich connection
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_getfeatured_artist", mdbConn)
+
+            'sets the command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'clear dataset
+            mDatasetArtist.Clear()
+
+            'fill dataset with allcustomers
+            mdbDataAdapter.Fill(mDatasetArtist, "Artists")
+
+            'copy dataset to view
+            mMyArtistView.Table = mDatasetArtist.Tables("Artists")
+
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
 End Class

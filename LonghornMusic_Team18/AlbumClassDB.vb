@@ -139,26 +139,6 @@ Public Class AlbumClassDB
         End Try
     End Sub
 
-    Public Sub AlbumGetAll()
-        'morgan 
-        'purpse: run any select query and fill data set
-        Try
-            'define dataconnection and data adapter
-            mdbConn = New SqlConnection(mstrConnection)
-            mdbDataAdapter = New SqlDataAdapter("usp_albums_get_all", mdbConn)
-            'sets command type to stored procedure
-            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
-            'clear the dataset before filling
-            mDatasetAlbum.Clear()
-            'fill the dataset
-            mdbDataAdapter.Fill(mDatasetAlbum, "tblAlbums")
-            'fill dataview
-            mMyView.Table = mDatasetAlbum.Tables("tblAlbums")
-            'if any problems, give them an error"
-        Catch ex As Exception
-            Throw New Exception("error is " & ex.Message)
-        End Try
-    End Sub
 
     Public Sub GetNewAlbumID()
         'peter
@@ -215,6 +195,51 @@ Public Class AlbumClassDB
             mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@OriginalPrice", decOriginalPrice))
             mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@DiscountPrice", decDiscountPrice))
             mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@AlbumID", intalbumID))
+
+            'clear dataset
+            mDatasetAlbum.Clear()
+
+            'fill dataset with allcustomers
+            mdbDataAdapter.Fill(mDatasetAlbum, "Albums")
+
+            'copy dataset to view
+            mMyAlbumView.Table = mDatasetAlbum.Tables("Albums")
+
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+
+    Public Sub GetFeaturedAlbum()
+
+        SelectFeaturedAlbum()
+        'mMyAlbumView.RowFilter = "FeaturedFlg = 'Y'"
+
+        'sort filtered view
+
+
+    End Sub
+
+    Public Sub GetDiscountAlbum()
+
+
+        SelectAllAlbums()
+        mMyAlbumView.RowFilter = "DiscountPrice > 0"
+
+        'sort filtered view
+
+
+    End Sub
+    Public Sub SelectFeaturedAlbum()
+        'peter
+        'use SP to get all albums
+        Try
+            'establich connection
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_getfeatured_album", mdbConn)
+
+            'sets the command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
 
             'clear dataset
             mDatasetAlbum.Clear()

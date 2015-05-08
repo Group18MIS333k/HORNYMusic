@@ -87,7 +87,26 @@ Public Class SongClassDB
         mMysongView.RowFilter = "ArtistID =" & intArtistID
 
     End Sub
+    Public Sub GetFeaturedSong()
 
+
+        SelectFeaturedSongs()
+        ' mMysongView.RowFilter = "FeaturedFlg = 'Y'"
+
+        'sort filtered view
+
+
+    End Sub
+    Public Sub GetDiscountSong()
+
+
+        SelectAllSongs()
+        mMysongView.RowFilter = "DiscountPrice > 0"
+
+        'sort filtered view
+
+
+    End Sub
     Public Sub AddSong(strSongTitle As String, strDescription As String, intArtistID As Integer, decOriginalPrice As Decimal, intAlbumID As Integer, strFlag As String)
 
         'Runs SP to add song to song table (album id can be null or a value)
@@ -189,6 +208,28 @@ Public Class SongClassDB
    
 
    
+    Public Sub SelectFeaturedSongs()
 
+        Try
+            'establich connection
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_getfeatured_song", mdbConn)
+
+            'sets the command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'clear dataset
+            mDatasetSong.Clear()
+
+            'fill dataset with allcustomers
+            mdbDataAdapter.Fill(mDatasetSong, "Songs")
+
+            'copy dataset to view
+            mMysongView.Table = mDatasetSong.Tables("Songs")
+
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
 End Class
 
