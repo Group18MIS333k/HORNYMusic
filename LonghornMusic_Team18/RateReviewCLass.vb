@@ -78,6 +78,7 @@ Public Class RateReviewCLass
         End Try
     End Sub
 
+
     Public Sub SearchReviewByCustIDandSongID(ByVal intCustID As Integer, ByVal intArtistID As Integer)
 
         SelectAllReviews()
@@ -88,12 +89,20 @@ Public Class RateReviewCLass
 
     End Sub
 
-    Public Sub SearchReviewBySong(ByVal intArtistID As Integer, ByVal intSongID As Integer)
+    Public Sub SearchReviewBySong(ByVal intSongID As Integer)
         'establish connection
 
         SelectAllReviews()
-        mMyView.RowFilter = "Artistid=" & intArtistID
         mMyView.RowFilter = "SongID =" & intSongID
+        'sort filtered view
+
+
+    End Sub
+    Public Sub SearchReviewByComment(ByVal intCommentID As Integer)
+        'establish connection
+
+        SelectAllReviews()
+        mMyView.RowFilter = "CommentID =" & intCommentID
         'sort filtered view
 
 
@@ -102,7 +111,39 @@ Public Class RateReviewCLass
     'select count ratings from ratings where song id = x
     'select avg ratings from ratings where song id = x
 
+    Public Sub UpvoteDownvote(ByVal VoteCount As Integer, ByVal intCommentID As Integer)
+        Try
+            'create command and connection
+            Dim objConnection As New SqlConnection(mstrConnection)
+            'tell SQL the procedure
+            Dim cmd As New SqlCommand
 
+            'tell SQL the procedure
+            Dim mdbDataAdapter As New SqlDataAdapter("usp_customer_upvotedownvote", objConnection)
+
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'add parameters
+
+            'add parameters
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@VoteCount", VoteCount))
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@CommentID", intCommentID))
+
+            'clear dataset
+            Me.mDatasetRR.Clear()
+            'open connection and fill
+            mdbDataAdapter.Fill(mDatasetRR, "Ratings")
+            'copy to dataview
+            'clear dataset
+            mMyView.Table = mDatasetRR.Tables("Ratings")
+            SelectAllReviews()
+
+        Catch ex As Exception
+            Throw New Exception(" error message is " & ex.Message)
+
+        End Try
+    End Sub
 
    
 
