@@ -1038,9 +1038,25 @@ Label5 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:LonghornMusic_Team18.MyMusicPage.GridView1">
+</member><member name="F:LonghornMusic_Team18.MyMusicPage.Label6">
 	<summary>
-GridView1 control.
+Label6 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.MyMusicPage.Label7">
+	<summary>
+Label7 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:LonghornMusic_Team18.MyMusicPage.gvMyMusic">
+	<summary>
+gvMyMusic control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -1929,22 +1945,6 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:LonghornMusic_Team18.WelcomePage.lnkLogout">
 	<summary>
 lnkLogout control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.EditProduct.Head1">
-	<summary>
-Head1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.EditProduct.form1">
-	<summary>
-form1 control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -3306,22 +3306,6 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:LonghornMusic_Team18.AlbumDetail.BtnAdd2Cart">
 	<summary>
 BtnAdd2Cart control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.RateReview.Head1">
-	<summary>
-Head1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:LonghornMusic_Team18.RateReview.form1">
-	<summary>
-form1 control.
 </summary>
 	<remarks>
 Auto-generated field.

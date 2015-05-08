@@ -1,15 +1,7 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="EditSong.aspx.vb" Inherits="LonghornMusic_Team18.EditProduct" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
-    <title></title>
-    <link href="LoginStyleSheet.css" rel="stylesheet" type="text/css" />
-    </head>
-<body>
-    <form id="form1" runat="server">
     <div id ="banner">
     
       <asp:Label ID="Label1" runat="server" Text="Edit Song"></asp:Label>
@@ -103,9 +95,6 @@
     
         </div>
   
-    </form>
-</body>
-</html>
 
 
     </asp:Content>
