@@ -390,6 +390,13 @@
       <DependentUpon>SongDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="SongSearch.aspx.designer.vb">
+      <DependentUpon>SongSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SongSearch.aspx.vb">
+      <DependentUpon>SongSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Validationclass.vb" />
     <Compile Include="WelcomePage.aspx.designer.vb">
       <DependentUpon>WelcomePage.aspx</DependentUpon>
@@ -435,6 +442,7 @@
     <Content Include="OrderHistory.aspx" />
     <Content Include="packages.config" />
     <Content Include="RateReview.aspx" />
+    <Content Include="SongSearch.aspx" />
     <Content Include="Web.config" />
     <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">
