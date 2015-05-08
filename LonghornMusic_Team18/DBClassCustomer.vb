@@ -11,6 +11,7 @@ Public Class DBClassCustomer
     Dim mdbDataAdapter As New SqlDataAdapter
     Dim mdbConn As SqlConnection
     Dim returnValue As String
+    Dim mMyView As New DataView
 
     Dim mstrConnection As String = "workstation id =COMPUTER;packet size=4096;data source=MISSQL.mccombs.utexas.edu;integrated security = False;initial catalog=mis333k_20152_Team18;user id=msbcn366;password=Getrektm9"
 
@@ -62,6 +63,13 @@ Public Class DBClassCustomer
             Return mDatasetCustomer
         End Get
     End Property
+
+    Public ReadOnly Property MyView() As DataView 'make sure and due this so your views work
+        Get
+            Return mMyView
+        End Get
+    End Property
+
     Public Sub AddCustomer(ByVal strpassword As String, ByVal strlast As String, ByVal strfirst As String, ByVal strMI As String, ByVal strAddress As String, ByVal strZipCode As String, ByVal strPhone As String, ByVal strEmailAddr As String, ByVal CCN1 As String, ByVal CCN2 As String)
         Try
             'create command and connection

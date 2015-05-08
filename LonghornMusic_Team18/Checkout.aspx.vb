@@ -1,18 +1,39 @@
 ﻿Public Class Checkout
     Inherits System.Web.UI.Page
     Dim CartDB As New CartClassDB
-
+    Dim CustDB As New DBClassCustomer
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Session("Cart") <> 1 Then
 
         End If
         DataBindShoppingCart()
+        DataBindCustomer()
+
     End Sub
+
+    Public Sub FillDDL()
+        'this tells the drop down box where to get the data
+        Me.ddlPaymentMethod0.DataSource = CustDB.CustDataset.Tables("Customers").Columns(8)
+        'sets which column from the dataset wil be displayed in the ddl
+        Me.ddlPaymentMethod0.DataTextField = "Credit Card #1 Number"
+        'sets which column from the dataset will be the value stored when items are selected 
+        Me.ddlPaymentMethod0.DataValueField = "Credit Card #1 Number"
+        'binds data
+        Me.ddlPaymentMethod0.DataBind()
+
+    End Sub
+
     Public Sub DataBindShoppingCart()
         gvCart.DataSource = CartDB.CartDataset.Tables("Cart")
         gvCart.DataSource = CartDB.MyView
         gvCart.DataBind()
+
+    End Sub
+    Public Sub DataBindCustomer()
+        gvCustomer.DataSource = CustDB.CustDataset.Tables("Customers")
+        gvCustomer.DataSource = CustDB.MyView
+        gvCustomer.DataBind()
 
     End Sub
     Public Sub GetSubtotal()
