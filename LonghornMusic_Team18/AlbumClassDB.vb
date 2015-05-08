@@ -27,84 +27,6 @@ Public Class AlbumClassDB
 
     End Property
 
-    'Public Sub SearchRatings(ByVal decRatingLower As Decimal, ByVal decRatingUpper As Decimal)
-    '    'morgan
-    '    mMyView.RowFilter = "AvgRatingNBR > '" & decRatingLower & "' AND avgRatingNBR < '" & decRatingUpper & "'"
-    'End Sub
-    'THIS WILL RUN ALL THE PROCEDURES NECESSARY FROM THE ARTIST TABLE
-    Public Sub AlbumSearchWithAnyParameters(ByVal strSPName As String, ByVal aryParamNames As ArrayList, ByVal aryParamValues As ArrayList)
-        'purpose to run a stored procedure with one parameter
-        'inputs: stored procedure name, table name, dataset name, dataview name, array list of pparameter name, array list of parameter Value
-        'returns: dataset filled with the correct answers
-        'author: morgan may 
-
-        'creates instances of the connection and the command object
-        Dim objConnection As New SqlConnection(mstrConnection)
-        'tell sql server the name of the stored procedure you wil be executing 
-        Dim mdbDataAdapter As New SqlDataAdapter(strSPName, objConnection)
-        Try
-            'sets the command type to stored procedure
-            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
-
-            'add parameter(s) to SPROC
-            Dim index As Integer = 0
-            For Each strParamName As String In aryParamNames
-                mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter(CStr(aryParamNames(index)), CStr(aryParamValues(index))))
-                index = index + 1
-            Next
-
-            'clear dataset
-            Me.mDatasetAlbum.Clear()
-            'open connection and fill dataset
-            mdbDataAdapter.Fill(mDatasetAlbum, "Albums")
-            'copy dataset to dataview
-            mMyView.Table = mDatasetAlbum.Tables("Albums")
-
-        Catch ex As Exception
-            Dim strError As String = ""
-            Dim index As Integer = 0
-            For Each paramName As String In aryParamNames
-                strError = strError & "ParamName : " & CStr(aryParamNames(index))
-                strError = strError & "ParamValue: " & CStr(aryParamValues(index))
-                index = index + 1
-            Next
-            Throw New Exception(strError & " error is " & ex.Message)
-        End Try
-
-    End Sub
-
-    Public Sub AlbumSearchSort(ByVal strSortValue As String)
-        'morgan may 
-        If strSortValue = "Rating Ascending" Then
-            'sort by the column name in the dataview
-            MyView.Sort = "AvgRatingNbr ASC"
-        End If
-
-        If strSortValue = "Rating Descending" Then
-            'sort by the column name in the dataview
-            MyView.Sort = "AvgRatingNbr DESC"
-        End If
-
-        If strSortValue = "Artist Name Ascending" Then
-            MyView.Sort = "ArtistName ASC"
-        End If
-
-        If strSortValue = "Artist Name Descending" Then
-            MyView.Sort = "ArtistName DESC"
-        End If
-
-        If strSortValue = "Album Name Ascending" Then
-            'sort by the column name in the dataview
-            MyView.Sort = "AlbumTitle ASC"
-        End If
-
-        If strSortValue = "Album Name Descending" Then
-            'sort by the column name in the dataview
-            MyView.Sort = "AlbumTitle DESC"
-        End If
-
-    End Sub
-
 
     Public ReadOnly Property myAlbumView1() As DataView
         'Peter
@@ -309,4 +231,48 @@ Public Class AlbumClassDB
         End Try
     End Sub
 
+    Public Sub GetAlbumListByArtist(ByVal ArtistID As Integer)
+        Try
+            'establich connection
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_AllAlbums_ByArtist", mdbConn)
+
+            'sets the command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@artistID", ArtistID))
+            'clear dataset
+            mDatasetAlbum.Clear()
+
+            'fill dataset with allcustomers
+            mdbDataAdapter.Fill(mDatasetAlbum, "Albums")
+
+            'copy dataset to view
+            mMyAlbumView.Table = mDatasetAlbum.Tables("Albums")
+
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+    Public Sub GetAlbumDescription(ByVal ArtistID As Integer)
+        Try
+            'establich connection
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_album_get_description", mdbConn)
+
+            'sets the command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@albumID", ArtistID))
+            'clear dataset
+            mDatasetAlbum.Clear()
+
+            'fill dataset with allcustomers
+            mdbDataAdapter.Fill(mDatasetAlbum, "Albums")
+
+            'copy dataset to view
+            mMyAlbumView.Table = mDatasetAlbum.Tables("Albums")
+
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
 End Class

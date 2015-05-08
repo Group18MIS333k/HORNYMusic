@@ -67,7 +67,46 @@ Public Class CartClassDB
             Throw New Exception(strError & " error message is " & ex.Message)
         End Try
     End Sub
+    Public Sub AddToCart(ByVal strUSPname As String, ByVal aryParamNames As ArrayList, ByVal aryParamValues As ArrayList)
+        'Purpose: insert inputs into cart table 
+        'argument: stored procedure name, array list of paramerter names, and araylist of parameter values
+        'return: nothing 
+        'author:Parth 
 
+        'creates instances of the connection and command object
+        Dim objConnection As New SqlConnection(mstrConnection)
+        'tell sql server the name ofthe stored procedure
+        Dim objCommand As New SqlDataAdapter(strUSPname, objConnection)
+
+        Try
+            'sets the command type to stored procedure
+            objCommand.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            'add parameters to stored procedure
+            Dim index As Integer = 0
+            For Each ParamName As String In aryParamNames
+                objCommand.SelectCommand.Parameters.Add(New SqlParameter(CStr(aryParamNames(index)), CStr(aryParamValues(index))))
+                index = index + 1
+            Next
+
+            'open connection and run insert/update query
+            objCommand.SelectCommand.Connection = objConnection
+            objConnection.Open()
+            objCommand.SelectCommand.ExecuteNonQuery()
+            objConnection.Close()
+
+            'print out each element of our array list if error occured
+        Catch ex As Exception
+            Dim strError As String = ""
+            Dim index As Integer = 0
+            For Each paramName As String In aryParamNames
+                strError = strError & "ParamName: " & CStr(aryParamNames(index))
+                strError = strError & " ParamValue: " & CStr(aryParamValues(index))
+                index = index + 1
+            Next
+            Throw New Exception(strError & " error message is " & ex.Message)
+        End Try
+    End Sub
 
 
 End Class

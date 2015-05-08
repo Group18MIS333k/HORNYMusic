@@ -23,10 +23,11 @@
 #RightDesc {
     position: relative;
     float: left;
-    width: 20%;
+    width: 28%;
     text-align:left;
     padding-left:4px;
-      
+    top: 0px;
+    left: 0px;
 }
 #picture
 {

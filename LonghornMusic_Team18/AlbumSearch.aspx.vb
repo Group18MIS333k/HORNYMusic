@@ -362,4 +362,14 @@
         Me.cblGenres.DataBind()
 
     End Sub
+
+
+    Protected Sub gvSearchResults_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvSearchResults.SelectedIndexChanged
+        Dim intAlbumID As Integer
+        intAlbumID = CInt(gvSearchResults.SelectedRow.Cells(2).Text)
+        Session("AlbumID") = intAlbumID
+        Response.Redirect("~/AlbumDetail.aspx")
+
+    End Sub
+
 End Class

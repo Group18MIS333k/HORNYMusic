@@ -66,6 +66,29 @@ Public Class ArtistClassDB
     End Sub
 
 
+    Public Sub GetArtistDescription(ByVal intArtistID As Integer)
+        'morgan
+        'purpse: run any select query and fill data set
+        Try
+            'define dataconnection and data adapter
+            mdbConn = New SqlConnection(mstrConnection)
+            mdbDataAdapter = New SqlDataAdapter("usp_artists_get_description", mdbConn)
+            'sets command type to stored procedure
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter("@artistID", intArtistID))
+            'clear the dataset before filling
+            mDatasetArtist.Clear()
+            'fill the dataset
+            mdbDataAdapter.Fill(mDatasetArtist, "Artists")
+            'fill dataview
+            mMyArtistView.Table = mDatasetArtist.Tables("Artists")
+            'if any problems, give them an error"
+        Catch ex As Exception
+            Throw New Exception("error is " & ex.Message)
+        End Try
+    End Sub
+
+
     Public Sub ArtistGetAll()
         'morgan
         'purpse: run any select query and fill data set

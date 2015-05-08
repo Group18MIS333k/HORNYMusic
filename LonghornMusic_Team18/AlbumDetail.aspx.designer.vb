@@ -32,13 +32,13 @@ Partial Public Class AlbumDetail
     Protected WithEvents Image1 As Global.System.Web.UI.WebControls.Image
 
     '''<summary>
-    '''LblAlbumName control.
+    '''gvAlbumDescription control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LblAlbumName As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents gvAlbumDescription As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
     '''LblArtistName control.
@@ -86,15 +86,6 @@ Partial Public Class AlbumDetail
     Protected WithEvents lblPrice As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''lblAlbumDescription control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblAlbumDescription As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''lblRatingsNReviews control.
     '''</summary>
     '''<remarks>
@@ -102,6 +93,15 @@ Partial Public Class AlbumDetail
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblRatingsNReviews As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''gvAlbumRR control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gvAlbumRR As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
     '''BtnAdd2Cart control.

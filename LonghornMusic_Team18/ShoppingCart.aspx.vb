@@ -29,6 +29,19 @@
 
 
     End Sub
+    Public Sub DataBindShoppingCart()
+        gvShoppingCart.DataSource = CartDB.CartDataset.Tables("Cart")
+        gvShoppingCart.DataSource = CartDB.MyView
+        gvShoppingCart.DataBind()
+
+    End Sub
 
 
+    Protected Sub btnCheckout_Click(sender As Object, e As EventArgs) Handles btnCheckout.Click
+
+    End Sub
+
+    Protected Sub gvShoppingCart_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvShoppingCart.SelectedIndexChanged
+
+    End Sub
 End Class

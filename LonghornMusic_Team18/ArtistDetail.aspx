@@ -18,7 +18,10 @@
     </div>
         
     <div id="LeftDesc">
-                        <b>Artist:</b><asp:Label ID="LblArtistName" runat="server"></asp:Label>
+                        <b>Artist:<br />
+                        <asp:GridView ID="gvArtistDescription" runat="server">
+                        </asp:GridView>
+                        </b>
                         <br />
                         <br />
                         <b>Album List:</b><br />
@@ -35,6 +38,7 @@
                                 <asp:CommandField ShowSelectButton="True" />
                             </Columns>
                         </asp:GridView>
+                        <br />
                         <asp:GridView ID="gvComments" runat="server">
                             <Columns>
                                 <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Vote" ShowHeader="True" Text="Vote" />
@@ -44,11 +48,11 @@
 
     <div id="RightDesc">
 
-        <b>Artist Description:</b>
-        <asp:Label ID="lblArtistDescription" runat="server"></asp:Label>
-        <br /><br />
+    
         <b>Ratings & Reviews:</b>
-                        <asp:Label ID="LblRatingsNReviews" runat="server"></asp:Label>
+                        <br />
+        <asp:GridView ID="gvArtistRR" runat="server">
+        </asp:GridView>
 
     </div>
        
