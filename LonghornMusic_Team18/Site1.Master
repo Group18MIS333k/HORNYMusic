@@ -6,12 +6,18 @@
 <head id="Head1" runat="server">
     <title></title>
     <link href="MasterPageStyleSheet.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .auto-style1 {
+            height: 232px;
+            width: 252px;
+        }
+    </style>
     </head>
 <body>
     <form id="form2" runat="server">
     <div id ="banner">
     
-        <asp:Label ID="Label3" runat="server" Font-Size="XX-Large" Text="Austin Company"></asp:Label>
+        <asp:Label ID="Label3" runat="server" Font-Size="XX-Large" Text="Longhorn Music"></asp:Label>
         
     
         <br />
@@ -54,8 +60,8 @@
 
     <div id ="bottom">
 
-        Company doing stuff in Austin<br />
-        Contact us: <a href="mailto:austincompany@gmail.com">austincompany@gmail.com</a><br />
+        Buy music from us. The White Rhino does!<br />
+        Contact us: <a href="mailto:longhornmusic@gmail.com" dir="ltr">longhornmusic@gmail.com</a><br />
         <img alt="" class="auto-style1" src="images.jpg" />
     </div>
     </form>

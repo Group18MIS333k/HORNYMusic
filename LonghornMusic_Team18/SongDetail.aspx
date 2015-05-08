@@ -31,9 +31,16 @@
                         <asp:LinkButton ID="LnkAlbum" runat="server" PostBackUrl="~/AlbumDetail.aspx">Go To Album</asp:LinkButton>
                         <br />
                         <br />
+                        <asp:GridView ID="gvComments" runat="server">
+                            <Columns>
+                                <asp:ButtonField ButtonType="Button" CommandName="Select" Text="Vote" />
+                            </Columns>
+                        </asp:GridView>
+                        <br />
                         <b>Song List:</b>                        
                         <asp:GridView ID="gvSongList" runat="server">
                         </asp:GridView>
+                        <br />
     </div>         
 
     <div id="RightDesc">
